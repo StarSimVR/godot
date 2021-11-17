@@ -6,7 +6,7 @@ StarSimVR (Godot)
 
 
 
-## Submodules Licenses
+## Submodules' Licenses
 
 ### `godot-headers` (**MIT**)
 
