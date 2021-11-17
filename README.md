@@ -8,7 +8,7 @@ StarSimVR (Godot)
 
 ## Submodules' Licenses
 
-### `godot-headers` (**MIT**)
+### `godot-headers` (MIT)
 
 > Copyright (c) 2017-2021 Godot Engine contributors.
 >
