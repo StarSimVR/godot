@@ -1,13 +1,38 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://geometry/obj/jupiter.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://geometry/gitf20/Jupiter.glb" type="PackedScene" id=2]
+[ext_resource path="res://geometry/gitf20/Material.material" type="Material" id=3]
+
+[sub_resource type="SphereShape" id=1]
+radius = 100.0
 
 [node name="Main" type="Spatial"]
 
 [node name="ARVROrigin" type="ARVROrigin" parent="."]
 
 [node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.1596, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 93.5427, 39.0861, 0 )
 
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
 
 [node name="RightController" type="ARVRController" parent="ARVROrigin"]
 controller_id = 2
+
+[node name="JupiterGltf20" type="RigidBody" parent="."]
+
+[node name="Mesh" parent="JupiterGltf20" instance=ExtResource( 2 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="JupiterGltf20"]
+shape = SubResource( 1 )
+
+[node name="JupiterObj" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 213.527, 0, -273.653 )
+
+[node name="MeshInstance" type="MeshInstance" parent="JupiterObj"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="JupiterObj"]
+shape = SubResource( 1 )
