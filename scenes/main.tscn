@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Main" type="Spatial"]
+
+[node name="ARVROrigin" type="ARVROrigin" parent="."]
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.1596, 0, 0 )
+
+[node name="LeftController" type="ARVRController" parent="ARVROrigin"]
+
+[node name="RightController" type="ARVRController" parent="ARVROrigin"]
+controller_id = 2
