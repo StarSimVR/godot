@@ -4,3 +4,6 @@
 [submodule "geometry"]
 	path = geometry
 	url = https://github.com/StarSimVR/geometry.git
+[submodule "godot_openvr_fps"]
+	path = godot_openvr_fps
+	url = https://github.com/GodotVR/godot_openvr_fps
