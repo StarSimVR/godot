@@ -12,14 +12,25 @@ script = ExtResource( 4 )
 [node name="World" type="Spatial" parent="."]
 
 [node name="JupiterGltf20" type="StaticBody" parent="World"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.815, 65.8199, 0 )
 
 [node name="Mesh" parent="World/JupiterGltf20" instance=ExtResource( 2 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="World/JupiterGltf20"]
 shape = SubResource( 1 )
 
+[node name="JupiterGltf20" type="StaticBody" parent="World/JupiterGltf20"]
+transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 2, 245.385, -90.5946, 0 )
+
+[node name="Mesh" parent="World/JupiterGltf20/JupiterGltf20" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, -100, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="World/JupiterGltf20/JupiterGltf20"]
+transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, -100, 0 )
+shape = SubResource( 1 )
+
 [node name="ARVROrigin" type="ARVROrigin" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 105.472, 28.4379, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.1079, -30.2701, 0 )
 
 [node name="Player_Camera" type="ARVRCamera" parent="ARVROrigin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.39169, 0 )

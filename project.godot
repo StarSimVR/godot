@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="StarSimVR"
-run/main_scene="res://scenes/jupiterVR.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 
