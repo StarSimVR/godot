@@ -1,9 +1,9 @@
-[submodule "godot-headers"]
-	path = godot-headers
-	url = https://github.com/godotengine/godot-headers.git
 [submodule "geometry"]
 	path = geometry
 	url = https://github.com/StarSimVR/geometry.git
 [submodule "godot_openvr_fps"]
 	path = godot_openvr_fps
 	url = https://github.com/GodotVR/godot_openvr_fps
+[submodule "godot-cpp"]
+	path = godot-cpp
+	url = https://github.com/godotengine/godot-cpp.git

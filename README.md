@@ -54,7 +54,7 @@ version of the license is as follows:
 
 ## Submodules' Licenses
 
-### `Godot` (incl. `godot-headers`) (MIT)
+### `Godot` (incl. `godot-cpp`) (MIT)
 
 > Copyright (c) 2017-2021 Godot Engine contributors.
 >
