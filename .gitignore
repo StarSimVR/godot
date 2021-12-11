@@ -1,3 +1,11 @@
 .import/
 build/
 addons/
+
+*.obj
+gdnative/bin/
+# Temporary database used by SCons to keep file signatures to speed up future builds
+.sconsign.dblite
+# SCons debug files
+vc140.idb
+vc140.pdb
