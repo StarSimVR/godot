@@ -17,7 +17,7 @@ config/windows_native_icon="res://icon.ico"
 
 [gdnative]
 
-singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
+singletons=[  ]
 
 [physics]
 
