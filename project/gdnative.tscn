@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://gdexample.gdns" type="Script" id=2]
+[ext_resource path="res://gdnative_main.gd" type="Script" id=3]
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
