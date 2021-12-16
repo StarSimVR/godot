@@ -12,19 +12,18 @@ class GDMath : public Spatial {
 
 private:
     float time_passed;
-    float time_emit;
-    float r;
-	float e;
-    float speed;
+	float speed;
+    float r, e;
+	float last_r, last_e;
 	Ellipse* ellipse;
+
 public:
     static void _register_methods();
 
     GDMath();
     ~GDMath();
 
-    void _init(); // our initializer called by Godot
-
+    void _init();
     void _process(float delta);
     void set_speed(float p_speed);
     float get_speed();
