@@ -1,24 +1,27 @@
-#ifndef GDEXAMPLE_H
-#define GDEXAMPLE_H
+#ifndef GDMATH_H
+#define GDMATH_H
 
 #include <Godot.hpp>
-#include <Sprite.hpp>
+#include <Spatial.hpp>
+#include <ellipse.hpp>
 
 namespace godot {
 
-class GDExample : public Sprite {
-    GODOT_CLASS(GDExample, Sprite)
+class GDMath : public Spatial {
+    GODOT_CLASS(GDMath, Spatial)
 
 private:
     float time_passed;
     float time_emit;
-    float amplitude;
+    float r;
+	float e;
     float speed;
+	Ellipse* ellipse;
 public:
     static void _register_methods();
 
-    GDExample();
-    ~GDExample();
+    GDMath();
+    ~GDMath();
 
     void _init(); // our initializer called by Godot
 

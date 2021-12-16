@@ -1,0 +1,8 @@
+[gd_resource type="NativeScript" load_steps=2 format=2]
+
+[ext_resource path="res://gdmath.gdnlib" type="GDNativeLibrary" id=1]
+
+[resource]
+resource_name = "gdmath"
+class_name = "GDMath"
+library = ExtResource( 1 )

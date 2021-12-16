@@ -3,6 +3,9 @@ build/
 addons/
 
 bin/
+src/*.obj
+src/*.d
+src/*.os
 # Temporary database used by SCons to keep file signatures to speed up future builds
 .sconsign.dblite
 # SCons debug files
