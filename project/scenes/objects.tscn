@@ -9,18 +9,15 @@
 [node name="Jupiter" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0 )
 script = ExtResource( 3 )
-r = 5.0
-speed = 0.5
+r = 0.5
+e = 0.01
 
 [node name="Ceres" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 1.76934, 0, 0 )
 script = ExtResource( 3 )
-r = 7.0
-e = 0.2
-speed = 1.5
+r = 8.0
 
 [node name="Ceres2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.185, 0, -2 )
 script = ExtResource( 3 )
-r = 8.0
-e = 0.8
+r = 5.0
