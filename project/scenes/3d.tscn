@@ -1,11 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://space.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=2]
-
-[sub_resource type="Environment" id=1]
-background_mode = 4
-ambient_light_color = Color( 0.568627, 0.564706, 0.709804, 1 )
 
 [node name="Main" type="Spatial"]
 
@@ -13,23 +8,5 @@ ambient_light_color = Color( 0.568627, 0.564706, 0.709804, 1 )
 
 [node name="Camera" type="Camera" parent="3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15905, -0.366722, 9.41425 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="3D"]
-environment = SubResource( 1 )
-
-[node name="Control" type="Control" parent="3D"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="3D/Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Objects" parent="." instance=ExtResource( 2 )]
