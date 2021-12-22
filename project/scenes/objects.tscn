@@ -30,13 +30,16 @@ transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0 )
 script = ExtResource( 3 )
 radius = 0.5
 eccentricity = 0.01
+centre = Vector3( 0, 0, 0 )
 
 [node name="Ceres" parent="Space" instance=ExtResource( 2 )]
-transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 1.76934, 0, 0 )
+transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 1.769, 0, 0 )
 script = ExtResource( 3 )
 radius = 8.0
+centre = Vector3( 1.769, 0, 0 )
 
 [node name="Ceres2" parent="Space" instance=ExtResource( 2 )]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.185, 0, -2 )
 script = ExtResource( 3 )
 radius = 5.0
+centre = Vector3( -6.185, 0, -2 )

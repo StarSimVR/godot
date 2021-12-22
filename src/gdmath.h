@@ -3,6 +3,7 @@
 
 #include <Godot.hpp>
 #include <Spatial.hpp>
+#include <Engine.hpp>
 #include <ellipse.hpp>
 
 #define GDMATH_DEFAULT_SPEED 1.0
@@ -18,15 +19,9 @@ class GDMath : public Spatial {
 	GODOT_CLASS(GDMath, Spatial)
 
 private:
-	static const float DEFAULT_SPEED;
-	static const float DEFAULT_RADIUS;
-	static const float DEFAULT_ECCENTRICITY;
-	static const Vector3 DEFAULT_CENTER;
-	static const Vector3 DEFAULT_NORMAL;
-	static const Vector3 DEFAULT_TANGENT;
-	
 	Ellipse* ellipse;
 	float time_passed;
+	bool is_ready;
 	
 	float speed;
 	float radius, eccentricity;
@@ -40,9 +35,13 @@ public:
 	void _init();
 	void _ready();
 	void _process(float delta);
+	void _notification(int notification);
+	
+	void sync_transform();
+	void sync_math();
 	
 	void create_ellipse();
-	void recreate_ellipse();
+	void update_after_set();
 	
 	void set_speed(float p_speed);
 	float get_speed();

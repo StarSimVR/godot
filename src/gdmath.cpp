@@ -13,6 +13,7 @@ GDMath::~GDMath() {
 void GDMath::_register_methods() {
 	register_method("_ready", &GDMath::_ready);
 	register_method("_process", &GDMath::_process);
+	register_method("_notification", &GDMath::_notification);
 	
 	register_property<GDMath, float>("speed", &GDMath::set_speed, &GDMath::get_speed, GDMATH_DEFAULT_SPEED);
 	register_property<GDMath, float>("radius", &GDMath::set_radius, &GDMath::get_radius, GDMATH_DEFAULT_RADIUS);
@@ -25,6 +26,7 @@ void GDMath::_register_methods() {
 void GDMath::_init() {
 	ellipse = NULL;
 	time_passed = 0.0;
+	is_ready = false;
 	
 	speed = GDMATH_DEFAULT_SPEED;
 	radius = GDMATH_DEFAULT_RADIUS;
@@ -35,28 +37,55 @@ void GDMath::_init() {
 }
 
 void GDMath::_ready() {
-	create_ellipse();
+	is_ready = true;
+	if (!Engine::get_singleton()->is_editor_hint()) {
+		create_ellipse();
+	} else {
+		set_notify_transform(true);
+	}
 }
 
 void GDMath::_process(float delta) {
-	time_passed += speed * delta;
-	vector<float> v = ellipse->eval(time_passed);
-	set_translation( Vector3(v[0], v[1], v[2]) );
+	if (!Engine::get_singleton()->is_editor_hint()) {
+		time_passed += speed * delta;
+		vector<float> v = ellipse->eval(time_passed);
+		set_translation( Vector3(v[0], v[1], v[2]) );
+	}
+}
+
+void GDMath::_notification(int notification) {
+	if (notification == NOTIFICATION_TRANSFORM_CHANGED && Engine::get_singleton()->is_editor_hint() && is_ready) {
+		sync_math();
+		property_list_changed_notify();
+	}
+}
+
+void GDMath::sync_transform() {
+	set_translation(center);
+}
+
+void GDMath::sync_math() {
+	center = get_translation();
 }
 
 void GDMath::create_ellipse() {
 	ellipse = new Ellipse(radius, eccentricity, center.x, center.y, center.z, tangent.x, tangent.y, tangent.z, normal.x, normal.y, normal.z);
 }
-void GDMath::recreate_ellipse() {
+
+void GDMath::update_after_set() {
 	if (ellipse) {
 		delete ellipse;
-		ellipse = new Ellipse(radius, eccentricity, center.x, center.y, center.z, tangent.x, tangent.y, tangent.z, normal.x, normal.y, normal.z);
+		create_ellipse();
+	}
+	if (Engine::get_singleton()->is_editor_hint() && is_ready) {
+		sync_transform();
+		property_list_changed_notify();
 	}
 }
 
 void GDMath::set_speed(float p_speed) {
 	speed = p_speed;
-	recreate_ellipse();
+	update_after_set();
 }
 float GDMath::get_speed() {
 	return speed;
@@ -64,7 +93,7 @@ float GDMath::get_speed() {
 
 void GDMath::set_radius(float p_radius) {
 	radius = p_radius;
-	recreate_ellipse();
+	update_after_set();
 }
 float GDMath::get_radius() {
 	return radius;
@@ -72,7 +101,7 @@ float GDMath::get_radius() {
 
 void GDMath::set_eccentricity(float p_eccentricity) {
 	eccentricity = p_eccentricity;
-	recreate_ellipse();
+	update_after_set();
 }
 float GDMath::get_eccentricity() {
 	return eccentricity;
@@ -80,7 +109,7 @@ float GDMath::get_eccentricity() {
 
 void GDMath::set_center(Vector3 p_center) {
 	center = p_center;
-	recreate_ellipse();
+	update_after_set();
 }
 Vector3 GDMath::get_center() {
 	return center;
@@ -88,7 +117,7 @@ Vector3 GDMath::get_center() {
 
 void GDMath::set_normal(Vector3 p_normal) {
 	normal = p_normal;
-	recreate_ellipse();
+	update_after_set();
 }
 Vector3 GDMath::get_normal() {
 	return normal;
@@ -96,7 +125,7 @@ Vector3 GDMath::get_normal() {
 
 void GDMath::set_tangent(Vector3 p_tangent) {
 	tangent = p_tangent;
-	recreate_ellipse();
+	update_after_set();
 }
 Vector3 GDMath::get_tangent() {
 	return tangent;
