@@ -1,5 +1,4 @@
 #include "GDMath.h"
-#include <ellipse.hpp>
 
 using namespace godot;
 
