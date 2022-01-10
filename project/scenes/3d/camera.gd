@@ -28,6 +28,10 @@ func _process(delta: float) -> void:
 	var velocity := delta * curr_speed * direction
 	translate(velocity)
 
+	if Input.is_action_just_pressed("print_position"):
+		print("Translation:", transform.origin)
+		print("Basis:", transform.basis)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion && Input.is_mouse_button_pressed(BUTTON_LEFT):
 		_mouse_motion += event.relative * look_sensitivity

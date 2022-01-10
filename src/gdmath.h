@@ -30,6 +30,8 @@
 #define GDMATH_DEFAULT_CENTER Vector3(1.0, 1.0, 1.0)
 #define GDMATH_DEFAULT_NORMAL Vector3(1.0, 1.0, 1.0)
 #define GDMATH_DEFAULT_TANGENT Vector3(1.0, 1.0, 1.0)
+#define GDMATH_DEFAULT_WARP_POINT_POSITION Vector3()
+#define GDMATH_DEFAULT_WARP_POINT_BASIS Basis()
 
 namespace godot {
 
@@ -44,6 +46,8 @@ private:
 	float speed;
 	float radius, eccentricity;
 	Vector3 center, normal, tangent;
+	Vector3 warp_point_position;
+	Basis warp_point_basis;
 public:
 	static void _register_methods();
 
@@ -73,6 +77,10 @@ public:
 	Vector3 get_normal();
 	void set_tangent(Vector3 p_tangent);
 	Vector3 get_tangent();
+	void set_warp_point_position(Vector3 p_warp_point_position);
+	Vector3 get_warp_point_position();
+	void set_warp_point_basis(Basis p_warp_point_basis);
+	Basis get_warp_point_basis();
 };
 
 }

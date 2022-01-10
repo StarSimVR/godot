@@ -38,6 +38,8 @@ void GDMath::_register_methods() {
 	register_property<GDMath, Vector3>("centre", &GDMath::set_center, &GDMath::get_center, GDMATH_DEFAULT_CENTER);
 	register_property<GDMath, Vector3>("normal", &GDMath::set_normal, &GDMath::get_normal, GDMATH_DEFAULT_NORMAL);
 	register_property<GDMath, Vector3>("tangent", &GDMath::set_tangent, &GDMath::get_tangent, GDMATH_DEFAULT_TANGENT);
+	register_property<GDMath, Vector3>("warp_point_position", &GDMath::set_warp_point_position, &GDMath::get_warp_point_position, GDMATH_DEFAULT_WARP_POINT_POSITION);
+	register_property<GDMath, Basis>("warp_point_basis", &GDMath::set_warp_point_basis, &GDMath::get_warp_point_basis, GDMATH_DEFAULT_WARP_POINT_BASIS);
 }
 
 void GDMath::_init() {
@@ -51,6 +53,8 @@ void GDMath::_init() {
 	center = GDMATH_DEFAULT_CENTER;
 	normal = GDMATH_DEFAULT_NORMAL;
 	tangent = GDMATH_DEFAULT_TANGENT;
+	warp_point_position = GDMATH_DEFAULT_WARP_POINT_POSITION;
+	warp_point_basis = GDMATH_DEFAULT_WARP_POINT_BASIS;
 }
 
 void GDMath::_ready() {
@@ -146,4 +150,20 @@ void GDMath::set_tangent(Vector3 p_tangent) {
 }
 Vector3 GDMath::get_tangent() {
 	return tangent;
+}
+
+void GDMath::set_warp_point_position(Vector3 p_warp_point_position) {
+	warp_point_position = p_warp_point_position;
+	update_after_set();
+}
+Vector3 GDMath::get_warp_point_position() {
+	return warp_point_position;
+}
+
+void GDMath::set_warp_point_basis(Basis p_warp_point_basis) {
+	warp_point_basis = p_warp_point_basis;
+	update_after_set();
+}
+Basis GDMath::get_warp_point_basis() {
+	return warp_point_basis;
 }
