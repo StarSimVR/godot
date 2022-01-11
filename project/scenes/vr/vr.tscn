@@ -15,6 +15,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
+script = ExtResource( 4 )
 
 [node name="Hand_Left" parent="ARVROrigin/LeftController" instance=ExtResource( 6 )]
 transform = Transform( -1.18945, 0, -1.03985e-07, 0, 1.18945, 0, 1.03985e-07, 0, -1.18945, -0.15, 0, -1 )

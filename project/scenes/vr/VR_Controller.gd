@@ -1,10 +1,10 @@
 extends ARVRController
 
-onready var grab_area = $Area
-onready var grab_raycast = $GrabCast
-onready var grab_pos_node = $Grab_Pos
-onready var hand_mesh = $Hand
-onready var teleport_raycast = $RayCast
+#onready var grab_area = $Area
+#onready var grab_raycast = $GrabCast
+#onready var grab_pos_node = $Grab_Pos
+#onready var hand_mesh = $Hand
+#onready var teleport_raycast = $RayCast
 
 var controller_velocity = Vector3(0, 0, 0)
 var prior_controller_position = Vector3(0, 0, 0)
