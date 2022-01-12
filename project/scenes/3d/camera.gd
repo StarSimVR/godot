@@ -13,11 +13,7 @@ func _process(delta: float) -> void:
 	if !_free_flight_mode:
 		var object: Spatial = _objects[_curr_object]
 		var origin := object.transform.origin
-		#look_at(origin, Vector3(0, 1, 0))
-		#rotation_degrees.y = -180
 		look_at_from_position(Vector3(origin.x, origin.y, -1.0), origin, Vector3(0, 1, 0))
-		#transform.origin = Vector3(origin.x, origin.y, -1.0)
-		#input = Vector3(0, 0, -1)
 	else:
 		transform.basis = Basis(Vector3(_rotation.y, _rotation.x, 0))
 		if Input.is_action_pressed("move_forward"):
@@ -42,7 +38,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("print_position"):
 		print("Position: ", transform.origin)
 		print("Rotation: ", _rotation)
-		print("Ms: ", OS.get_ticks_msec())
 	if Input.is_action_just_pressed("toggle_free_flight_mode"):
 		_free_flight_mode = !_free_flight_mode
 
@@ -60,4 +55,3 @@ func _input(event: InputEvent) -> void:
 		_curr_object += 1
 		if _curr_object == _objects.size():
 			_curr_object = 1
-		#transform.origin = _objects[_curr_object].global_transform.origin + Vector3(0, 0, 5)
