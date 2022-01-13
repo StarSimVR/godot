@@ -31,8 +31,7 @@ func _process(delta: float) -> void:
 		input = input.normalized()
 
 	var curr_speed := speed_with_shift if Input.is_key_pressed(KEY_SHIFT) else speed
-	var direction := global_transform.basis * input
-	var velocity := delta * curr_speed * direction
+	var velocity := delta * curr_speed * input
 	translate(velocity)
 
 	if Input.is_action_just_pressed("print_position"):
