@@ -1,10 +1,16 @@
 extends ARVRController
 
-#onready var grab_area = $Area
-#onready var grab_raycast = $GrabCast
-#onready var grab_pos_node = $Grab_Pos
-#onready var hand_mesh = $Hand
-#onready var teleport_raycast = $RayCast
+const BUTTON = {
+	"Trigger":0,
+	"TouchPad":1,
+	"SideButton":2
+}
+
+onready var _ARVRCamera := get_node("../ARVRCamera")
+onready var _objects := get_node("../../Objects/Space").get_children()
+var _curr_object := 1
+var lastPosition = null
+
 
 var controller_velocity = Vector3(0, 0, 0)
 var prior_controller_position = Vector3(0, 0, 0)
@@ -94,17 +100,62 @@ func _physics_process(delta):
 	else:
 		directional_movement = false
 	# --------------------
+	
+func init():
+	var object: Spatial = _objects[_curr_object]
+	var origin := object.transform.origin
+	_ARVRCamera.updatePosition(origin)
+	lastPosition = origin
 
+func _process(_delta):
+	if lastPosition == null:
+		init()
+	else:
+		var object: Spatial = _objects[_curr_object]
+		var origin := object.transform.origin
+		print(origin)
+		_ARVRCamera.updatePosition(lastPosition - origin)
+		lastPosition = origin
 
 func button_pressed(button_index):
-	var string = "Pressed: %d"
-	string = string % button_index
-	print(string)
+	match button_index:
+		"Trigger":
+			match self.controller_id:
+				1:
+					pass
+				2:
+					grab()
+				_:
+					print("Trigger__ControllerID: %d" % self.controller_id)
+		"TouchPad":
+			match self.controller_id:
+				1: 
+					changeWarpPointBackwards()
+				2:
+					changeWarpPointForwards()
+				_:
+					print("TouchPad__ControllerID: %d" % self.controller_id)
+		"SideButton":
+			print("SideButton")
+		_:
+			print("Pressed: %d" % button_index)
 
 func button_released(button_index):
-	var string = "Released: %d"
-	string = string % button_index
-	print(string)
+	print("Released: %d" % button_index)
+	
+	
+func changeWarpPointBackwards():
+	_curr_object -= 1
+	if _curr_object == 0:
+		_curr_object = _objects.size() - 1
+	
+func changeWarpPointForwards():
+	_curr_object += 1
+	if _curr_object == _objects.size():
+		_curr_object = 1
+		
+func grab():
+	pass
 
 func sleep_area_entered(body):
 	pass

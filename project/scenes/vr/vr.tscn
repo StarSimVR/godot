@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/vr/vr.gd" type="Script" id=2]
+[ext_resource path="res://scenes/vr/ARVRCamera.gd" type="Script" id=3]
 [ext_resource path="res://scenes/vr/VR_Controller.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Hand_Left.scn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Hand_Right.scn" type="PackedScene" id=7]
@@ -29,5 +30,6 @@ transform = Transform( -1.18945, 0, -1.03985e-07, 0, 1.18945, 0, 1.03985e-07, 0,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 fov = 90.0
 far = 300.0
+script = ExtResource( 3 )
 
 [node name="Objects" parent="." instance=ExtResource( 1 )]
