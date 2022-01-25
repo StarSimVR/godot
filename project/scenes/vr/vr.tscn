@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/vr/vr.gd" type="Script" id=2]
 [ext_resource path="res://scenes/vr/ARVRCamera.gd" type="Script" id=3]
 [ext_resource path="res://scenes/vr/VR_Controller.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Hand_Left.scn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Hand_Right.scn" type="PackedScene" id=7]
+[ext_resource path="res://geometry/Controller/vr_controller_vive_1_5.obj" type="ArrayMesh" id=5]
 
 [node name="VR" type="Spatial"]
 script = ExtResource( 2 )
@@ -16,17 +15,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
 script = ExtResource( 4 )
 
-[node name="Hand_Left" parent="ARVROrigin/LeftController" instance=ExtResource( 6 )]
-transform = Transform( -1.18945, 0, -1.03985e-07, 0, 1.18945, 0, 1.03985e-07, 0, -1.18945, -0.15, 0, -1 )
+[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/LeftController"]
+mesh = ExtResource( 5 )
+material/0 = null
 
 [node name="RightController" type="ARVRController" parent="ARVROrigin"]
 controller_id = 2
 script = ExtResource( 4 )
 
-[node name="Hand_Right" parent="ARVROrigin/RightController" instance=ExtResource( 7 )]
-transform = Transform( -1.18945, 0, -1.03985e-07, 0, 1.18945, 0, 1.03985e-07, 0, -1.18945, 0.15, 0, -1 )
+[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/RightController"]
+mesh = ExtResource( 5 )
+material/0 = null
 
-[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+[node name="StarSimVRCamera" type="ARVRCamera" parent="ARVROrigin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 fov = 90.0
 far = 300.0

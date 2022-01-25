@@ -1,5 +1,7 @@
 extends ARVRCamera
 
+class_name StarSimVRCamera
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,7 +14,7 @@ func _ready():
 	
 	
 func updatePosition(_newPosition):
-	self.look_at_from_position(self.transform.origin + _newPosition, Vector3(0,0,0), Vector3(0,1,0))
+	self.look_at_from_position(_newPosition, Vector3(0,0,0), Vector3(0,1,0))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

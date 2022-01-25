@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ARVRCamera",
+"class": "StarSimVRCamera",
+"language": "GDScript",
+"path": "res://scenes/vr/ARVRCamera.gd"
+} ]
+_global_script_class_icons={
+"StarSimVRCamera": ""
+}
+
 [application]
 
 config/name="StarSimVR"
