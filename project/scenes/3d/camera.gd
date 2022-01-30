@@ -3,17 +3,31 @@ extends Camera
 export var speed := 5.0
 export var speed_with_shift := 25.0
 export var look_sensitivity := 1.0
-onready var _objects := get_node("../../Objects/Space").get_children()
+onready var _objects := get_node("/root/Main/Objects/Space").get_children()
+onready var _labels := get_node("/root/Main/Objects/CanvasLayer/Labels")
 var _rotation := Vector2()
 var _free_flight_mode := false
 var _curr_object := 1
 
+func _ready() -> void:
+	for object in _objects:
+		if object.name == "sun":
+			continue
+		var label := Label.new()
+		label.name = object.name
+		label.set_text(object.name)
+		_labels.add_child(label)
+
 func _process(delta: float) -> void:
 	var input := Vector3()
 	if !_free_flight_mode:
+		var sun: Spatial = _objects[0]
 		var object: Spatial = _objects[_curr_object]
 		var origin := object.transform.origin
-		look_at_from_position(Vector3(origin.x, origin.y, -1.0), origin, Vector3(0, 1, 0))
+		var sun_origin := sun.transform.origin
+		var position := origin + origin.normalized() * 1
+		if position != sun_origin:
+			look_at_from_position(position, sun_origin, Vector3(0, 0, 1))
 	else:
 		transform.basis = Basis(Vector3(_rotation.y, _rotation.x, 0))
 		if Input.is_action_pressed("move_forward"):
@@ -39,6 +53,18 @@ func _process(delta: float) -> void:
 		print("Rotation: ", _rotation)
 	if Input.is_action_just_pressed("toggle_free_flight_mode"):
 		_free_flight_mode = !_free_flight_mode
+
+	for object in _objects:
+		if object.name == "sun":
+			continue
+		var label: Label = _labels.get_node(object.name)
+		var offset := Vector2(label.get_size().x / 2, 0)
+		var object_position: Vector3 = object.global_transform.origin
+		if is_position_behind(object_position):
+			label.hide()
+		else:
+			label.show()
+		label.rect_position = unproject_position(object_position) - offset
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion && Input.is_mouse_button_pressed(BUTTON_LEFT):

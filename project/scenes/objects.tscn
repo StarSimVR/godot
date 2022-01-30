@@ -24,6 +24,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Labels" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Space" type="Spatial" parent="."]
 
 [node name="sun" parent="Space" instance=ExtResource( 11 )]
