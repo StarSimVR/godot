@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Camera",
+"class": "BaseCamera",
+"language": "GDScript",
+"path": "res://scenes/base_camera.gd"
+}, {
 "base": "ARVRCamera",
 "class": "StarSimVRCamera",
 "language": "GDScript",
 "path": "res://scenes/vr/ARVRCamera.gd"
 } ]
 _global_script_class_icons={
+"BaseCamera": "",
 "StarSimVRCamera": ""
 }
 
@@ -85,6 +91,16 @@ prev_warp_point={
 toggle_free_flight_mode={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+slower={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":75,"unicode":0,"echo":false,"script":null)
+ ]
+}
+faster={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":76,"unicode":0,"echo":false,"script":null)
  ]
 }
 
