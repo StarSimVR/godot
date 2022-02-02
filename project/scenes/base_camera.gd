@@ -5,16 +5,6 @@ onready var _objects := get_node("/root/Main/Objects/Space").get_children()
 onready var _labels := get_node("/root/Main/Objects/CanvasLayer/Labels")
 var _curr_object := 1
 
-func change_speed(k: float) -> void:
-	for object in _objects:
-		object.speed *= k
-
-func slower() -> void:
-	change_speed(0.5)
-
-func faster() -> void:
-	change_speed(2)
-
 func create_labels() -> void:
 	for object in _objects:
 		if object.name == "sun":

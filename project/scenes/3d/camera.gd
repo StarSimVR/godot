@@ -54,7 +54,3 @@ func _input(event: InputEvent) -> void:
 		prev_warp_point()
 	if Input.is_action_just_pressed("next_warp_point"):
 		next_warp_point()
-	if Input.is_action_just_pressed("slower"):
-		slower()
-	if Input.is_action_just_pressed("faster"):
-		faster()

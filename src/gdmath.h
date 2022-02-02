@@ -65,6 +65,9 @@ public:
 	void create_ellipse();
 	void update_after_set();
 	
+	void slower();
+	void faster();
+	
 	void set_speed(float p_speed);
 	float get_speed();
 	void set_radius(float p_radius);

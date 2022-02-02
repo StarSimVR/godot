@@ -40,6 +40,8 @@ void GDMath::_register_methods() {
 	register_property<GDMath, Vector3>("tangent", &GDMath::set_tangent, &GDMath::get_tangent, GDMATH_DEFAULT_TANGENT);
 	register_property<GDMath, Vector3>("warp_point_position", &GDMath::set_warp_point_position, &GDMath::get_warp_point_position, GDMATH_DEFAULT_WARP_POINT_POSITION);
 	register_property<GDMath, Basis>("warp_point_basis", &GDMath::set_warp_point_basis, &GDMath::get_warp_point_basis, GDMATH_DEFAULT_WARP_POINT_BASIS);
+	register_method("slower", &GDMath::slower);
+	register_method("faster", &GDMath::faster);
 }
 
 void GDMath::_init() {
@@ -102,6 +104,14 @@ void GDMath::update_after_set() {
 		sync_transform();
 		property_list_changed_notify();
 	}
+}
+
+void GDMath::slower() {
+	speed *= 0.5f;
+}
+
+void GDMath::faster() {
+	speed *= 2.f;
 }
 
 void GDMath::set_speed(float p_speed) {
