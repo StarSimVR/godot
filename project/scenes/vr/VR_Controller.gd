@@ -8,6 +8,7 @@ const BUTTON = {
 
 onready var StarSimVRCamera := get_node("../StarSimVRCamera")
 onready var _objects := get_node("../../Objects/Space").get_children()
+onready var BaseController := get_node("../Controller")
 var _curr_object := 1
 var isInited = false
 
@@ -134,7 +135,13 @@ func button_pressed(button_index):
 				_:
 					print("TouchPad__ControllerID: %d" % self.controller_id)
 		BUTTON.SideButton:
-			print("SideButton")
+			match self.controller_id:
+				1:
+					BaseController.slower()
+				2:
+					BaseController.faster()
+				_:
+					print("SideButton__ControllerID: %d" % self.controller_id)
 		_:
 			print("Did not match. pressed: %d" % button_index)
 
