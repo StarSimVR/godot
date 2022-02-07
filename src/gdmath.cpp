@@ -178,6 +178,7 @@ void GDMath::faster() {
 
 /**
  * @param   p_speed   Speed to set.
+ *
  * This method sets the speed of the object.
  */
 void GDMath::set_speed(float p_speed) {
@@ -193,6 +194,7 @@ float GDMath::get_speed() {
 
 /**
  * @param   p_radius   Radius to set.
+ *
  * This method sets the radius of the object.
  */
 void GDMath::set_radius(float p_radius) {
@@ -208,6 +210,7 @@ float GDMath::get_radius() {
 
 /**
  * @param   p_eccentricity   Eccentricity to set.
+ *
  * This method sets the eccentricity of the object.
  */
 void GDMath::set_eccentricity(float p_eccentricity) {
@@ -223,6 +226,7 @@ float GDMath::get_eccentricity() {
 
 /**
  * @param   p_center   Center to set.
+ *
  * This method sets the center of the object.
  */
 void GDMath::set_center(Vector3 p_center) {
@@ -238,6 +242,7 @@ Vector3 GDMath::get_center() {
 
 /**
  * @param   p_normal   Normal to set.
+ *
  * This method sets the normal of the object.
  */
 void GDMath::set_normal(Vector3 p_normal) {
@@ -253,6 +258,7 @@ Vector3 GDMath::get_normal() {
 
 /**
  * @param   p_tangent   Tangent to set.
+ *
  * This method sets the tangent of the object.
  */
 void GDMath::set_tangent(Vector3 p_tangent) {
@@ -268,6 +274,7 @@ Vector3 GDMath::get_tangent() {
 
 /**
  * @param   p_warp_point_position   Warp point position to set.
+ *
  * This method sets the warp point position of the object.
  */
 void GDMath::set_warp_point_position(Vector3 p_warp_point_position) {
@@ -283,6 +290,7 @@ Vector3 GDMath::get_warp_point_position() {
 
 /**
  * @param   p_warp_point_basis   Warp point basis to set.
+ *
  * This method sets the warp point basis of the object.
  */
 void GDMath::set_warp_point_basis(Basis p_warp_point_basis) {

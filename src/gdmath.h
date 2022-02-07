@@ -56,13 +56,37 @@
  * Constants with default values for parameters.
  */
 
+/**
+ * Default speed.
+*/
 #define GDMATH_DEFAULT_SPEED 1.0
+/**
+ * Default radius.
+*/
 #define GDMATH_DEFAULT_RADIUS 1.0
+/**
+ * Default eccentricity.
+*/
 #define GDMATH_DEFAULT_ECCENTRICITY 1.0
+/**
+ * Default center.
+*/
 #define GDMATH_DEFAULT_CENTER Vector3(1.0, 1.0, 1.0)
+/**
+ * Default normal.
+*/
 #define GDMATH_DEFAULT_NORMAL Vector3(1.0, 1.0, 1.0)
+/**
+ * Default tangent.
+*/
 #define GDMATH_DEFAULT_TANGENT Vector3(1.0, 1.0, 1.0)
+/**
+ * Default warp point position.
+*/
 #define GDMATH_DEFAULT_WARP_POINT_POSITION Vector3()
+/**
+ * Default warp point basis.
+*/
 #define GDMATH_DEFAULT_WARP_POINT_BASIS Basis()
 
 namespace godot {
