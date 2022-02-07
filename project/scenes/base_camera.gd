@@ -19,13 +19,22 @@ func render_labels() -> void:
 		if object.name == "sun":
 			continue
 		var label: Label = _labels.get_node(object.name)
-		var offset := Vector2(label.get_size().x / 2, 0)
 		var object_position: Vector3 = object.global_transform.origin
 		if is_position_behind(object_position):
 			label.hide()
-		else:
+			continue
+
+		var object_to_exclude: Node = object.get_node_or_null("CollisionObject")
+		var exclude = [] if object_to_exclude == null else [object_to_exclude]
+		var result := get_world().direct_space_state.intersect_ray(
+			global_transform.origin, object_position, exclude, 2147483647, true, true
+		)
+		if result.empty():
 			label.show()
-		label.rect_position = unproject_position(object_position) - offset
+			var offset := Vector2(label.get_size().x / 2, 0)
+			label.rect_position = unproject_position(object_position) - offset
+		else:
+			label.hide()
 
 func look_at_current_object() -> void:
 	var sun: Spatial = _objects[0]
