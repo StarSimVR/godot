@@ -42,6 +42,9 @@ radius = 0.0
 eccentricity = 0.0
 centre = Vector3( 0, 0, 0 )
 
+[node name="DirectionalLight" type="DirectionalLight" parent="Space/sun"]
+light_color = Color( 1, 0.952941, 0.564706, 1 )
+
 [node name="CollisionObject" parent="Space/sun" instance=ExtResource( 12 )]
 transform = Transform( 2.98757, 0, 0, 0, 3.03886, 0, 0, 0, 3.0879, 0, 0, 0 )
 

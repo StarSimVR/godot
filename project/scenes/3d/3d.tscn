@@ -8,6 +8,7 @@
 [sub_resource type="Environment" id=1]
 background_mode = 4
 ambient_light_color = Color( 0.568627, 0.564706, 0.709804, 1 )
+ambient_light_energy = 0.5
 
 [node name="Main" type="Spatial"]
 
