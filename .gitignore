@@ -11,3 +11,7 @@ src/*.os
 # SCons debug files
 vc140.idb
 vc140.pdb
+
+# Doxygen
+html/
+latex/

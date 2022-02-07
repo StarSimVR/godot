@@ -16,13 +16,45 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+/**
+ * @author      Luka-sama
+ * @brief       Introducing the `GDMath' class.
+ * @copyright   (C) 2022 Luka-sama.
+ *              This file is licensed GPL 2 as of June 1991.
+ * @date        2022
+ * @file        gdmath.h
+ * @note        See `LICENSE' for full license.
+ *              See `README.md' for project details.
+ *
+ * This is the main header of the repository introducing the `GDMath` class.
+ *
+ * The introduced class is intended to simulate planetary motion using
+ * `Ellipse` class.
+ */
+
+/******************************************************************************/
+
+/*
+ * Security settings.
+ */
+
+
 #ifndef GDMATH_H
 #define GDMATH_H
+
+/*
+ * Includes.
+ */
 
 #include <Godot.hpp>
 #include <Spatial.hpp>
 #include <Engine.hpp>
 #include <ellipse.hpp>
+
+
+/*
+ * Constants with default values for parameters.
+ */
 
 #define GDMATH_DEFAULT_SPEED 1.0
 #define GDMATH_DEFAULT_RADIUS 1.0
@@ -34,6 +66,17 @@
 #define GDMATH_DEFAULT_WARP_POINT_BASIS Basis()
 
 namespace godot {
+
+/**
+ * @brief   This class simulates planetary motion.
+ *
+ * This class is intended to simulate planetary motion using
+ * `Ellipse` class. It passes the required parameters to
+ * `Ellipse` instance and handles speed of the objects.
+ *
+ * It can also synchronize some parameters between instances
+ * of this class and `Ellipse` class.
+ */
 
 class GDMath : public Spatial {
 	GODOT_CLASS(GDMath, Spatial)
@@ -88,4 +131,11 @@ public:
 
 }
 
-#endif
+/*
+ * End of header.
+ */
+
+// Leaving the header.
+#endif // ! GDMATH_H
+
+/******************************************************************************/

@@ -16,18 +16,57 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+/**
+ * @author      Luka-sama
+ * @brief       Register GDNative classes.
+ * @copyright   (C) 2022 Luka-sama.
+ *              This file is licensed GPL 2 as of June 1991.
+ * @date        2022
+ * @file        gdlibrary.cpp
+ * @note        See `LICENSE' for full license.
+ *              See `README.md' for project details.
+ *
+ * This source file registers GDNative classes in Godot.
+ */
+
+/******************************************************************************/
+
+/*
+ * Includes.
+ */
+
 #include "gdmath.h"
 
+/**
+ * @brief   Initialize GDNative.
+ * @param   o   Options (see Godot reference for details).
+ *
+ * This function initializes GDNative so we can use GDNative for creating NativeScripts.
+ */
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
 	godot::Godot::gdnative_init(o);
 }
 
+/**
+ * @brief   Terminate GDNative.
+ * @param   o   Options (see Godot reference for details).
+ *
+ * This function terminates GDNative so Godot can clean up.
+ */
 extern "C" void GDN_EXPORT godot_gdnative_terminate(godot_gdnative_terminate_options *o) {
 	godot::Godot::gdnative_terminate(o);
 }
 
+/**
+ * @brief   Register GDNative classes.
+ * @param   handle   Handle pointer (see Godot reference for details).
+ *
+ * This function initializes GDNative so Godot can clean up.
+ */
 extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	godot::Godot::nativescript_init(handle);
 
 	godot::register_tool_class<godot::GDMath>();
 }
+
+/******************************************************************************/
