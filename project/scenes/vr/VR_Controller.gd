@@ -7,9 +7,8 @@ const BUTTON = {
 }
 
 onready var StarSimVRCamera := get_node("../StarSimVRCamera")
-onready var _objects := get_node("../../Objects/Space").get_children()
+onready var Space := get_node("../../Objects/Space")
 onready var BaseController := get_node("../Controller")
-var _curr_object := 1
 var isInited = false
 
 
@@ -105,8 +104,8 @@ func _physics_process(delta):
 	
 	
 func init():
-	var object: Spatial = _objects[_curr_object]
-	var origin := object.transform.origin
+	var object: Spatial = Space.getCurObject()
+	#var origin := object.transform.origin
 	updateCameraPosition()
 	isInited = true;
 
@@ -121,7 +120,7 @@ func button_pressed(button_index):
 		BUTTON.Trigger:
 			match self.controller_id:
 				1:
-					pass
+					changeToGodView()
 				2:
 					grab()
 				_:
@@ -146,23 +145,20 @@ func button_pressed(button_index):
 			print("Did not match. pressed: %d" % button_index)
 
 func button_released(button_index):
-	print("Released: %d" % button_index)
+	#print("Released: %d" % button_index)
+	pass
 	
 	
 func changeWarpPointBackwards():
-	_curr_object -= 1
-	if _curr_object == 0:
-		_curr_object = _objects.size() - 1
+	Space.decreaseCurObject()
 	updateCameraPosition()
 	
 func changeWarpPointForwards():
-	_curr_object += 1
-	if _curr_object == _objects.size():
-		_curr_object = 1
+	Space.increaseCurObject()
 	updateCameraPosition()
 		
 func updateCameraPosition():
-	var object: Spatial = _objects[_curr_object]
+	var object: Spatial = Space.getCurObject()
 	var origin := object.transform.origin
 	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
 	camera_offset.y = 0
@@ -178,3 +174,10 @@ func sleep_area_entered(body):
 
 func sleep_area_exited(body):
 	pass
+	
+func changeToGodView():
+	var object: Spatial = get_node("../../Objects/GodView")
+	var origin := object.transform.origin
+	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
+	camera_offset.y = 0
+	get_parent().global_transform.origin = origin - camera_offset
