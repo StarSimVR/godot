@@ -8,6 +8,7 @@ var _free_flight_mode := false
 
 func _ready() -> void:
 	create_labels()
+	create_trails()
 
 func move_in_free_flight_mode(delta: float) -> void:
 	var input := Vector3()

@@ -3,6 +3,7 @@ extends Camera
 
 onready var _objects := get_node("/root/Main/Objects/Space").get_children()
 onready var _labels := get_node("/root/Main/Objects/CanvasLayer/Labels")
+var motion_trail_scene := preload("res://MotionTrail/MotionTrail.tscn")
 var _curr_object := 1
 
 func create_labels() -> void:
@@ -13,6 +14,17 @@ func create_labels() -> void:
 		label.name = object.name
 		label.set_text(object.name)
 		_labels.add_child(label)
+
+func create_trails() -> void:
+	for object in _objects:
+		if object.name == "sun":
+			continue
+		var motion_trail = motion_trail_scene.instance()
+		motion_trail.name = "MotionTrail"
+		motion_trail.fromWidth = 0.05
+		motion_trail.startColor = Color(0.52, 0.55, 0.72)
+		motion_trail.rotate_y(PI / 2)
+		object.add_child(motion_trail)
 
 func render_labels() -> void:
 	for object in _objects:
