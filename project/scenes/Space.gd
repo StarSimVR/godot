@@ -26,6 +26,14 @@ func decreaseCurObject():
 	
 func getCurObject():
 	return _objects[_curr_object]
+	
+func setCurObject(object):
+	if(object.name == "mercury2"):
+		object.name = "mercury"
+	for i in range(len(_objects)):
+		if(object.name == _objects[i].name):
+			_curr_object = i
+			return
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
