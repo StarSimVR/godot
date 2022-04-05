@@ -9,6 +9,7 @@ const BUTTON = {
 onready var StarSimVRCamera := get_node("../StarSimVRCamera")
 onready var Space := get_node("../../Objects/Space")
 onready var BaseController := get_node("../Controller")
+onready var grabCast := get_node("GrabCast")
 var isInited = false
 
 
@@ -104,6 +105,14 @@ func _physics_process(delta):
 	
 	
 func init():
+	if(self.controller_id == 1):
+		grabCast.visible = true
+		grabCast.collide_with_areas = true
+		grabCast.collide_with_bodies = false
+		grabCast.set_enabled(true)
+		grabCast.cast_to = Vector3(0, 0, -100)
+	else:
+		grabCast.visible = false
 	var object: Spatial = Space.getCurObject()
 	#var origin := object.transform.origin
 	updateCameraPosition()
@@ -166,8 +175,12 @@ func updateCameraPosition():
 	#StarSimVRCamera.updatePosition(origin)
 		
 func grab():
-	print("In grab")
-	pass
+	var leftRayCast = get_node("../LeftController").getRayCast()
+	leftRayCast.force_raycast_update()
+	if(leftRayCast.is_colliding()):
+		var body = leftRayCast.get_collider()
+		Space.setCurObject(body)
+		updateCameraPosition()
 
 func sleep_area_entered(body):
 	pass
@@ -181,3 +194,6 @@ func changeToGodView():
 	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
 	camera_offset.y = 0
 	get_parent().global_transform.origin = origin - camera_offset
+	
+func getRayCast():
+	return grabCast
