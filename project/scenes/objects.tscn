@@ -50,7 +50,7 @@ centre = Vector3( 0, 0, 0 )
 [node name="DirectionalLight" type="DirectionalLight" parent="Space/sun"]
 light_color = Color( 1, 0.952941, 0.564706, 1 )
 
-[node name="CollisionObject" parent="Space/sun" instance=ExtResource( 12 )]
+[node name="sun" parent="Space/sun" instance=ExtResource( 12 )]
 transform = Transform( 2.98757, 0, 0, 0, 3.03886, 0, 0, 0, 3.0879, 0, 0, 0 )
 
 [node name="mercury" parent="Space" instance=ExtResource( 5 )]
@@ -60,12 +60,18 @@ radius = 3.0
 eccentricity = 0.206
 centre = Vector3( 0, 0, 0 )
 
+[node name="mercury2" parent="Space/mercury" instance=ExtResource( 12 )]
+transform = Transform( 2.98757, 0, 0, 0, 3.03886, 0, 0, 0, 3.0879, 0, 0, 0 )
+
 [node name="venus" parent="Space" instance=ExtResource( 7 )]
 script = ExtResource( 10 )
 speed = 0.783
 radius = 4.0
 eccentricity = 0.007
 centre = Vector3( 0, 0, 0 )
+
+[node name="venus" parent="Space/venus" instance=ExtResource( 12 )]
+transform = Transform( 2.98757, 0, 0, 0, 3.03886, 0, 0, 0, 3.0879, 0, 0, 0 )
 
 [node name="earth" parent="Space" instance=ExtResource( 1 )]
 script = ExtResource( 10 )
@@ -74,12 +80,18 @@ radius = 5.0
 eccentricity = 0.017
 centre = Vector3( 0, 0, 0 )
 
+[node name="earth" parent="Space/earth" instance=ExtResource( 12 )]
+transform = Transform( 2.98757, 0, 0, 0, 3.03886, 0, 0, 0, 3.0879, 0, 0, 0 )
+
 [node name="mars" parent="Space" instance=ExtResource( 9 )]
 script = ExtResource( 10 )
 speed = 0.256
 radius = 6.0
 eccentricity = 0.093
 centre = Vector3( 0, 0, 0 )
+
+[node name="mars" parent="Space/mars" instance=ExtResource( 12 )]
+transform = Transform( 2.98757, 0, 0, 0, 3.03886, 0, 0, 0, 3.0879, 0, 0, 0 )
 
 [node name="jupiter" parent="Space" instance=ExtResource( 8 )]
 script = ExtResource( 10 )
@@ -88,7 +100,7 @@ radius = 9.0
 eccentricity = 0.049
 centre = Vector3( 0, 0, 0 )
 
-[node name="CollisionObject" parent="Space/jupiter" instance=ExtResource( 12 )]
+[node name="jupiter" parent="Space/jupiter" instance=ExtResource( 12 )]
 transform = Transform( 0.30844, 0, 0, 0, 0.304032, 0, 0, 0, 0.305706, 0, 0, 0 )
 
 [node name="saturn" parent="Space" instance=ExtResource( 2 )]
@@ -98,7 +110,7 @@ radius = 11.0
 eccentricity = 0.054
 centre = Vector3( 0, 0, 0 )
 
-[node name="CollisionObject" parent="Space/saturn" instance=ExtResource( 12 )]
+[node name="saturn" parent="Space/saturn" instance=ExtResource( 12 )]
 transform = Transform( 0.257692, 0, 0, 0, 0.27479, 0, 0, 0, 0.268199, 0, 0, 0 )
 
 [node name="uranus" parent="Space" instance=ExtResource( 6 )]
@@ -108,7 +120,7 @@ radius = 13.0
 eccentricity = 0.047
 centre = Vector3( 0, 0, 0 )
 
-[node name="CollisionObject" parent="Space/uranus" instance=ExtResource( 12 )]
+[node name="uranus" parent="Space/uranus" instance=ExtResource( 12 )]
 transform = Transform( 0.100629, 0, 0, 0, 0.106959, 0, 0, 0, 0.109671, 0, 0, 0 )
 
 [node name="neptune" parent="Space" instance=ExtResource( 3 )]
@@ -118,5 +130,5 @@ radius = 15.0
 eccentricity = 0.011
 centre = Vector3( 0, 0, 0 )
 
-[node name="CollisionObject" parent="Space/neptune" instance=ExtResource( 12 )]
+[node name="neptune" parent="Space/neptune" instance=ExtResource( 12 )]
 transform = Transform( 0.10352, 0, 0, 0, 0.0999872, 0, 0, 0, 0.103642, 0, 0, 0 )
