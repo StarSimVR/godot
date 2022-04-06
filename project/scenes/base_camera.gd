@@ -1,13 +1,14 @@
 class_name BaseCamera
 extends Camera
 
-onready var _objects := get_node("/root/Main/Objects/Space").get_children()
+onready var _space := get_node("/root/Main/Objects/Space")
 onready var _labels := get_node("/root/Main/Objects/CanvasLayer/Labels")
 var motion_trail_scene := preload("res://MotionTrail/MotionTrail.tscn")
+var collision_object_scene := preload("res://scenes/collision_object.tscn")
 var _curr_object := 1
 
 func create_labels() -> void:
-	for object in _objects:
+	for object in _space.get_children():
 		if object.name == "sun":
 			continue
 		var label := Label.new()
@@ -16,7 +17,7 @@ func create_labels() -> void:
 		_labels.add_child(label)
 
 func create_trails() -> void:
-	for object in _objects:
+	for object in _space.get_children():
 		if object.name == "sun":
 			continue
 		var motion_trail = motion_trail_scene.instance()
@@ -26,8 +27,15 @@ func create_trails() -> void:
 		motion_trail.rotate_y(PI / 2)
 		object.add_child(motion_trail)
 
+func create_collision_objects() -> void:
+	for object in _space.get_children():
+		var collision_object := collision_object_scene.instance()
+		collision_object.name = "CollisionObject"
+		collision_object.set_scale(object.get_child(0).get_scale())
+		object.add_child(collision_object)
+
 func render_labels() -> void:
-	for object in _objects:
+	for object in _space.get_children():
 		if object.name == "sun":
 			continue
 		var label: Label = _labels.get_node(object.name)
@@ -49,6 +57,9 @@ func render_labels() -> void:
 			label.hide()
 
 func look_at_current_object() -> void:
+	var _objects := _space.get_children()
+	if len(_objects) < 1:
+		return
 	var sun: Spatial = _objects[0]
 	var object: Spatial = _objects[_curr_object]
 	var origin := object.transform.origin
@@ -60,9 +71,9 @@ func look_at_current_object() -> void:
 func prev_warp_point() -> void:
 	_curr_object -= 1
 	if _curr_object == 0:
-		_curr_object = _objects.size() - 1
+		_curr_object = _space.get_child_count() - 1
 
 func next_warp_point() -> void:
 	_curr_object += 1
-	if _curr_object == _objects.size():
+	if _curr_object == _space.get_child_count():
 		_curr_object = 1

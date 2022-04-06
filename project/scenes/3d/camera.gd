@@ -7,8 +7,10 @@ var _rotation := Vector2()
 var _free_flight_mode := false
 
 func _ready() -> void:
+	SceneDecoder.create("solar_system")
 	create_labels()
 	create_trails()
+	create_collision_objects()
 
 func move_in_free_flight_mode(delta: float) -> void:
 	var input := Vector3()

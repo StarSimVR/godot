@@ -1,0 +1,141 @@
+{
+	"config": {
+		"modelDir": "geometry/solarSystem/glTF2/",
+		"params": [
+			"speed",
+			"radius",
+			"eccentricity",
+			"centre",
+			"normal",
+			"tangent"
+		]
+	},
+	"lights": [
+		{
+			"name": "DirectionalLight",
+			"childOf": "sun",
+			"direction": [0, 0, 0],
+			"color": [1, 0.952941, 0.564706, 1]
+		}
+	],
+	"geometries": [
+		{
+			"name": "sun",
+			"type": "mesh",
+			"path": "sun.glb"
+		},
+		{
+			"name": "mercury",
+			"type": "mesh",
+			"path": "mercury.glb"
+		},
+		{
+			"name": "venus",
+			"type": "mesh",
+			"path": "venus.glb"
+		},
+		{
+			"name": "earth",
+			"type": "mesh",
+			"path": "earth.glb"
+		},
+		{
+			"name": "mars",
+			"type": "mesh",
+			"path": "mars.glb"
+		},
+		{
+			"name": "jupiter",
+			"type": "mesh",
+			"path": "jupiter.glb"
+		},
+		{
+			"name": "saturn",
+			"type": "mesh",
+			"path": "saturn.glb"
+		},
+		{
+			"name": "uranus",
+			"type": "mesh",
+			"path": "uranus.glb"
+		},
+		{
+			"name": "neptune",
+			"type": "mesh",
+			"path": "neptune.glb"
+		}
+	],
+	"objects": [
+		{
+			"name": "sun",
+			"geometry": "sun",
+			"scale": [3, 3, 3],
+			"radius": 0,
+			"eccentricity": 0
+		},
+		{
+			"name": "mercury",
+			"geometry": "mercury",
+			"scale": [0.009, 0.009, 0.009],
+			"speed": 2,
+			"radius": 3,
+			"eccentricity": 0.206
+		},
+		{
+			"name": "venus",
+			"geometry": "venus",
+			"scale": [0.026, 0.026, 0.026],
+			"speed": 0.783,
+			"radius": 4,
+			"eccentricity": 0.007
+		},
+		{
+			"name": "earth",
+			"geometry": "earth",
+			"scale": [0.027, 0.027, 0.027],
+			"speed": 0.482,
+			"radius": 5,
+			"eccentricity": 0.017
+		},
+		{
+			"name": "mars",
+			"geometry": "mars",
+			"scale": [0.015, 0.015, 0.015],
+			"speed": 0.256,
+			"radius": 6,
+			"eccentricity": 0.093
+		},
+		{
+			"name": "jupiter",
+			"geometry": "jupiter",
+			"scale": [0.3, 0.3, 0.3],
+			"speed": 0.041,
+			"radius": 9,
+			"eccentricity": 0.049
+		},
+		{
+			"name": "saturn",
+			"geometry": "saturn",
+			"scale": [0.25, 0.25, 0.25],
+			"speed": 0.016,
+			"radius": 11,
+			"eccentricity": 0.054
+		},
+		{
+			"name": "uranus",
+			"geometry": "uranus",
+			"scale": [0.1, 0.1, 0.1],
+			"speed": 0.006,
+			"radius": 13,
+			"eccentricity": 0.047
+		},
+		{
+			"name": "neptune",
+			"geometry": "neptune",
+			"scale": [0.1, 0.1, 0.1],
+			"speed": 0.003,
+			"radius": 15,
+			"eccentricity": 0.011
+		}
+	]
+}
