@@ -47,7 +47,12 @@ radius = 0.0
 eccentricity = 0.0
 centre = Vector3( 0, 0, 0 )
 
+[node name="OmniLight" type="OmniLight" parent="Space/sun"]
+omni_range = 4096.0
+omni_attenuation = 1e-05
+
 [node name="DirectionalLight" type="DirectionalLight" parent="Space/sun"]
+visible = false
 light_color = Color( 1, 0.952941, 0.564706, 1 )
 
 [node name="sun" parent="Space/sun" instance=ExtResource( 12 )]
