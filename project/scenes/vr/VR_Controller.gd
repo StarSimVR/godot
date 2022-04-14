@@ -70,7 +70,7 @@ func init():
 	if(self.controller_id == 2):
 		grabCast.visible = true
 		grabCast.collide_with_areas = true
-		grabCast.collide_with_bodies = true
+		grabCast.collide_with_bodies = false
 		grabCast.set_enabled(true)
 		grabCast.cast_to = Vector3(0, 0, -100)
 	else:
