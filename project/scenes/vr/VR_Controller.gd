@@ -114,6 +114,7 @@ func init():
 	else:
 		grabCast.visible = false
 	var object: Spatial = Space.getCurObject()
+	
 	#var origin := object.transform.origin
 	updateCameraPosition()
 	isInited = true;
@@ -122,7 +123,12 @@ func _process(_delta):
 	if not isInited:
 		 init()
 	else:
-		pass
+		var leftController = get_node("../LeftController")
+		var leftRayCast = leftController.getRayCast()
+		if(leftRayCast.is_colliding()):
+			leftController.rumble = 0.3
+		else:
+			leftController.rumble = 0
 
 func button_pressed(button_index):
 	match button_index:
