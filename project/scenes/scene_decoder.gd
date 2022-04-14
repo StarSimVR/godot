@@ -81,9 +81,9 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	var geometry = geometries[object.geometry] if "geometry" in object else null
 	var node: Node
 	var mesh: MeshInstance = null
-	if "isCollisionObject" in object && object.isCollisionObject:
-		node = collision_object.instance()
-	elif geometry is PackedScene:
+	var colObject: CollisionObject
+		
+	if geometry is PackedScene:
 		node = geometry.instance()
 		node.set_script(gdmath)
 		mesh = node.get_child(0)
@@ -93,6 +93,17 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node.set_script(gdmath)
 		if geometry:
 			node.set_mesh(geometry)
+			
+	if "isCollisionObject" in object && object.isCollisionObject:
+		colObject = collision_object.instance()
+		if "name" in object:
+			colObject.name = object.name
+			
+		if "scale" in object:
+			colObject.set_scale(Vector3(object.scale[0], object.scale[1], object.scale[2]))
+		
+		colObject.input_ray_pickable = true
+		node.add_child(colObject)
 
 	if "childOf" in object:
 		space.get_node(object.childOf).add_child(node)
@@ -106,11 +117,21 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node.set_surface_material(0, materials[object.material])
 	if "position" in object:
 		node.transform.origin = Vector3(object.position[0], object.position[1], object.position[2])
+		##+++This will have to take the already existing material into account in the future++
+	if "ambient" in object:
+		var m_instance := SpatialMaterial.new()
+		m_instance.emission_enabled = true
+		m_instance.emission_energy = 3
+		m_instance.emission = Color(255,255,255)
+		m_instance.vertex_color_use_as_albedo = true
+		mesh.set_surface_material(0, m_instance)
+		
 	for param in params:
 		if param in node && param in object:
 			var val = object[param]
 			val = Vector3(val[0], val[1], val[2]) if val is Array else val
 			node[param] = val
+
 
 func create_light(light: Dictionary) -> void:
 	var space := get_node("/root/Main/Objects/Space")

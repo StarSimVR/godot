@@ -72,7 +72,9 @@
 			"geometry": "sun",
 			"scale": [3, 3, 3],
 			"radius": 0,
-			"eccentricity": 0
+			"eccentricity": 0,
+			"isCollisionObject": true,
+			"ambient": true
 		},
 		{
 			"name": "mercury",
@@ -80,7 +82,8 @@
 			"scale": [0.009, 0.009, 0.009],
 			"speed": 2,
 			"radius": 3,
-			"eccentricity": 0.206
+			"eccentricity": 0.206,
+			"isCollisionObject": true
 		},
 		{
 			"name": "venus",
@@ -88,7 +91,8 @@
 			"scale": [0.026, 0.026, 0.026],
 			"speed": 0.783,
 			"radius": 4,
-			"eccentricity": 0.007
+			"eccentricity": 0.007,
+			"isCollisionObject": true
 		},
 		{
 			"name": "earth",
@@ -96,7 +100,8 @@
 			"scale": [0.027, 0.027, 0.027],
 			"speed": 0.482,
 			"radius": 5,
-			"eccentricity": 0.017
+			"eccentricity": 0.017,
+			"isCollisionObject": true
 		},
 		{
 			"name": "mars",
@@ -104,7 +109,8 @@
 			"scale": [0.015, 0.015, 0.015],
 			"speed": 0.256,
 			"radius": 6,
-			"eccentricity": 0.093
+			"eccentricity": 0.093,
+			"isCollisionObject": true
 		},
 		{
 			"name": "jupiter",
@@ -112,7 +118,8 @@
 			"scale": [0.3, 0.3, 0.3],
 			"speed": 0.041,
 			"radius": 9,
-			"eccentricity": 0.049
+			"eccentricity": 0.049,
+			"isCollisionObject": true
 		},
 		{
 			"name": "saturn",
@@ -120,7 +127,8 @@
 			"scale": [0.25, 0.25, 0.25],
 			"speed": 0.016,
 			"radius": 11,
-			"eccentricity": 0.054
+			"eccentricity": 0.054,
+			"isCollisionObject": true
 		},
 		{
 			"name": "uranus",
@@ -128,7 +136,8 @@
 			"scale": [0.1, 0.1, 0.1],
 			"speed": 0.006,
 			"radius": 13,
-			"eccentricity": 0.047
+			"eccentricity": 0.047,
+			"isCollisionObject": true
 		},
 		{
 			"name": "neptune",
@@ -136,7 +145,8 @@
 			"scale": [0.1, 0.1, 0.1],
 			"speed": 0.003,
 			"radius": 15,
-			"eccentricity": 0.011
+			"eccentricity": 0.011,
+			"isCollisionObject": true
 		}
 	]
 }
