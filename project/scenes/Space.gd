@@ -2,7 +2,6 @@ class_name Space
 extends Spatial
 
 
-onready var _objects := self.get_children()
 var _curr_object := 1
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,19 +14,24 @@ func _ready():
 	
 	
 func increaseCurObject():
+	var _objects = self.get_children()
 	_curr_object += 1
 	if _curr_object == _objects.size():
 		_curr_object = 1
 	
 func decreaseCurObject():
+	var _objects = self.get_children()
 	_curr_object -= 1
 	if _curr_object == 0:
 		_curr_object = _objects.size() - 1
 	
 func getCurObject():
+	var _objects = self.get_children()
+	if(_objects.size() == 0): return null
 	return _objects[_curr_object]
 	
 func setCurObject(object):
+	var _objects = self.get_children()
 	if(object.name == "mercury2"):
 		object.name = "mercury"
 	for i in range(len(_objects)):

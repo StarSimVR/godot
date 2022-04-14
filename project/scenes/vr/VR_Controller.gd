@@ -7,7 +7,7 @@ const BUTTON = {
 }
 
 onready var StarSimVRCamera := get_node("../StarSimVRCamera")
-onready var Space := get_node("../../Objects/Space")
+onready var Space := get_node("/root/Main/Objects/Space")
 onready var BaseController := get_node("../Controller")
 onready var grabCast := get_node("GrabCast")
 var isInited = false
@@ -64,58 +64,18 @@ func _physics_process(delta):
 
 		if prior_controller_velocities.size() > 30:
 			prior_controller_velocities.remove(0)
-
-	# --------------------
-
-	# Directional movement
-	# --------------------
-	# NOTE: you may need to change this depending on which VR controllers
-	# you are using and which OS you are on.
-#	var trackpad_vector = Vector2(-get_joystick_axis(1), get_joystick_axis(0))
-#	var joystick_vector = Vector2(-get_joystick_axis(5), get_joystick_axis(4))
-#
-#	if trackpad_vector.length() < CONTROLLER_DEADZONE:
-#		trackpad_vector = Vector2(0, 0)
-#	else:
-#		trackpad_vector = trackpad_vector.normalized() * ((trackpad_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
-#
-#	if joystick_vector.length() < CONTROLLER_DEADZONE:
-#		joystick_vector = Vector2(0, 0)
-#	else:
-#		joystick_vector = joystick_vector.normalized() * ((joystick_vector.length() - CONTROLLER_DEADZONE) / (1 - CONTROLLER_DEADZONE))
-#
-#	var forward_direction = get_parent().get_node("ARVRCamera").global_transform.basis.z.normalized()
-#	var right_direction = get_parent().get_node("ARVRCamera").global_transform.basis.x.normalized()
-#
-#	var movement_vector = (trackpad_vector + joystick_vector).normalized()
-#
-#	var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
-#	var movement_right = right_direction * movement_vector.y * delta * MOVEMENT_SPEED
-#
-#	movement_forward.y = 0
-#	movement_right.y = 0
-#
-#	if movement_right.length() > 0 or movement_forward.length() > 0:
-#		get_parent().translate(movement_right + movement_forward)
-#		directional_movement = true
-#	else:
-#		directional_movement = false
-#
-	# --------------------
 	
 	
 func init():
-	if(self.controller_id == 1):
+	if(self.controller_id == 2):
 		grabCast.visible = true
 		grabCast.collide_with_areas = true
-		grabCast.collide_with_bodies = false
+		grabCast.collide_with_bodies = true
 		grabCast.set_enabled(true)
 		grabCast.cast_to = Vector3(0, 0, -100)
 	else:
 		grabCast.visible = false
-	var object: Spatial = Space.getCurObject()
 	
-	#var origin := object.transform.origin
 	updateCameraPosition()
 	isInited = true;
 
@@ -174,6 +134,7 @@ func changeWarpPointForwards():
 		
 func updateCameraPosition():
 	var object: Spatial = Space.getCurObject()
+	if(object == null): return
 	var origin := object.transform.origin
 	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
 	camera_offset.y = 0
