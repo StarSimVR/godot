@@ -142,3 +142,9 @@ func create_light(light: Dictionary) -> void:
 
 	if "ambientFactor" in light:
 		node.set_param(Light.PARAM_ENERGY, light.ambientFactor)
+		
+	if "range" in light:
+		node.set_param(Light.PARAM_RANGE, light.range)
+		
+	if "attenuation" in light:
+		node.set_param(Light.PARAM_ATTENUATION, light. attenuation)
