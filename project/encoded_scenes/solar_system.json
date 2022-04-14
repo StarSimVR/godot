@@ -12,10 +12,11 @@
 	},
 	"lights": [
 		{
-			"name": "DirectionalLight",
+			"name": "OmniLight",
 			"childOf": "sun",
-			"direction": [0, 0, 0],
-			"color": [1, 0.952941, 0.564706, 1]
+			"range": 4096,
+			"attenuation": 0,
+			"color": [1,1,1]
 		}
 	],
 	"geometries": [
