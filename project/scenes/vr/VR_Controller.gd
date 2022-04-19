@@ -84,8 +84,9 @@ func _process(_delta):
 		 init()
 	else:
 		var leftController = get_node("../LeftController")
-		var leftRayCast = leftController.getRayCast()
-		if(leftRayCast.is_colliding()):
+		var rightController = get_node("../RightController")
+		var rightRayCast = rightController.getRayCast()
+		if(rightRayCast.is_colliding()):
 			leftController.rumble = 0.3
 		else:
 			leftController.rumble = 0
@@ -142,10 +143,10 @@ func updateCameraPosition():
 	#StarSimVRCamera.updatePosition(origin)
 		
 func grab():
-	var leftRayCast = get_node("../LeftController").getRayCast()
-	leftRayCast.force_raycast_update()
-	if(leftRayCast.is_colliding()):
-		var body = leftRayCast.get_collider()
+	var rightRayCast = get_node("../RightController").getRayCast()
+	rightRayCast.force_raycast_update()
+	if(rightRayCast.is_colliding()):
+		var body = rightRayCast.get_collider()
 		Space.setCurObject(body)
 		updateCameraPosition()
 
