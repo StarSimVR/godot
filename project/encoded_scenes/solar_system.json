@@ -14,7 +14,7 @@
 		{
 			"name": "OmniLight",
 			"childOf": "sun",
-			"range": 4096,
+			"radius": 4096,
 			"attenuation": 0,
 			"color": [1,1,1]
 		}
@@ -74,7 +74,7 @@
 			"radius": 0,
 			"eccentricity": 0,
 			"isCollisionObject": true,
-			"ambient": true
+			"material": "sun_material"
 		},
 		{
 			"name": "mercury",
@@ -147,6 +147,15 @@
 			"radius": 15,
 			"eccentricity": 0.011,
 			"isCollisionObject": true
+		}
+	],
+	"materials": [
+		{
+			"name": "sun_material",
+			"emission_enabled": true,
+			"emission_energy": 3,
+			"emission": [255,255,255],
+			"use_as_albedo": true
 		}
 	]
 }

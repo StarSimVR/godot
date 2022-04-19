@@ -72,6 +72,14 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.albedo_texture = textures[m_info.albedoMap]
 		if "normalMap" in m_info:
 			m_instance.normal_texture = textures[m_info.normalMap]
+		if "emission_enabled" in m_info:
+			m_instance.emission_enabled = m_info.emission_enabled
+		if "emission_energy" in m_info:
+			m_instance.emission_energy = m_info.emission_energy
+		if "emission" in m_info:
+			m_instance.emission = Color(m_info.emission[0], m_info.emission[1], m_info.emission[2])
+		if "use_as_albedo" in m_info:
+			m_instance.vertex_color_use_as_albedo = m_info.use_as_albedo
 
 		materials[m_info.name] = m_instance
 	return materials
@@ -114,17 +122,9 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "scale" in object && mesh:
 		mesh.set_scale( Vector3(object.scale[0], object.scale[1], object.scale[2]) )
 	if "material" in object:
-		node.set_surface_material(0, materials[object.material])
+		mesh.set_surface_material(0, materials[object.material])
 	if "position" in object:
 		node.transform.origin = Vector3(object.position[0], object.position[1], object.position[2])
-		##+++This will have to take the already existing material into account in the future++
-	if "ambient" in object:
-		var m_instance := SpatialMaterial.new()
-		m_instance.emission_enabled = true
-		m_instance.emission_energy = 3
-		m_instance.emission = Color(255,255,255)
-		m_instance.vertex_color_use_as_albedo = true
-		mesh.set_surface_material(0, m_instance)
 		
 	for param in params:
 		if param in node && param in object:
@@ -163,9 +163,6 @@ func create_light(light: Dictionary) -> void:
 
 	if "ambientFactor" in light:
 		node.set_param(Light.PARAM_ENERGY, light.ambientFactor)
-		
-	if "range" in light:
-		node.set_param(Light.PARAM_RANGE, light.range)
 		
 	if "attenuation" in light:
 		node.set_param(Light.PARAM_ATTENUATION, light. attenuation)
