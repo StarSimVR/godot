@@ -19,6 +19,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/base_controller.gd"
 }, {
+"base": "Resource",
+"class": "PlanetData",
+"language": "GDScript",
+"path": "res://Planet/PlanetData.gd"
+}, {
+"base": "MeshInstance",
+"class": "PlanetMeshFace",
+"language": "GDScript",
+"path": "res://Planet/PlanetMeshFace.gd"
+}, {
+"base": "Resource",
+"class": "PlanetNoise",
+"language": "GDScript",
+"path": "res://Planet/PlanetNoise.gd"
+}, {
 "base": "Spatial",
 "class": "Space",
 "language": "GDScript",
@@ -32,6 +47,9 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseCamera": "",
 "BaseController": "",
+"PlanetData": "",
+"PlanetMeshFace": "",
+"PlanetNoise": "",
 "Space": "",
 "StarSimVRCamera": ""
 }
