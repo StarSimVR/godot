@@ -126,11 +126,11 @@ func button_released(button_index):
 	
 	
 func changeWarpPointBackwards():
-	Space.decreaseCurObject()
+	BaseController.prev_warp_point()
 	updateCameraPosition()
 	
 func changeWarpPointForwards():
-	Space.increaseCurObject()
+	BaseController.next_warp_point()
 	updateCameraPosition()
 		
 func updateCameraPosition():
