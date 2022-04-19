@@ -7,6 +7,7 @@ var _rotation := Vector2()
 var _free_flight_mode := false
 
 func _ready() -> void:
+	var space = preload("res://scenes/objects.tscn")
 	SceneDecoder.create("solar_system")
 	create_labels()
 	create_trails()

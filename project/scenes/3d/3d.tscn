@@ -30,6 +30,7 @@ environment = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15905, -0.366722, 9.41425 )
+current = true
 script = ExtResource( 2 )
 
 [node name="Objects" parent="." instance=ExtResource( 1 )]
