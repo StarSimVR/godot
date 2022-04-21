@@ -93,7 +93,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		
 	if geometry is PackedScene:
 		node = geometry.instance()
-		node.set_script(gdmath)
+		#node.set_script(gdmath)
 		mesh = node.get_child(0)
 	else:
 		node = MeshInstance.new()
@@ -124,7 +124,8 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "material" in object:
 		mesh.set_surface_material(0, materials[object.material])
 	if "position" in object:
-		node.transform.origin = Vector3(object.position[0], object.position[1], object.position[2])
+		var rad = 3000
+		node.transform.origin = Vector3(rad * object.position[0], rad * object.position[1], rad * object.position[2])
 		
 	for param in params:
 		if param in node && param in object:
