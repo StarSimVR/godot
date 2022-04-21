@@ -77,7 +77,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 environment = SubResource( 1 )
 fov = 90.0
-far = 300.0
+far = 4000.0
 script = ExtResource( 3 )
 
 [node name="Controller" type="Spatial" parent="ARVROrigin"]
