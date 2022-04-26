@@ -68,6 +68,7 @@
 	],
 	"objects": [
 		{
+			"withScript": true,
 			"name": "sun",
 			"geometry": "sun",
 			"scale": [3, 3, 3],
@@ -77,6 +78,7 @@
 			"material": "sun_material"
 		},
 		{
+			"withScript": true,
 			"name": "mercury",
 			"geometry": "mercury",
 			"scale": [0.009, 0.009, 0.009],
@@ -86,6 +88,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "venus",
 			"geometry": "venus",
 			"scale": [0.026, 0.026, 0.026],
@@ -95,6 +98,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "earth",
 			"geometry": "earth",
 			"scale": [0.027, 0.027, 0.027],
@@ -104,6 +108,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "mars",
 			"geometry": "mars",
 			"scale": [0.015, 0.015, 0.015],
@@ -113,6 +118,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "jupiter",
 			"geometry": "jupiter",
 			"scale": [0.3, 0.3, 0.3],
@@ -122,6 +128,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "saturn",
 			"geometry": "saturn",
 			"scale": [0.25, 0.25, 0.25],
@@ -131,6 +138,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "uranus",
 			"geometry": "uranus",
 			"scale": [0.1, 0.1, 0.1],
@@ -140,6 +148,7 @@
 			"isCollisionObject": true
 		},
 		{
+			"withScript": true,
 			"name": "neptune",
 			"geometry": "neptune",
 			"scale": [0.1, 0.1, 0.1],
