@@ -93,12 +93,14 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		
 	if geometry is PackedScene:
 		node = geometry.instance()
-		#node.set_script(gdmath)
+		if "withScript" in object && object.withScript:
+			node.set_script(gdmath)
 		mesh = node.get_child(0)
 	else:
 		node = MeshInstance.new()
 		mesh = node
-		node.set_script(gdmath)
+		if "withScript" in object && object.withScript:
+			node.set_script(gdmath)
 		if geometry:
 			node.set_mesh(geometry)
 			
@@ -116,7 +118,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "childOf" in object:
 		space.get_node(object.childOf).add_child(node)
 	else:
-		space.add_child(node)
+		if "withScript" in object && object.withScript:
+			space.add_child(node)
+		else:
+			space.get_node("Stars").add_child(node)
 	if "name" in object:
 		node.name = object.name
 	if "scale" in object && mesh:

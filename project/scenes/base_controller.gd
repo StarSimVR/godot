@@ -4,13 +4,17 @@ extends Spatial
 onready var _space := get_node("/root/Main/Objects/Space")
 
 func slower() -> void:
-	var _objects := get_node("/root/Main/Objects/Space").get_children()
+	var _objects := get_node("/root/Main/Objects/Space/").get_children()
 	for object in _objects:
+		if object.name == "Stars":
+			continue
 		object.slower()
 
 func faster() -> void:
-	var _objects := get_node("/root/Main/Objects/Space").get_children()
+	var _objects := get_node("/root/Main/Objects/Space/").get_children()
 	for object in _objects:
+		if object.name == "Stars":
+			continue
 		object.faster()
 
 func prev_warp_point() -> void:

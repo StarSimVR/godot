@@ -29,8 +29,6 @@ func getCurObject():
 	
 func setCurObject(object):
 	var _objects = self.get_children()
-	if(object.name == "mercury2"):
-		object.name = "mercury"
 	for i in range(len(_objects)):
 		if(object.name == _objects[i].name):
 			_curr_object = i

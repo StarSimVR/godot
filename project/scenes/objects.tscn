@@ -29,3 +29,5 @@ __meta__ = {
 
 [node name="Space" type="Spatial" parent="."]
 script = ExtResource( 13 )
+
+[node name="Stars" type="Spatial" parent="Space"]
