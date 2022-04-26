@@ -10,5 +10,5 @@ func _ready():
 		Engine.target_fps = 90
 		# Also, the physics FPS in the project settings is also 90 FPS. This makes the physics
 		# run at the same frame rate as the display, which makes things look smoother in VR!
-	SceneDecoder.create("solar_system")
 	SceneDecoder.create("stars")
+	SceneDecoder.create("solar_system")

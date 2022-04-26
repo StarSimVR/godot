@@ -10,18 +10,6 @@ func _ready():
 	pass # Replace with function body.
 	
 	
-func increaseCurObject():
-	var _objects = self.get_children()
-	_curr_object += 1
-	if _curr_object == _objects.size():
-		_curr_object = 1
-	
-func decreaseCurObject():
-	var _objects = self.get_children()
-	_curr_object -= 1
-	if _curr_object == 0:
-		_curr_object = _objects.size() - 1
-	
 func getCurObject():
 	var _objects = self.get_children()
 	if(_objects.size() == 0): return null
