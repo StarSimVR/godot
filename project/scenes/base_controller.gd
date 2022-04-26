@@ -2,6 +2,14 @@ class_name BaseController
 extends Spatial
 
 onready var _space := get_node("/root/Main/Objects/Space")
+const TIMER_LIMIT = 1.0
+var timer = 0.0
+
+func _process(delta):
+	timer += delta
+	if timer >= TIMER_LIMIT:
+		timer = 0.0
+		print("FPS: ", Engine.get_frames_per_second())
 
 func slower() -> void:
 	var _objects := get_node("/root/Main/Objects/Space/").get_children()
