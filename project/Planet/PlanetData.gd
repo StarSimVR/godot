@@ -14,7 +14,7 @@ var max_height := 0.0
 func set_planet_color(val):
 	planet_color = val
 	if planet_color != null and not planet_color.is_connected("changed", self, "on_data_changed"):
-		planet_color.connect("changed", self, "on_data_changed")
+		var _err := planet_color.connect("changed", self, "on_data_changed")
 
 
 func set_radius(val):
@@ -34,8 +34,8 @@ func set_planet_noise(val):
 
 func on_data_changed():
 	emit_signal("changed")
-	
-	
+
+
 func point_on_planet(point_on_sphere : Vector3) -> Vector3:
 	var elevation : float = 0.0
 	var base_elevation := 0.0

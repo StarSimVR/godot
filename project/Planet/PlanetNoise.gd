@@ -24,7 +24,7 @@ func set_noise_map(val):
 	noise_map = val
 	emit_signal("changed")
 	if noise_map != null and not noise_map.is_connected("changed", self, "on_data_changed"):
-		noise_map.connect("changed", self, "on_data_changed")
+		var _err := noise_map.connect("changed", self, "on_data_changed")
 		
 func on_data_changed():
 	emit_signal("changed")

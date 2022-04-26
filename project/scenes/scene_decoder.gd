@@ -2,6 +2,7 @@ extends Node
 
 var collision_object := preload("collision_object.tscn")
 var gdmath := preload("res://gdmath.gdns")
+var planet_scene := preload("res://Planet/Planet.tscn")
 
 func create(scene_name: String) -> void:
 	var file := File.new()
@@ -18,9 +19,10 @@ func create(scene_name: String) -> void:
 		var textures := get_textures(data)
 		var geometries := get_geometries(data)
 		var materials := get_materials(data, textures)
+		var planet_data := get_planet_data(data)
 		var params: Array = data.config.params if "config" in data && "params" in data.config else []
 		for object in data.objects:
-			create_object(object, geometries, materials, params)
+			create_object(object, geometries, materials, planet_data, params)
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
@@ -43,7 +45,7 @@ func get_textures(data: Dictionary) -> Dictionary:
 func get_geometries(data: Dictionary) -> Dictionary:
 	var model_dir: String = data.config.modelDir if "config" in data && "modelDir" in data.config else ""
 	model_dir = "res://" + model_dir
-	var geometries := {}
+	var geometries := {"planet": planet_scene}
 	if !data.has("geometries"):
 		return geometries
 	for geometry in data.geometries:
@@ -84,34 +86,74 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 		materials[m_info.name] = m_instance
 	return materials
 
-func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, params: Array) -> void:
+func get_planet_data(data: Dictionary) -> Dictionary:
+	var planet_data := {}
+	if !data.has("planet_data"):
+		return planet_data
+	for pd_info in data.planet_data:
+		if !pd_info.has("name"):
+			continue
+
+		var pd_instance := PlanetData.new()
+		for key in pd_info:
+			if key == "planet_noise":
+				var noise_infos: Array = pd_info[key] if typeof(pd_info[key]) == TYPE_ARRAY else [pd_info[key]]
+				pd_instance[key] = []
+				for noise_info in noise_infos:
+					var planet_noise := PlanetNoise.new()
+					var noise_map := OpenSimplexNoise.new()
+					planet_noise.noise_map = noise_map
+					for noise_key in noise_info:
+						if noise_key in planet_noise:
+							planet_noise[noise_key] = noise_info[noise_key]
+						elif noise_key in noise_map:
+							noise_map[noise_key] = noise_info[noise_key]
+					pd_instance[key].push_back(planet_noise)
+			elif key == "planet_color":
+				var color_info: Dictionary = pd_info[key]
+				var colors: PoolColorArray = []
+				for i in len(color_info.colors):
+					if i % 4 == 0:
+						colors.append(Color(color_info.colors[i], color_info.colors[i + 1], color_info.colors[i + 2], color_info.colors[i + 3]))
+				var planet_color := GradientTexture.new()
+				var gradient := Gradient.new()
+				gradient.set_offsets(PoolRealArray(color_info.offsets))
+				gradient.set_colors(colors)
+				planet_color.set_width(color_info.width)
+				planet_color.set_gradient(gradient)
+				pd_instance[key] = planet_color
+			elif key != "name":
+				pd_instance[key] = pd_info[key]
+		planet_data[pd_info.name] = pd_instance
+	return planet_data
+
+func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, planet_data: Dictionary, params: Array) -> void:
 	var space := get_node("/root/Main/Objects/Space")
 	var geometry = geometries[object.geometry] if "geometry" in object else null
 	var node: Node
-	var mesh: MeshInstance = null
+	var mesh = null
 	var colObject: CollisionObject
-		
+
 	if geometry is PackedScene:
 		node = geometry.instance()
-		if "withScript" in object && object.withScript:
-			node.set_script(gdmath)
 		mesh = node.get_child(0)
 	else:
 		node = MeshInstance.new()
 		mesh = node
-		if "withScript" in object && object.withScript:
-			node.set_script(gdmath)
 		if geometry:
 			node.set_mesh(geometry)
-			
+
+	if "withScript" in object && object.withScript:
+			node.set_script(gdmath)
+
 	if "isCollisionObject" in object && object.isCollisionObject:
 		colObject = collision_object.instance()
 		if "name" in object:
 			colObject.name = object.name
-			
+
 		if "scale" in object:
 			colObject.set_scale(Vector3(object.scale[0], object.scale[1], object.scale[2]))
-		
+
 		colObject.input_ray_pickable = true
 		node.add_child(colObject)
 
@@ -128,16 +170,16 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		mesh.set_scale( Vector3(object.scale[0], object.scale[1], object.scale[2]) )
 	if "material" in object:
 		mesh.set_surface_material(0, materials[object.material])
+	if "planet_data" in object:
+		mesh.planet_data = planet_data[object.planet_data]
 	if "position" in object:
-		var rad = 3000
-		node.transform.origin = Vector3(rad * object.position[0], rad * object.position[1], rad * object.position[2])
-		
+		node.transform.origin = Vector3(object.position[0], object.position[1], object.position[2])
+
 	for param in params:
 		if param in node && param in object:
 			var val = object[param]
 			val = Vector3(val[0], val[1], val[2]) if val is Array else val
 			node[param] = val
-
 
 func create_light(light: Dictionary) -> void:
 	var space := get_node("/root/Main/Objects/Space")
@@ -169,6 +211,6 @@ func create_light(light: Dictionary) -> void:
 
 	if "ambientFactor" in light:
 		node.set_param(Light.PARAM_ENERGY, light.ambientFactor)
-		
+
 	if "attenuation" in light:
 		node.set_param(Light.PARAM_ATTENUATION, light. attenuation)
