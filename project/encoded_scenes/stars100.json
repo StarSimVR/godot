@@ -1,0 +1,2689 @@
+{
+    "config": {
+        "modelDir": "geometry/solarSystem/stars/"
+    },
+    "geometries": [
+        {
+            "name": "star",
+            "path": "star.glb",
+            "type": "mesh"
+        }
+    ],
+    "materials": [
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star0",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star1",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star2",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star3",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star4",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star5",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star6",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star7",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star8",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star9",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star10",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star11",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star12",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star13",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star14",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star15",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star16",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star17",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star18",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star19",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star20",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star21",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star22",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star23",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star24",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star25",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star26",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star27",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star28",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star29",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star30",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star31",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star32",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star33",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star34",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star35",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star36",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star37",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star38",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star39",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star40",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star41",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star42",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star43",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "Porrima",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star44",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star45",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star46",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star47",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star48",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star49",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star50",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star51",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star52",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star53",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star54",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star55",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star56",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star57",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star58",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star59",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star60",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star61",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star62",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star63",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star64",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star65",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star66",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star67",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star68",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star69",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star70",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star71",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star72",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star73",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star74",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star75",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star76",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star77",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star78",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star79",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star80",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star81",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star82",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star83",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star84",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star85",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star86",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star87",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star88",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star89",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star90",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star91",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star92",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star93",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star94",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star95",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star96",
+            "use_as_albedo": true
+        },
+        {
+            "emission": [
+                255,
+                255,
+                255
+            ],
+            "emission_enabled": true,
+            "emission_energy": 3,
+            "name": "star97",
+            "use_as_albedo": true
+        }
+    ],
+    "objects": [
+        {
+            "geometry": "star",
+            "magnitude": 4.7,
+            "material": "star0",
+            "name": "star0",
+            "position": [
+                -0.0945103564355554,
+                0.0278126215431227,
+                0.9951352926156942
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.02,
+            "material": "star1",
+            "name": "star1",
+            "position": [
+                -0.6012154400947342,
+                -0.6587077354240015,
+                0.45237607572049926
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.22,
+            "material": "star2",
+            "name": "star2",
+            "position": [
+                -0.7351691706337665,
+                0.5368291075275475,
+                0.41393332779668374
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.49,
+            "material": "star3",
+            "name": "star3",
+            "position": [
+                -0.16045347684539557,
+                0.9569165571641854,
+                -0.24200286029976248
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.38,
+            "material": "star4",
+            "name": "star4",
+            "position": [
+                -0.8873884572152855,
+                0.14660269572076917,
+                0.43709195326438927
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.04,
+            "material": "star5",
+            "name": "star5",
+            "position": [
+                0.6165044225297992,
+                -0.7735096767505723,
+                0.1469866557699168
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.34,
+            "material": "star6",
+            "name": "star6",
+            "position": [
+                -0.4559612188999,
+                0.24458493668890485,
+                0.8557321868459793
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.89,
+            "material": "star7",
+            "name": "star7",
+            "position": [
+                -0.23957616319071925,
+                0.5215583148596837,
+                0.8188896056438504
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.06,
+            "material": "star8",
+            "name": "star8",
+            "position": [
+                0.3190885339570533,
+                -0.8883451560163156,
+                -0.330189932129201
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.18,
+            "material": "star9",
+            "name": "star9",
+            "position": [
+                0.9166349545439211,
+                0.37968881517884767,
+                0.12496705060273457
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.48,
+            "material": "star10",
+            "name": "star10",
+            "position": [
+                0.4525738058765765,
+                0.477081099090002,
+                -0.7533727995657041
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.28,
+            "material": "star11",
+            "name": "star11",
+            "position": [
+                -0.8286128810395027,
+                0.46786443795489946,
+                -0.30741431500917626
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.14,
+            "material": "star12",
+            "name": "star12",
+            "position": [
+                0.45878862855571817,
+                0.6271339334805588,
+                0.629456927664765
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.49,
+            "material": "star13",
+            "name": "star13",
+            "position": [
+                0.7856640227001623,
+                -0.5274464558329552,
+                0.32331452126969656
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.11,
+            "material": "star14",
+            "name": "star14",
+            "position": [
+                -0.34283540526169426,
+                -0.9392159002518872,
+                -0.01836784181897498
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.34,
+            "material": "star15",
+            "name": "star15",
+            "position": [
+                0.31125639830467167,
+                -0.06688002818357654,
+                -0.9479696811315051
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.34,
+            "material": "star16",
+            "name": "star16",
+            "position": [
+                -0.34822080841721875,
+                0.9214688597527794,
+                0.17215518897544485
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.14,
+            "material": "star17",
+            "name": "star17",
+            "position": [
+                -0.5657778244989844,
+                -0.7655795423920461,
+                0.3062407836588421
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 3.88,
+            "material": "star18",
+            "name": "star18",
+            "position": [
+                -0.6972344960043232,
+                -0.02864424655632729,
+                -0.7162705946224637
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.49,
+            "material": "star19",
+            "name": "star19",
+            "position": [
+                0.881528623827474,
+                0.40234646866615786,
+                0.247031586087108
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.25,
+            "material": "star20",
+            "name": "star20",
+            "position": [
+                0.5513873237601248,
+                -0.5413429087998579,
+                -0.6347596980659344
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.21,
+            "material": "star21",
+            "name": "star21",
+            "position": [
+                -0.11637819085962782,
+                0.7193548325585253,
+                0.6848246064262995
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.04,
+            "material": "star22",
+            "name": "star22",
+            "position": [
+                -0.07220335098394166,
+                -0.8508726780545769,
+                0.520386742574138
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 3.77,
+            "material": "star23",
+            "name": "star23",
+            "position": [
+                -0.4122409639239542,
+                -0.38006112680639287,
+                0.8280162604403999
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.13,
+            "material": "star24",
+            "name": "star24",
+            "position": [
+                -0.10720047916411767,
+                -0.9897905582891838,
+                -0.09392927120216218
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.01,
+            "material": "star25",
+            "name": "star25",
+            "position": [
+                0.27117633244036493,
+                0.5804891965051401,
+                -0.7677862264100663
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.29,
+            "material": "star26",
+            "name": "star26",
+            "position": [
+                -0.16972046039506108,
+                -0.9621329015380268,
+                -0.21329614413136044
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.73,
+            "material": "star27",
+            "name": "star27",
+            "position": [
+                0.2585794733706707,
+                0.8282844380471442,
+                0.4970729781835592
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.0,
+            "material": "star28",
+            "name": "star28",
+            "position": [
+                0.5046746653568637,
+                0.2813292050015271,
+                -0.8161846363171427
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.25,
+            "material": "star29",
+            "name": "star29",
+            "position": [
+                0.3243289226608197,
+                -0.5943194725526186,
+                0.7359314604434636
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.94,
+            "material": "star30",
+            "name": "star30",
+            "position": [
+                -0.20935764184794822,
+                0.11717075676867568,
+                -0.9707936915524956
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.49,
+            "material": "star31",
+            "name": "star31",
+            "position": [
+                0.718660912464788,
+                -0.6454252662728183,
+                0.25875223390714897
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.89,
+            "material": "star32",
+            "name": "star32",
+            "position": [
+                0.9069518078317745,
+                0.2147945748899903,
+                0.362355776645694
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.93,
+            "material": "star33",
+            "name": "star33",
+            "position": [
+                0.15106306891563456,
+                -0.9731884984114848,
+                0.1734476744421482
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.89,
+            "material": "star34",
+            "name": "star34",
+            "position": [
+                -0.6726851797728871,
+                0.6864595698592834,
+                -0.27616644955991015
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.38,
+            "material": "star35",
+            "name": "star35",
+            "position": [
+                -0.3594940955066326,
+                0.723713226915823,
+                0.5890697416121071
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.44,
+            "material": "star36",
+            "name": "star36",
+            "position": [
+                0.06702472415363822,
+                -0.9737988425854186,
+                0.21730968807540046
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 3.78,
+            "material": "star37",
+            "name": "star37",
+            "position": [
+                0.7410196879565987,
+                0.6281480656888259,
+                0.23731799264297604
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.95,
+            "material": "star38",
+            "name": "star38",
+            "position": [
+                -0.8220488940597702,
+                0.34148401638828707,
+                -0.455658076112377
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.57,
+            "material": "star39",
+            "name": "star39",
+            "position": [
+                -0.03502018035681794,
+                0.803443887569927,
+                0.5943496500329569
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.86,
+            "material": "star40",
+            "name": "star40",
+            "position": [
+                0.5883226443911562,
+                -0.6418324298076905,
+                -0.49186136069399994
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.79,
+            "material": "star41",
+            "name": "star41",
+            "position": [
+                0.38610105734108,
+                -0.5386631016636794,
+                -0.7488444674471226
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.35,
+            "material": "star42",
+            "name": "star42",
+            "position": [
+                0.2474786181651235,
+                -0.5979678484906211,
+                0.7623573871371475
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.1,
+            "material": "star43",
+            "name": "star43",
+            "position": [
+                -0.5399658066038755,
+                -0.3023881391607659,
+                -0.7854924194373332
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 2.74,
+            "material": "Porrima",
+            "name": "Porrima",
+            "position": [
+                0.9832089605346149,
+                0.18072180355745804,
+                -0.02529366804917016
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.43,
+            "material": "star44",
+            "name": "star44",
+            "position": [
+                0.15602964714357662,
+                -0.8957471243877845,
+                0.41628336306326974
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 3.86,
+            "material": "star45",
+            "name": "star45",
+            "position": [
+                -0.10202895555216855,
+                -0.8079978903396735,
+                -0.5802839834387733
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.12,
+            "material": "star46",
+            "name": "star46",
+            "position": [
+                -0.5883806751845753,
+                0.1380913632337176,
+                0.7967050624099216
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.29,
+            "material": "star47",
+            "name": "star47",
+            "position": [
+                -0.44389156397784074,
+                -0.8859647510593985,
+                0.1342636931920344
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.34,
+            "material": "star48",
+            "name": "star48",
+            "position": [
+                -0.1650485761045257,
+                0.3283610659407671,
+                0.9300204180017295
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.83,
+            "material": "star49",
+            "name": "star49",
+            "position": [
+                0.39065718572737884,
+                -0.45569403221958293,
+                -0.7998311773362063
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.63,
+            "material": "star50",
+            "name": "star50",
+            "position": [
+                0.43219551832820785,
+                0.1951546565365928,
+                -0.8804099578997822
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.37,
+            "material": "star51",
+            "name": "star51",
+            "position": [
+                -0.29831729768707155,
+                0.7815560972329764,
+                0.5478839811298023
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.46,
+            "material": "star52",
+            "name": "star52",
+            "position": [
+                0.12389980175211172,
+                -0.1459344173383801,
+                -0.9815049592141116
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.33,
+            "material": "star53",
+            "name": "star53",
+            "position": [
+                0.37072265244536035,
+                -0.9156926393815887,
+                0.15515058861073064
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.27,
+            "material": "star54",
+            "name": "star54",
+            "position": [
+                -0.6298826791977928,
+                -0.26123347547172343,
+                0.73144027899725
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.05,
+            "material": "star55",
+            "name": "star55",
+            "position": [
+                0.11176424167184826,
+                -0.6568289256342116,
+                -0.7457107460226948
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.13,
+            "material": "star56",
+            "name": "star56",
+            "position": [
+                -0.26909161931689135,
+                -0.33431197344925107,
+                0.9032304273118131
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.5,
+            "material": "star57",
+            "name": "star57",
+            "position": [
+                -0.6199620275238477,
+                0.3371698744757382,
+                0.7084938674219663
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.92,
+            "material": "star58",
+            "name": "star58",
+            "position": [
+                0.5704348507405209,
+                0.28896104498124964,
+                -0.7688339193505864
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.52,
+            "material": "star59",
+            "name": "star59",
+            "position": [
+                0.9727158207697657,
+                -0.22947658592647371,
+                0.03412372394289331
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.89,
+            "material": "star60",
+            "name": "star60",
+            "position": [
+                0.6016521296047345,
+                -0.5943350011330367,
+                0.5336484061348643
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.21,
+            "material": "star61",
+            "name": "star61",
+            "position": [
+                0.9645457277686325,
+                -0.08501424181809214,
+                -0.24984818936981362
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.87,
+            "material": "star62",
+            "name": "star62",
+            "position": [
+                0.7742374612619299,
+                0.1722797714738754,
+                0.6089959227446361
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.32,
+            "material": "star63",
+            "name": "star63",
+            "position": [
+                0.07416371408527905,
+                0.6581041422163745,
+                -0.7492654279430802
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.46,
+            "material": "star64",
+            "name": "star64",
+            "position": [
+                -0.8899393207052887,
+                -0.2176364707877278,
+                0.40080216072979435
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.26,
+            "material": "star65",
+            "name": "star65",
+            "position": [
+                0.04623761853453979,
+                -0.2769059860715421,
+                0.9597839118832954
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.06,
+            "material": "star66",
+            "name": "star66",
+            "position": [
+                -0.8940908728565012,
+                -0.16409872127136088,
+                0.41674107159218643
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.7,
+            "material": "star67",
+            "name": "star67",
+            "position": [
+                -0.27607497049579527,
+                0.671495165379947,
+                -0.6876604202199682
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.47,
+            "material": "star68",
+            "name": "star68",
+            "position": [
+                0.4956468097550683,
+                -0.3640078740770701,
+                0.7885635723196418
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.61,
+            "material": "star69",
+            "name": "star69",
+            "position": [
+                0.7900712301689846,
+                -0.24929665279653038,
+                -0.5600344901554845
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.8,
+            "material": "star70",
+            "name": "star70",
+            "position": [
+                0.5039384111079169,
+                -0.23865823106579037,
+                -0.8301134419792128
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.18,
+            "material": "star71",
+            "name": "star71",
+            "position": [
+                -0.2078070064663016,
+                -0.4611289610899403,
+                0.8626565535064501
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.19,
+            "material": "star72",
+            "name": "star72",
+            "position": [
+                -0.8029773586998457,
+                0.5032396290657064,
+                -0.3193387498460364
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.24,
+            "material": "star73",
+            "name": "star73",
+            "position": [
+                -0.1069339653517471,
+                -0.9912689860703962,
+                -0.07714223427617423
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.26,
+            "material": "star74",
+            "name": "star74",
+            "position": [
+                -0.17869348244958247,
+                -0.9078916102816483,
+                0.379211633933133
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.5,
+            "material": "star75",
+            "name": "star75",
+            "position": [
+                -0.539111552640702,
+                -0.7628324062605887,
+                0.356995033253982
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.25,
+            "material": "star76",
+            "name": "star76",
+            "position": [
+                -0.40209492781815703,
+                0.26753377440411036,
+                0.87563996515463
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.46,
+            "material": "star77",
+            "name": "star77",
+            "position": [
+                0.01020956687832454,
+                0.7625362796910483,
+                -0.6468648907608855
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.93,
+            "material": "star78",
+            "name": "star78",
+            "position": [
+                0.7539131625079649,
+                -0.5169853860671968,
+                -0.40539000233132333
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.92,
+            "material": "star79",
+            "name": "star79",
+            "position": [
+                0.45452314722826354,
+                -0.4846809824405216,
+                -0.7473239283565094
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.12,
+            "material": "star80",
+            "name": "star80",
+            "position": [
+                -0.8453845339057736,
+                0.3870793847539456,
+                -0.3680958295490794
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.01,
+            "material": "star81",
+            "name": "star81",
+            "position": [
+                0.1451570366582252,
+                0.9805394343230057,
+                0.13218113498575537
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.9,
+            "material": "star82",
+            "name": "star82",
+            "position": [
+                0.7828258305177844,
+                -0.31685359104868777,
+                0.5355254624326392
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 3.43,
+            "material": "star83",
+            "name": "star83",
+            "position": [
+                0.3815590088863966,
+                -0.3466803166223303,
+                -0.8568695821443726
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.3,
+            "material": "star84",
+            "name": "star84",
+            "position": [
+                -0.7860776959249195,
+                -0.4670278439603537,
+                -0.40492820219776415
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.38,
+            "material": "star85",
+            "name": "star85",
+            "position": [
+                -0.6673624781462614,
+                0.7424962760178798,
+                0.05767670987548632
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 4.84,
+            "material": "star86",
+            "name": "star86",
+            "position": [
+                0.47391574584904345,
+                0.8581998468525268,
+                -0.19722294161340426
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.35,
+            "material": "star87",
+            "name": "star87",
+            "position": [
+                0.3170138366712359,
+                -0.380423233997005,
+                -0.8687809795306543
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.3,
+            "material": "star88",
+            "name": "star88",
+            "position": [
+                -0.8207124766838423,
+                0.562703316959721,
+                0.09897478314197773
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.83,
+            "material": "star89",
+            "name": "star89",
+            "position": [
+                0.24564681972617772,
+                0.6414939973105362,
+                0.7267345398238372
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.35,
+            "material": "star90",
+            "name": "star90",
+            "position": [
+                0.8257563130131335,
+                -0.17459193314248425,
+                -0.5363246856154641
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.12,
+            "material": "star91",
+            "name": "star91",
+            "position": [
+                -0.9870913125179197,
+                -0.07147997286368486,
+                0.14332255311379768
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.31,
+            "material": "star92",
+            "name": "star92",
+            "position": [
+                0.4011043518616369,
+                0.6844409709295137,
+                -0.6088151248373522
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.18,
+            "material": "star93",
+            "name": "star93",
+            "position": [
+                -0.5052653507783141,
+                -0.8461812769591043,
+                -0.16936402164192588
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.15,
+            "material": "star94",
+            "name": "star94",
+            "position": [
+                0.8668265717463667,
+                -0.37238179519814446,
+                0.3315772807649044
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.26,
+            "material": "star95",
+            "name": "star95",
+            "position": [
+                0.005451727530396377,
+                0.5461295489620515,
+                -0.8376829916009043
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 6.31,
+            "material": "star96",
+            "name": "star96",
+            "position": [
+                -0.9088576014445588,
+                -0.3919078542760004,
+                0.14277987972128503
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "geometry": "star",
+            "magnitude": 5.38,
+            "material": "star97",
+            "name": "star97",
+            "position": [
+                -0.4923328518316346,
+                0.4872799918552574,
+                0.7212257431240721
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ]
+        }
+    ]
+}
