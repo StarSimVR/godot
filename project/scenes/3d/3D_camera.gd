@@ -8,6 +8,7 @@ var _free_flight_mode := false
 
 func _ready() -> void:
 	SceneDecoder.create("solar_system")
+	SceneDecoder.create("stars")
 	create_labels()
 	create_trails()
 	create_collision_objects()
