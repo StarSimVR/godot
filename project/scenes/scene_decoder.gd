@@ -26,7 +26,8 @@ func create(scene_name: String) -> void:
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
-
+			
+			
 func get_textures(data: Dictionary) -> Dictionary:
 	var texture_dir: String = data.config.textureDir if "config" in data && "textureDir" in data.config else ""
 	texture_dir = "res://" + texture_dir
