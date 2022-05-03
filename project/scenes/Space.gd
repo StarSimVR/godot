@@ -10,12 +10,12 @@ func _ready():
 	pass # Replace with function body.
 	
 	
-func getCurObject():
+func get_cur_object():
 	var _objects = self.get_children()
 	if(_objects.size() == 0): return null
 	return _objects[_curr_object]
 	
-func setCurObject(object):
+func set_cur_object(object):
 	var _objects = self.get_children()
 	for i in range(len(_objects)):
 		if(object.name == _objects[i].name):

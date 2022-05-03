@@ -76,7 +76,7 @@ func init():
 	else:
 		grabCast.visible = false
 	
-	updateCameraPosition()
+	update_camera_position()
 	isInited = true;
 
 func _process(_delta):
@@ -96,7 +96,7 @@ func button_pressed(button_index):
 		BUTTON.Trigger:
 			match self.controller_id:
 				1:
-					changeToGodView()
+					change_to_god_view()
 				2:
 					grab()
 				_:
@@ -104,9 +104,9 @@ func button_pressed(button_index):
 		BUTTON.TouchPad:
 			match self.controller_id:
 				1: 
-					changeWarpPointBackwards()
+					change_warp_point_backwards()
 				2:
-					changeWarpPointForwards()
+					change_warp_point_forwards()
 				_:
 					print("TouchPad__ControllerID: %d" % self.controller_id)
 		BUTTON.SideButton:
@@ -125,16 +125,16 @@ func button_released(button_index):
 	pass
 	
 	
-func changeWarpPointBackwards():
+func change_warp_point_backwards():
 	BaseController.prev_warp_point()
-	updateCameraPosition()
+	update_camera_position()
 	
-func changeWarpPointForwards():
+func change_warp_point_forwards():
 	BaseController.next_warp_point()
-	updateCameraPosition()
+	update_camera_position()
 		
-func updateCameraPosition():
-	var object: Spatial = Space.getCurObject()
+func update_camera_position():
+	var object: Spatial = Space.get_cur_object()
 	if(object == null): return
 	var origin := object.transform.origin
 	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
@@ -147,8 +147,8 @@ func grab():
 	rightRayCast.force_raycast_update()
 	if(rightRayCast.is_colliding()):
 		var body = rightRayCast.get_collider()
-		Space.setCurObject(body)
-		updateCameraPosition()
+		Space.set_cur_object(body)
+		update_camera_position()
 
 func sleep_area_entered(body):
 	pass
@@ -156,7 +156,7 @@ func sleep_area_entered(body):
 func sleep_area_exited(body):
 	pass
 	
-func changeToGodView():
+func change_to_god_view():
 	var object: Spatial = get_node("../../Objects/GodView")
 	var origin := object.transform.origin
 	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin

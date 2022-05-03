@@ -59,7 +59,7 @@ func look_at_current_object() -> void:
 	if len(_objects) < 1:
 		return
 	var sun: Spatial = _objects[0]
-	var object :Spatial = _space.getCurObject()
+	var object :Spatial = _space.get_cur_object()
 	var origin := object.transform.origin
 	var sun_origin := sun.transform.origin
 	var position := origin + origin.normalized() * 1
