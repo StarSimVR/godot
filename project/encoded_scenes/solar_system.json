@@ -162,8 +162,8 @@
 		{
 			"name": "sun_material",
 			"emission_enabled": true,
-			"emission_energy": 3,
-			"emission": [255,255,255],
+			"emission_energy": 1,
+			"emission": [0.94, 0.95, 0.69],
 			"use_as_albedo": true
 		}
 	]
