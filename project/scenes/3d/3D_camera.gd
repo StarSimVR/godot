@@ -53,7 +53,7 @@ func _input(event: InputEvent) -> void:
 		_rotation += event.relative * look_sensitivity * (-0.001)
 		_rotation.x = fmod(_rotation.x, 2 * PI)
 		_rotation.y = fmod(_rotation.y, 2 * PI)
-		
+
 func look_at_current_object() -> void:
 	var _objects := _space.get_children()
 	if len(_objects) < 1:
@@ -65,7 +65,7 @@ func look_at_current_object() -> void:
 	var position := origin + origin.normalized() * 1
 	if position != sun_origin:
 		look_at_from_position(position, sun_origin, Vector3(0, 0, 1))
-		
+
 func render_labels() -> void:
 	for object in _space.get_children():
 		if object.name == "sun":
@@ -87,7 +87,7 @@ func render_labels() -> void:
 			label.rect_position = unproject_position(object_position) - offset
 		else:
 			label.hide()
-			
+
 func create_labels() -> void:
 	for object in _space.get_children():
 		if object.name == "sun":
@@ -96,7 +96,7 @@ func create_labels() -> void:
 		label.name = object.name
 		label.set_text(object.name)
 		_labels.add_child(label)
-		
+
 func create_trails() -> void:
 	for object in _space.get_children():
 		if object.name == "sun":
@@ -107,7 +107,7 @@ func create_trails() -> void:
 		motion_trail.startColor = Color(0.52, 0.55, 0.72)
 		motion_trail.rotate_y(PI / 2)
 		object.add_child(motion_trail)
-		
+
 func create_collision_objects() -> void:
 	for object in _space.get_children():
 		var collision_object := collision_object_scene.instance()
