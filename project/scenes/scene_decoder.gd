@@ -26,8 +26,8 @@ func create(scene_name: String) -> void:
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
-			
-			
+
+
 func get_textures(data: Dictionary) -> Dictionary:
 	var texture_dir: String = data.config.textureDir if "config" in data && "textureDir" in data.config else ""
 	texture_dir = "res://" + texture_dir
@@ -87,6 +87,9 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 		materials[m_info.name] = m_instance
 	return materials
 
+func get_randomized(value, rng: RandomNumberGenerator):
+	return value if typeof(value) != TYPE_ARRAY else rng.randf_range(value[0], value[1])
+
 func get_planet_data(data: Dictionary) -> Dictionary:
 	var planet_data := {}
 	if !data.has("planet_data"):
@@ -95,41 +98,66 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 		if !pd_info.has("name"):
 			continue
 
-		var pd_instance := PlanetData.new()
-		for key in pd_info:
-			if key == "planet_noise":
-				var noise_infos: Array = pd_info[key] if typeof(pd_info[key]) == TYPE_ARRAY else [pd_info[key]]
-				pd_instance[key] = []
-				for noise_info in noise_infos:
-					var planet_noise := PlanetNoise.new()
-					var noise_map := OpenSimplexNoise.new()
-					planet_noise.noise_map = noise_map
-					for noise_key in noise_info:
-						if noise_key in planet_noise:
-							planet_noise[noise_key] = noise_info[noise_key]
-						elif noise_key in noise_map:
-							noise_map[noise_key] = noise_info[noise_key]
-					pd_instance[key].push_back(planet_noise)
-			elif key == "planet_color":
-				var color_info: Dictionary = pd_info[key]
-				var colors: PoolColorArray = []
-				for i in len(color_info.colors):
-					if i % 4 == 0:
-						colors.append(Color(color_info.colors[i], color_info.colors[i + 1], color_info.colors[i + 2], color_info.colors[i + 3]))
-				var planet_color := GradientTexture.new()
-				var gradient := Gradient.new()
-				gradient.set_offsets(PoolRealArray(color_info.offsets))
-				gradient.set_colors(colors)
-				planet_color.set_width(color_info.width)
-				planet_color.set_gradient(gradient)
-				pd_instance[key] = planet_color
-			elif key != "name":
-				pd_instance[key] = pd_info[key]
-		planet_data[pd_info.name] = pd_instance
+		var rng := RandomNumberGenerator.new()
+		if "seed" in pd_info:
+			rng.seed = pd_info.seed
+		else:
+			rng.randomize()
+		var count: int = pd_info.count if "count" in pd_info else 1
+		planet_data[pd_info.name] = []
+
+		for n in count:
+			var pd_instance := PlanetData.new()
+			for key in pd_info:
+				if key == "planet_noise":
+					var noise_infos: Array = pd_info[key] if typeof(pd_info[key]) == TYPE_ARRAY else [pd_info[key]]
+					pd_instance[key] = []
+					for noise_info in noise_infos:
+						var planet_noise := PlanetNoise.new()
+						var noise_map := OpenSimplexNoise.new()
+						planet_noise.noise_map = noise_map
+						noise_map.seed = rng.randi()
+						for noise_key in noise_info:
+							if noise_key in planet_noise:
+								planet_noise[noise_key] = get_randomized(noise_info[noise_key], rng)
+							elif noise_key in noise_map:
+								noise_map[noise_key] = get_randomized(noise_info[noise_key], rng)
+						pd_instance[key].push_back(planet_noise)
+				elif key == "planet_color":
+					var color_info: Dictionary = pd_info[key]
+					var colors: PoolColorArray = []
+					for i in len(color_info.colors):
+						if i % 4 == 0:
+							colors.append(Color(color_info.colors[i], color_info.colors[i + 1], color_info.colors[i + 2], color_info.colors[i + 3]))
+					var planet_color := GradientTexture.new()
+					var gradient := Gradient.new()
+					gradient.set_offsets(PoolRealArray(color_info.offsets))
+					gradient.set_colors(colors)
+					planet_color.set_width(get_randomized(color_info.width, rng))
+					planet_color.set_gradient(gradient)
+					pd_instance[key] = planet_color
+				elif !["name", "seed", "count"].has(key):
+					pd_instance[key] = get_randomized(pd_info[key], rng)
+			planet_data[pd_info.name].push_back(pd_instance)
 	return planet_data
 
-func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, planet_data: Dictionary, params: Array) -> void:
+func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, planet_data: Dictionary,
+				   params: Array, number := 0, rng: RandomNumberGenerator = null) -> void:
 	var space := get_node("/root/Main/Objects/Space")
+
+	if rng == null:
+		rng = RandomNumberGenerator.new()
+		if "seed" in object:
+			rng.seed = object.seed
+		else:
+			rng.randomize()
+
+	var count: int = object.count if "count" in object else 1
+	if count > 1 && number == 0:
+		for i in count:
+			create_object(object, geometries, materials, planet_data, params, i + 1, rng)
+		return
+
 	var geometry = geometries[object.geometry] if "geometry" in object else null
 	var node: Node
 	var mesh = null
@@ -138,11 +166,13 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if geometry is PackedScene:
 		node = geometry.instance()
 		mesh = node.get_child(0)
-	else:
+	elif geometry:
 		node = MeshInstance.new()
 		mesh = node
-		if geometry:
-			node.set_mesh(geometry)
+		node.set_mesh(geometry)
+	else:
+		node = Spatial.new()
+		mesh = node
 
 	if "withScript" in object && object.withScript:
 			node.set_script(gdmath)
@@ -166,15 +196,20 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		else:
 			space.get_node("Stars").add_child(node)
 	if "name" in object:
-		node.name = object.name
+		node.name = object.name + str(number) if number > 0 else object.name
 	if "scale" in object && mesh:
 		mesh.set_scale( Vector3(object.scale[0], object.scale[1], object.scale[2]) )
 	if "material" in object:
 		mesh.set_surface_material(0, materials[object.material])
 	if "planet_data" in object:
-		mesh.planet_data = planet_data[object.planet_data]
+		var pd: Array = planet_data[object.planet_data]
+		mesh.planet_data = pd[rng.randi_range(0, pd.size() - 1)]
 	if "position" in object:
-		node.transform.origin = Vector3(object.position[0], object.position[1], object.position[2])
+		node.transform.origin = Vector3(
+			get_randomized(object.position[0], rng),
+			get_randomized(object.position[1], rng),
+			get_randomized(object.position[2], rng)
+		)
 
 	for param in params:
 		if param in node && param in object:

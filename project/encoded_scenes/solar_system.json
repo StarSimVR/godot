@@ -66,6 +66,29 @@
 			"path": "neptune.glb"
 		}
 	],
+	"planet_data": [
+		{
+			"name": "asteroid",
+			"seed": 1234,
+			"count": 15,
+			"radius": [0.5, 2.0],
+			"resolution": 20,
+			"planet_noise": {
+				"amplitude": [0.5, 2.0],
+				"min_height": 0.0,
+				"use_first_layer_as_mask": false,
+				"octaves": 4,
+				"period": [30, 150],
+				"persistence": 0.5,
+				"lacunarity": 2.0
+			},
+			"planet_color": {
+				"width": 128,
+				"offsets": [0, 0.25, 0.5, 0.75, 1],
+				"colors": [0.1, 0.1, 0.1, 1, 0.3, 0.3, 0.3, 1, 0.5, 0.5, 0.5, 1, 0.7, 0.7, 0.7, 1, 0.9, 0.9, 0.9, 1]
+			}
+		}
+	],
 	"objects": [
 		{
 			"withScript": true,
