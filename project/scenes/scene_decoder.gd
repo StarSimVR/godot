@@ -29,8 +29,9 @@ func create(scene_name: String) -> void:
 
 
 func get_textures(data: Dictionary) -> Dictionary:
-	var texture_dir: String = data.config.textureDir if "config" in data && "textureDir" in data.config else ""
-	texture_dir = "res://" + texture_dir
+	var texture_dir := "res://"
+	if "config" in data && ("textureDir" in data.config || "texture_dir" in data.config):
+		texture_dir += data.config.textureDir if "textureDir" in data.config else data.config.texture_dir
 	var textures := {}
 	if !data.has("textures"):
 		return textures
@@ -38,14 +39,15 @@ func get_textures(data: Dictionary) -> Dictionary:
 	for texture in data.textures:
 		if "name" in texture && "path" in texture:
 			textures[texture.name] = load(texture_dir + texture.path)
-			if "loadLinear" in texture && texture.loadLinear:
+			if ("loadLinear" in texture && texture.loadLinear) || ("load_linear" in texture && texture.load_linear):
 				textures[texture.name].set_flags(Texture.FLAG_FILTER | Texture.FLAG_CONVERT_TO_LINEAR)
 
 	return textures
 
 func get_geometries(data: Dictionary) -> Dictionary:
-	var model_dir: String = data.config.modelDir if "config" in data && "modelDir" in data.config else ""
-	model_dir = "res://" + model_dir
+	var model_dir := "res://"
+	if "config" in data && ("modelDir" in data.config || "model_dir" in data.config):
+		model_dir += data.config.modelDir if "modelDir" in data.config else data.config.model_dir
 	var geometries := {"planet": planet_scene}
 	if !data.has("geometries"):
 		return geometries
@@ -71,8 +73,12 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.roughness = m_info.roughness
 		if "metallic" in m_info:
 			m_instance.metallic = m_info.metallic
+		if "albedo_map" in m_info:
+			m_instance.albedo_texture = textures[m_info.albedo_map]
 		if "albedoMap" in m_info:
 			m_instance.albedo_texture = textures[m_info.albedoMap]
+		if "normal_map" in m_info:
+			m_instance.normal_texture = textures[m_info.normal_map]
 		if "normalMap" in m_info:
 			m_instance.normal_texture = textures[m_info.normalMap]
 		if "emission_enabled" in m_info:
@@ -174,10 +180,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node = Spatial.new()
 		mesh = node
 
-	if "withScript" in object && object.withScript:
+	if "with_script" in object && object.with_script:
 			node.set_script(gdmath)
 
-	if "isCollisionObject" in object && object.isCollisionObject:
+	if "is_collision_object" in object && object.is_collision_object:
 		colObject = collision_object.instance()
 		if "name" in object:
 			colObject.name = object.name
@@ -188,10 +194,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		colObject.input_ray_pickable = true
 		node.add_child(colObject)
 
-	if "childOf" in object:
-		space.get_node(object.childOf).add_child(node)
+	if "child_of" in object:
+		space.get_node(object.child_of).add_child(node)
 	else:
-		if "withScript" in object && object.withScript:
+		if "with_script" in object && object.with_script:
 			space.add_child(node)
 		else:
 			space.get_node("Stars").add_child(node)
@@ -225,8 +231,8 @@ func create_light(light: Dictionary) -> void:
 	else:
 		node = OmniLight.new()
 
-	if "childOf" in light:
-		space.get_node(light.childOf).add_child(node)
+	if "child_of" in light:
+		space.get_node(light.child_of).add_child(node)
 	else:
 		space.add_child(node)
 
@@ -245,6 +251,8 @@ func create_light(light: Dictionary) -> void:
 		var pos: Array = light.position if "position" in light else light.direction
 		node.transform.origin = Vector3(pos[0], pos[1], pos[2])
 
+	if "ambient_factor" in light:
+		node.set_param(Light.PARAM_ENERGY, light.ambient_factor)
 	if "ambientFactor" in light:
 		node.set_param(Light.PARAM_ENERGY, light.ambientFactor)
 

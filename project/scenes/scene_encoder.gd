@@ -1,5 +1,5 @@
 extends Node
-const modelDir := "geometry/solarSystem/glTF2/"
+const model_dir := "geometry/solarSystem/glTF2/"
 const params := ["speed", "radius", "eccentricity", "centre", "normal", "tangent"]
 
 func save(scene_name) -> void:
@@ -10,7 +10,7 @@ func save(scene_name) -> void:
 	file.close()
 
 func encode() -> String:
-	var data := {"config": {"modelDir": modelDir, "params": params}, "lights": [], "geometries": [], "objects": []}
+	var data := {"config": {"model_dir": model_dir, "params": params}, "lights": [], "geometries": [], "objects": []}
 	var space := get_node("/root/Main/Objects/Space")
 
 	var geometries := {}
@@ -37,7 +37,7 @@ func add_object(object: Spatial, data: Dictionary, geometries: Dictionary, child
 	if geometry_name:
 		object_info.geometry = geometry_name
 	if child_of:
-		object_info.childOf = child_of
+		object_info.child_of = child_of
 	var scale: Vector3 = object.get_child(0).get_scale() if is_glb else object.get_scale()
 	if scale != Vector3.ONE:
 		object_info.scale = [scale.x, scale.y, scale.z]
@@ -45,7 +45,7 @@ func add_object(object: Spatial, data: Dictionary, geometries: Dictionary, child
 	if position != Vector3.ZERO || object is DirectionalLight:
 		object_info["direction" if object is DirectionalLight else "position"] = [position.x, position.y, position.z]
 	if object is CollisionObject:
-		object_info.isCollisionObject = true
+		object_info.is_collision_object = true
 	for param in params:
 		if param in object:
 			var val = object[param]
@@ -72,5 +72,5 @@ func get_mesh_path(object: Spatial) -> String:
 	var path: String = mesh_instance.get_mesh().resource_path
 	path = path.replace("res://", "")
 	path = path.split("::")[0]
-	path = path.replace(modelDir, "")
+	path = path.replace(model_dir, "")
 	return path
