@@ -2,6 +2,7 @@ extends Node
 
 var collision_object := preload("collision_object.tscn")
 var gdmath := preload("res://gdmath.gdns")
+var rotate := preload("res://scenes/rotate.gd")
 var planet_scene := preload("res://Planet/Planet.tscn")
 
 func create(scene_name: String) -> void:
@@ -96,6 +97,13 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 func get_randomized(value, rng: RandomNumberGenerator):
 	return value if typeof(value) != TYPE_ARRAY else rng.randf_range(value[0], value[1])
 
+func get_randomized_vector3(value: Array, rng: RandomNumberGenerator) -> Vector3:
+	return Vector3(
+			get_randomized(value[0], rng),
+			get_randomized(value[1], rng),
+			get_randomized(value[2], rng)
+		)
+
 func get_planet_data(data: Dictionary) -> Dictionary:
 	var planet_data := {}
 	if !data.has("planet_data"):
@@ -181,7 +189,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		mesh = node
 
 	if "with_script" in object && object.with_script:
-			node.set_script(gdmath)
+		node.set_script(gdmath)
 
 	if "is_collision_object" in object && object.is_collision_object:
 		colObject = collision_object.instance()
@@ -195,9 +203,9 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node.add_child(colObject)
 
 	if "child_of" in object:
-		space.get_node(object.child_of).add_child(node)
+		space.find_node(object.child_of, true, false).add_child(node)
 	else:
-		if "with_script" in object && object.with_script:
+		if ("with_script" in object && object.with_script) || "centre" in object || "speed" in object || !object.has("geometry"):
 			space.add_child(node)
 		else:
 			space.get_node("Stars").add_child(node)
@@ -211,11 +219,18 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		var pd: Array = planet_data[object.planet_data]
 		mesh.planet_data = pd[rng.randi_range(0, pd.size() - 1)]
 	if "position" in object:
-		node.transform.origin = Vector3(
-			get_randomized(object.position[0], rng),
-			get_randomized(object.position[1], rng),
-			get_randomized(object.position[2], rng)
+		node.transform.origin = get_randomized_vector3(object.position, rng)
+	elif "centre" in object && "radius" in object && (!object.has("with_script") || !object.with_script):
+		var centre := get_randomized_vector3(object.centre, rng)
+		var radius: float = get_randomized(object.radius, rng)
+		node.transform.origin = centre + radius * Vector3(
+			cos(rng.randf_range(0, 2 * PI)),
+			sin(rng.randf_range(0, 2 * PI)),
+			0
 		)
+	if "speed" in object && (!object.has("with_script") || !object.with_script):
+		node.set_script(rotate)
+		node.speed = object.speed
 
 	for param in params:
 		if param in node && param in object:

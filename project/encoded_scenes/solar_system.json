@@ -71,7 +71,7 @@
 			"name": "asteroid",
 			"seed": 1234,
 			"count": 15,
-			"radius": [0.5, 2.0],
+			"radius": [0.5, 1.0],
 			"resolution": 20,
 			"planet_noise": {
 				"amplitude": [0.5, 2.0],
@@ -141,6 +141,10 @@
 			"is_collision_object": true
 		},
 		{
+			"name": "asteroidBelt",
+			"speed": 0.2
+		},
+		{
 			"with_script": true,
 			"name": "jupiter",
 			"geometry": "jupiter",
@@ -159,6 +163,18 @@
 			"radius": 11,
 			"eccentricity": 0.054,
 			"is_collision_object": true
+		},
+		{
+			"child_of": "asteroidBelt",
+			"seed": 1111,
+			"count": 20,
+			"name": "asteroid",
+			"geometry": "planet",
+			"scale": [0.3, 0.3, 0.3],
+			"planet_data": "asteroid",
+			"centre": [0, 0, 0],
+			"radius": [6, 9],
+			"speed": 0.5
 		},
 		{
 			"with_script": true,
