@@ -48,11 +48,22 @@ func _process(delta: float) -> void:
 
 	render_labels()
 
+func zoom_in() -> void:
+	fov = max(fov - 0.5, 1)
+
+func zoom_out() -> void:
+	fov = min(fov + 0.5, 179)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion && Input.is_mouse_button_pressed(BUTTON_LEFT):
 		_rotation += event.relative * look_sensitivity * (-0.001)
 		_rotation.x = fmod(_rotation.x, 2 * PI)
 		_rotation.y = fmod(_rotation.y, 2 * PI)
+
+	if Input.is_action_pressed("zoom_in"):
+		zoom_in()
+	if Input.is_action_pressed("zoom_out"):
+		zoom_out()
 
 func look_at_current_object() -> void:
 	var _objects := _space.get_children()
