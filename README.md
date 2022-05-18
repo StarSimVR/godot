@@ -26,6 +26,17 @@
 
 # godot
 
+## Documentation
+
+### VR Controller
+Button|LeftController | Right Controller
+---|---|---
+Trigger(press)| Display God View| Teleport to object
+Trigger(hold) | Unused | Unused
+TouchPad(press)| WarpPoint backwards| WarpPoint forwards
+TouchPad(move) | Unused | Unused
+SideButton|SpeedUp Time| SlowDown Time
+
 ## Summary
 
 StarSimVR (Godot)
