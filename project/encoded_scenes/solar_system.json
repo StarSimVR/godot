@@ -71,10 +71,10 @@
 			"name": "asteroid",
 			"seed": 1234,
 			"count": 15,
-			"radius": [0.5, 1.0],
+			"radius": 0.0009,
 			"resolution": 20,
 			"planet_noise": {
-				"amplitude": [0.5, 2.0],
+				"amplitude": [1.0, 3.0],
 				"min_height": 0.0,
 				"use_first_layer_as_mask": false,
 				"octaves": 4,
@@ -142,7 +142,19 @@
 		},
 		{
 			"name": "asteroidBelt",
-			"speed": 0.2
+			"speed": 0.01
+		},
+		{
+			"child_of": "asteroidBelt",
+			"seed": 1111,
+			"count": 300,
+			"name": "asteroid",
+			"geometry": "planet",
+			"scale": [1.0, 1.0, 1.0],
+			"planet_data": "asteroid",
+			"centre": [0, 0, 0],
+			"radius": [6, 9],
+			"speed": 0.01
 		},
 		{
 			"with_script": true,
@@ -165,16 +177,21 @@
 			"is_collision_object": true
 		},
 		{
-			"child_of": "asteroidBelt",
+			"child_of": "saturn",
+			"name": "ringsOfSaturn",
+			"speed": 1.0,
+		},
+		{
+			"child_of": "ringsOfSaturn",
 			"seed": 1111,
-			"count": 20,
-			"name": "asteroid",
+			"count": 300,
+			"name": "ring",
 			"geometry": "planet",
-			"scale": [0.3, 0.3, 0.3],
+			"scale": [1.0, 1.0, 1.0],
 			"planet_data": "asteroid",
-			"centre": [0, 0, 0],
-			"radius": [6, 9],
-			"speed": 0.5
+			"centre": [0, 0, [-0.02, 0.02]],
+			"radius": [0.25, 0.5],
+			"speed": 0.01
 		},
 		{
 			"with_script": true,
