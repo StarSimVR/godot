@@ -121,6 +121,8 @@ func create_trails() -> void:
 
 func create_collision_objects() -> void:
 	for object in _space.get_children():
+		if object.name == "Stars":
+			continue
 		var collision_object := collision_object_scene.instance()
 		collision_object.name = "CollisionObject"
 		collision_object.set_scale(object.get_child(0).get_scale())

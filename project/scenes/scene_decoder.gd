@@ -1,9 +1,9 @@
 extends Node
 
-var collision_object := preload("collision_object.tscn")
-var gdmath := preload("res://gdmath.gdns")
-var rotate := preload("res://scenes/rotate.gd")
-var planet_scene := preload("res://Planet/Planet.tscn")
+const collision_object := preload("collision_object.tscn")
+const gdmath := preload("res://gdmath.gdns")
+const rotate := preload("res://scenes/rotate.gd")
+const planet_scene := preload("res://Planet/Planet.tscn")
 
 func create(scene_name: String) -> void:
 	var file := File.new()
@@ -152,6 +152,8 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 					pd_instance[key] = planet_color
 				elif !["name", "seed", "count"].has(key):
 					pd_instance[key] = get_randomized(pd_info[key], rng)
+				elif key == "name":
+					pd_instance[key] = pd_info[key] + (str(n) if count > 1 else "")
 			planet_data[pd_info.name].push_back(pd_instance)
 	return planet_data
 
@@ -245,6 +247,9 @@ func create_light(light: Dictionary) -> void:
 		node = DirectionalLight.new()
 	else:
 		node = OmniLight.new()
+
+	if "name" in light:
+		node.name = light.name
 
 	if "child_of" in light:
 		space.get_node(light.child_of).add_child(node)

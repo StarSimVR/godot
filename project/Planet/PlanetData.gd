@@ -3,6 +3,7 @@ extends Resource
 
 class_name PlanetData
 
+export var name := ""
 export var radius := 1.0 setget set_radius
 export var resolution := 10 setget set_resolution
 export(Array, Resource) var planet_noise setget set_planet_noise
