@@ -1,134 +1,124 @@
 extends Node
-const model_dir := "geometry/solarSystem/glTF2/"
-const params := ["speed", "radius", "eccentricity", "centre", "normal", "tangent"]
-const scripts := {
-	"gdmath": preload("res://gdmath.gdns"),
-	"rotate": preload("res://scenes/rotate.gd"),
-	"planet": preload("res://Planet/Planet.gd")
-}
+class_name SceneEncoder
 
-func save(scene_name) -> void:
-	var data := encode()
+var data: Dictionary = {}
+
+func _init(scene_name: String) -> void:
+	data = SceneDecoder.load_scene(scene_name)
+
+func save(scene_name: String) -> void:
 	var file := File.new()
 	var _err := file.open("res://encoded_scenes/" + scene_name + ".json", File.WRITE)
-	file.store_string(data)
+	file.store_string(JSON.print(data, "\t"))
 	file.close()
 
-func encode() -> String:
-	var data := {"config": {"model_dir": model_dir, "params": params}, "lights": [],
-				"geometries": [], "planet_data": [], "objects": []}
-	var space := get_node("/root/Main/Objects/Space")
+func check_parent(object: Dictionary, parent: String) -> bool:
+	return object.has("child_of") && object.child_of == parent || !object.has("child_of") && !parent
 
-	var geometries := {}
-	var planet_data := {}
-	for object in space.get_children():
-		add_object(object, data, geometries, planet_data)
+func get_object(name: String, parent := "") -> Dictionary:
+	if !data.has("objects"):
+		return {"not_found": true}
 
-	for geometry_name in geometries:
-		data.geometries.push_back(geometries[geometry_name])
+	for object in data.objects:
+		if check_parent(object, parent) && object.name == name:
+			return object
+	return {"not_found": true}
 
-	for planet_data_name in planet_data:
-		data.planet_data.push_back(planet_data[planet_data_name])
+func get_entry(array_name: String, name: String) -> Dictionary:
+	if !data.has(array_name):
+		return {"not_found": true}
 
-	return JSON.print(data, "\t")
+	for entry in data[array_name]:
+		if "name" in entry && entry.name == name:
+			return entry
+	return {"not_found": true}
 
-func add_object(object: Spatial, data: Dictionary, geometries: Dictionary, planet_data: Dictionary, child_of := "") -> void:
-	if object is ImmediateGeometry || object is Area || object.name == "Stars":
+func get_light(name: String) -> Dictionary:
+	return get_entry("lights", name)
+
+func get_geometry(name: String) -> Dictionary:
+	return get_entry("geometries", name)
+
+func get_texture(name: String) -> Dictionary:
+	return get_entry("textures", name)
+
+func get_material(name: String) -> Dictionary:
+	return get_entry("materials", name)
+
+func get_planet_data(name: String) -> Dictionary:
+	return get_entry("planet_data", name)
+
+func set_object(new_object: Dictionary, name := "", parent := "") -> void:
+	if !name:
+		name = new_object.name
+		parent = new_object.parent if "parent" in new_object else ""
+	if !data.has("objects"):
+		data.objects = []
+
+	for i in data.objects.size():
+		var object: Dictionary = data.objects[i]
+		if check_parent(object, parent) && object.name == name:
+			data.objects[i] = new_object
+			return
+
+	data.objects.append(new_object)
+
+func set_entry(array_name: String, new_entry: Dictionary, name: String) -> void:
+	if !name:
+		name = new_entry.name
+	if !data.has(array_name):
+		data[array_name] = []
+
+	for i in data[array_name].size():
+		var entry: Dictionary = data[array_name][i]
+		if "name" in entry && entry.name == name:
+			data[array_name][i] = new_entry
+			return
+
+	data[array_name].push_back(new_entry)
+
+func set_light(new_entry: Dictionary, name := "") -> void:
+	set_entry("lights", new_entry, name)
+
+func set_geometry(new_entry: Dictionary, name := "") -> void:
+	set_entry("geometries", new_entry, name)
+
+func set_texture(new_entry: Dictionary, name := "") -> void:
+	set_entry("textures", new_entry, name)
+
+func set_material(new_entry: Dictionary, name := "") -> void:
+	set_entry("materials", new_entry, name)
+
+func set_planet_data(new_entry: Dictionary, name := "") -> void:
+	set_entry("planet_data", new_entry, name)
+
+func delete_object(name: String, parent := "") -> void:
+	if !data.has("objects"):
 		return
 
-	var path = get_mesh_path(object)
-	var geometry_name = path.split(".")[0]
-	if geometry_name && !geometries.has(geometry_name):
-		geometries[geometry_name] = {"name": geometry_name, "type": "mesh", "path": path}
+	for object in data.objects:
+		if check_parent(object, parent) && object.name == name:
+			data.objects.erase(object)
 
-	var object_info = {"name": object.name}
+func delete_entry(array_name: String, name: String) -> void:
+	if !data.has(array_name):
+		return
 
-	var script: Script = object.get_script()
-	if script == scripts.gdmath:
-		object_info.with_script = true
+	for entry in data[array_name]:
+		if "name" in entry && entry.name == name:
+			data[array_name].erase(entry)
 
-	var is_glb := object is Spatial && object.get_child_count() > 0 && object.get_child(0) is MeshInstance
-	var generated: bool = object.get_child_count() > 0 && object.get_child(0).get_script() == scripts.planet
+func delete_light(name: String) -> void:
+	delete_entry("lights", name)
 
-	if script == scripts.planet:
-		object_info.with_script = "planet"
-	var mesh: Spatial = object.get_child(0) if is_glb || generated else null
-	if mesh && "planet_data" in mesh:
-		var pd_name: String = mesh.planet_data.name
-		planet_data[pd_name] = get_planet_data(mesh.planet_data)
-		object_info.geometry = "planet"
-		object_info.planet_data = pd_name
+func delete_geometry(name: String) -> void:
+	delete_entry("geometries", name)
 
-	if geometry_name:
-		object_info.geometry = geometry_name
-	if child_of:
-		object_info.child_of = child_of
-	var scale: Vector3 = mesh.get_scale() if is_glb else object.get_scale()
-	if scale != Vector3.ONE:
-		object_info.scale = [scale.x, scale.y, scale.z]
-	var position: Vector3 = object.transform.origin
-	if position != Vector3.ZERO || object is DirectionalLight:
-		object_info["direction" if object is DirectionalLight else "position"] = [position.x, position.y, position.z]
-	if object is CollisionObject:
-		object_info.is_collision_object = true
-	for param in params:
-		if param in object:
-			var val = object[param]
-			object_info[param] = [val.x, val.y, val.z] if val is Vector3 else val
+func delete_texture(name: String) -> void:
+	delete_entry("textures", name)
 
-	if object is Light:
-		var color: Color = object.get_color()
-		object_info.color = [color.r, color.g, color.b, color.a]
-		if object is OmniLight:
-			object_info.radius = object.get_param(Light.PARAM_RANGE)
-			object_info.attenuation = object.get_param(Light.PARAM_ATTENUATION)
-		data.lights.push_back(object_info)
-	else:
-		data.objects.push_back(object_info)
+func delete_material(name: String) -> void:
+	delete_entry("materials", name)
 
-	if !(object is CollisionObject):
-		for child in object.get_children():
-			if (!is_glb || !(child is MeshInstance)) && (!generated || child.get_script() != scripts.planet):
-				add_object(child, data, geometries, planet_data, object.name)
-
-func get_mesh_path(object: Spatial) -> String:
-	if object.get_child_count() < 1:
-		return ""
-	var mesh_instance := object.get_child(0)
-	if !(mesh_instance is MeshInstance):
-		return ""
-	var path: String = mesh_instance.get_mesh().resource_path
-	path = path.replace("res://", "")
-	path = path.split("::")[0]
-	path = path.replace(model_dir, "")
-	return path
-
-func get_planet_data(pd: PlanetData) -> Dictionary:
-	var pd_info := {"name": pd.name, "radius": pd.radius, "resolution": pd.resolution}
-
-	var pd_color := pd.planet_color
-	var colors := []
-	for color in pd_color.gradient.colors:
-		colors.append_array([color.r, color.g, color.b, color.a])
-	pd_info.planet_color = {
-		"width": pd_color.width,
-		"offsets": pd_color.gradient.offsets,
-		"colors": colors
-	}
-
-	var pd_noise: Array = pd.planet_noise
-	var pd_noise_info := []
-	for curr_noise in pd_noise:
-		var noise_map: OpenSimplexNoise = curr_noise.noise_map
-		var curr_noise_info := {
-			"amplitude": curr_noise.amplitude,
-			"min_height": curr_noise.min_height,
-			"use_first_layer_as_mask": curr_noise.use_first_layer_as_mask,
-			"octaves": noise_map.octaves,
-			"period": noise_map.period,
-			"persistence": noise_map.persistence,
-			"lacunarity": noise_map.lacunarity
-		}
-		pd_noise_info.push_back(curr_noise_info)
-	pd_info.planet_noise = pd_noise_info
-	return pd_info
+func delete_planet_data(name: String) -> void:
+	delete_entry("planet_data", name)

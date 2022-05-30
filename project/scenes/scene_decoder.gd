@@ -5,7 +5,7 @@ const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
 
-func create(scene_name: String) -> void:
+func load_scene(scene_name: String) -> Dictionary:
 	var file := File.new()
 	var _err := file.open("res://encoded_scenes/" + scene_name + ".json", File.READ)
 	var content := file.get_as_text()
@@ -13,8 +13,14 @@ func create(scene_name: String) -> void:
 	var json_result := JSON.parse(content)
 	if json_result.error:
 		print("Error parsing JSON in " + scene_name)
-		return
+		return {"error": true}
 	var data: Dictionary = json_result.result
+	return data
+
+func create(scene_name: String) -> void:
+	var data := load_scene(scene_name)
+	if "error" in data:
+		return
 
 	if data.has("objects"):
 		var textures := get_textures(data)
