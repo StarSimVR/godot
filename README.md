@@ -29,7 +29,7 @@
 ## Documentation
 
 ### VR Controller
-Button|LeftController | Right Controller
+Button|Left Controller | Right Controller
 ---|---|---
 Trigger(press)| Display God View| Teleport to object
 Trigger(hold) | Unused | Unused
