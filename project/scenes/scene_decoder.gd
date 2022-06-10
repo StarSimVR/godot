@@ -4,6 +4,7 @@ const collision_object := preload("collision_object.tscn")
 const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
+var is_editor := false
 
 func load_scene(scene_name: String) -> Dictionary:
 	var file := File.new()
@@ -60,7 +61,11 @@ func get_geometries(data: Dictionary) -> Dictionary:
 		return geometries
 	for geometry in data.geometries:
 		if "name" in geometry && "path" in geometry && "type" in geometry && geometry.type == "mesh":
-			geometries[geometry.name] = load(model_dir + geometry.path)
+			if is_editor:
+				var sphere := SphereMesh.new()
+				geometries[geometry.name] = sphere
+			else:
+				geometries[geometry.name] = load(model_dir + geometry.path)
 	return geometries
 
 func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
@@ -196,7 +201,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node = Spatial.new()
 		mesh = node
 
-	if "with_script" in object && object.with_script:
+	if "with_script" in object && object.with_script && !is_editor:
 		node.set_script(gdmath)
 
 	if "is_collision_object" in object && object.is_collision_object:
@@ -238,6 +243,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		)
 	if "speed" in object && (!object.has("with_script") || !object.with_script):
 		node.set_script(rotate)
+		node.is_editor = is_editor
 		node.speed = object.speed
 
 	for param in params:

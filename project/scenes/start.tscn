@@ -35,17 +35,22 @@ __meta__ = {
 }
 
 [node name="Start3D" type="Button" parent="VBoxContainer"]
-margin_right = 98.0
+margin_right = 128.0
 margin_bottom = 35.0
-size_flags_horizontal = 0
 text = "Start 3D"
 
 [node name="StartVR" type="Button" parent="VBoxContainer"]
 margin_top = 45.0
-margin_right = 99.0
+margin_right = 128.0
 margin_bottom = 80.0
-size_flags_horizontal = 0
 text = "Start VR"
+
+[node name="StartEditor" type="Button" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 128.0
+margin_bottom = 125.0
+text = "Start editor"
 
 [connection signal="pressed" from="VBoxContainer/Start3D" to="." method="_on_Start3D_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartVR" to="." method="_on_StartVR_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartEditor" to="." method="_on_StartEditor_pressed"]
