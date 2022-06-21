@@ -106,7 +106,7 @@ func init():
 	else:
 		grabCast.visible = false
 	
-	update_camera_position()
+	update_camera_position_on_warp()
 	isInited = true;
 
 #Function to handle any physical input
@@ -132,7 +132,7 @@ func button_pressed(button_index):
 				1:
 					change_to_god_view()
 				2:
-					grab()
+					teleport()
 				_:
 					print("Trigger__ControllerID: %d" % self.controller_id)
 		BUTTON.TouchPad:
@@ -164,15 +164,16 @@ func button_released(button_index):
 #Function to call upon the BaseController warp point backwards functionality and update the camera
 func change_warp_point_backwards():
 	BaseController.prev_warp_point()
-	update_camera_position()
+	update_camera_position_on_warp()
 	
 #Function to call upon the BaseController warp point forwards functionality and update the camera	
 func change_warp_point_forwards():
 	BaseController.next_warp_point()
-	update_camera_position()
-		
-#Function to specify how to update and redisplay a scene in VR
-func update_camera_position():
+	update_camera_position_on_warp()
+	
+	
+	#Function to specify how to update and redisplay a scene in VR upon a warp point change
+func update_camera_position_on_warp():
 	var object: Spatial = Space.get_cur_object()
 	if(object == null): return
 	var origin := object.transform.origin
@@ -180,16 +181,26 @@ func update_camera_position():
 	camera_offset.y = 0
 	get_parent().global_transform.origin = origin - camera_offset
 		
+		
+#Function to specify how to update and redisplay a scene in VR upon a teleport
+func update_camera_position_on_teleport():
+	var object: Spatial = Space.get_cur_object()
+	if(object == null): return
+	var object_origin := object.transform.origin
+	var camera_direction = get_parent().get_node("StarSimVRCamera").global_transform.origin - object_origin
+	camera_direction.y = 0
+	get_parent().global_transform.origin = object_origin + 2 * camera_direction.normalized()
+		
 
-#Function to specify what happens when the grab button on the controller is pressed
-func grab():
+#Function to specify what happens when a teleport interaction is triggered
+func teleport():
 	var rightRayCast = get_node("../RightController").getRayCast()
 	rightRayCast.force_raycast_update()
 	#when a collision is detected, teleport the user to the location
 	if(rightRayCast.is_colliding()):
 		var body = rightRayCast.get_collider()
 		Space.set_cur_object(body)
-		update_camera_position()
+		update_camera_position_on_teleport()
 
 func sleep_area_entered(body):
 	pass
