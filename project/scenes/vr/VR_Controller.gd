@@ -85,8 +85,8 @@ func _physics_process_directional_movement(delta):
 	
 	var movement_vector = trackpad_vector.normalized()
 	
-	var forward_direction = get_parent().get_node("Player_Camera").global_transform.basis.z.normalized()
-	var right_direction = get_parent().get_node("Player_Camera").global_transform.basis.x.normalized()
+	var forward_direction = get_parent().get_node("StarSimVRCamera").global_transform.basis.z.normalized()
+	var right_direction = get_parent().get_node("StarSimVRCamera").global_transform.basis.x.normalized()
 	
 	# Calculate the amount of movement the player will take on the Z (forward) axis and assign it to movement_forward.
 	var movement_forward = forward_direction * movement_vector.x * delta * MOVEMENT_SPEED
