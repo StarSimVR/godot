@@ -7,6 +7,9 @@ var _rotation := Vector2()
 var _free_flight_mode := false
 
 func _ready() -> void:
+	start()
+
+func start() -> void:
 	SceneDecoder.create("solar_system")
 	SceneDecoder.create("stars")
 	create_labels()
