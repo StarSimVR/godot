@@ -62,83 +62,60 @@ __meta__ = {
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 458.0
-margin_bottom = 266.0
+margin_bottom = 180.0
 theme = ExtResource( 3 )
 
-[node name="Editor" type="GridContainer" parent="HUD/MarginContainer"]
+[node name="Background" type="ColorRect" parent="HUD/MarginContainer"]
 margin_right = 438.0
-margin_bottom = 246.0
-columns = 2
+margin_bottom = 160.0
+color = Color( 0.886275, 0.85098, 0.85098, 0.478431 )
+
+[node name="Editor" type="VBoxContainer" parent="HUD/MarginContainer"]
+margin_right = 438.0
+margin_bottom = 160.0
 script = ExtResource( 6 )
 
-[node name="NameLabel" type="Label" parent="HUD/MarginContainer/Editor"]
-margin_top = 5.0
-margin_right = 141.0
-margin_bottom = 34.0
-text = "Name: "
-
-[node name="Name" type="LineEdit" parent="HUD/MarginContainer/Editor"]
-margin_left = 145.0
+[node name="Locked" type="CheckBox" parent="HUD/MarginContainer/Editor"]
 margin_right = 438.0
-margin_bottom = 39.0
+margin_bottom = 37.0
+text = "Lock mass / radius ratio"
+
+[node name="Params" type="GridContainer" parent="HUD/MarginContainer/Editor"]
+margin_top = 47.0
+margin_right = 438.0
+margin_bottom = 109.0
+columns = 2
+
+[node name="MassLabel" type="Label" parent="HUD/MarginContainer/Editor/Params"]
+margin_right = 82.0
+margin_bottom = 29.0
+text = "Mass: "
+
+[node name="Mass" type="HSlider" parent="HUD/MarginContainer/Editor/Params"]
+margin_left = 86.0
+margin_right = 438.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
-
-[node name="ModeLabel" type="Label" parent="HUD/MarginContainer/Editor"]
-margin_top = 46.0
-margin_right = 141.0
-margin_bottom = 75.0
-text = "Mode: "
-
-[node name="Mode" type="OptionButton" parent="HUD/MarginContainer/Editor"]
-margin_left = 145.0
-margin_top = 43.0
-margin_right = 438.0
-margin_bottom = 78.0
-text = "Mass/radius and density"
-items = [ "Mass/radius and density", null, false, 0, null, "Mass and radius", null, false, 1, null ]
-selected = 0
-
-[node name="MassRadiusLabel" type="Label" parent="HUD/MarginContainer/Editor"]
-margin_top = 82.0
-margin_right = 141.0
-margin_bottom = 111.0
-text = "Mass/radius: "
-
-[node name="MassRadius" type="HSlider" parent="HUD/MarginContainer/Editor"]
-margin_left = 145.0
-margin_top = 82.0
-margin_right = 438.0
-margin_bottom = 98.0
 value = 50.0
 
-[node name="DensityRadiusLabel" type="Label" parent="HUD/MarginContainer/Editor"]
-margin_top = 115.0
-margin_right = 141.0
-margin_bottom = 144.0
-text = "Density: "
+[node name="RadiusLabel" type="Label" parent="HUD/MarginContainer/Editor/Params"]
+margin_top = 33.0
+margin_right = 82.0
+margin_bottom = 62.0
+text = "Radius: "
 
-[node name="DensityRadius" type="HSlider" parent="HUD/MarginContainer/Editor"]
-margin_left = 145.0
-margin_top = 115.0
+[node name="Radius" type="HSlider" parent="HUD/MarginContainer/Editor/Params"]
+margin_left = 86.0
+margin_top = 33.0
 margin_right = 438.0
-margin_bottom = 131.0
+margin_bottom = 49.0
+size_flags_horizontal = 3
 value = 50.0
-
-[node name="SaveButton" type="Button" parent="HUD/MarginContainer/Editor"]
-margin_top = 148.0
-margin_right = 62.0
-margin_bottom = 183.0
-size_flags_horizontal = 0
-text = "Save"
 
 [node name="Info" type="Label" parent="HUD/MarginContainer/Editor"]
-margin_left = 145.0
-margin_top = 151.0
+margin_top = 119.0
 margin_right = 438.0
-margin_bottom = 180.0
+margin_bottom = 148.0
 
-[connection signal="text_changed" from="HUD/MarginContainer/Editor/Name" to="HUD/MarginContainer/Editor" method="load_object"]
-[connection signal="item_selected" from="HUD/MarginContainer/Editor/Mode" to="HUD/MarginContainer/Editor" method="change_mode"]
-[connection signal="value_changed" from="HUD/MarginContainer/Editor/MassRadius" to="HUD/MarginContainer/Editor" method="update_mass_radius"]
-[connection signal="value_changed" from="HUD/MarginContainer/Editor/DensityRadius" to="HUD/MarginContainer/Editor" method="update_density_radius"]
-[connection signal="pressed" from="HUD/MarginContainer/Editor/SaveButton" to="HUD/MarginContainer/Editor" method="save"]
+[connection signal="value_changed" from="HUD/MarginContainer/Editor/Params/Mass" to="HUD/MarginContainer/Editor" method="update_mass"]
+[connection signal="value_changed" from="HUD/MarginContainer/Editor/Params/Radius" to="HUD/MarginContainer/Editor" method="update_radius"]
