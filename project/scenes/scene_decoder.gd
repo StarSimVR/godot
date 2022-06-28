@@ -29,11 +29,36 @@ func create(scene_name: String) -> void:
 		var materials := get_materials(data, textures)
 		var planet_data := get_planet_data(data)
 		var params: Array = data.config.params if "config" in data && "params" in data.config else []
+		
+		#create MultiMesh if stars are loaded
+		if "config" in data && "starFile" in data.config && data.config.starFile:
+			var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
+			multiStar.multimesh.instance_count = data.objects.size()
+			var index = 0
+			for star in data.objects:
+				create_star(star, materials, index)
+				index+=1
+			multiStar.multimesh.visible_instance_count = -1
+			return
+		
 		for object in data.objects:
 			create_object(object, geometries, materials, planet_data, params)
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
+			
+			
+func create_star(object: Dictionary, materials: Dictionary, index) -> void:
+	var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
+	#Set the position of the star
+	var position = Transform()
+	position = position.translated(Vector3(object.position[0], object.position[1], object.position[2]))
+	multiStar.multimesh.set_instance_transform(index, position)
+	
+	#Set the material of the star
+	#+++Currently not working+++
+	multiStar.multimesh.set_instance_custom_data(index, materials[object.material].emission)
+	
 
 
 func get_textures(data: Dictionary) -> Dictionary:
