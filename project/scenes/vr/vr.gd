@@ -12,3 +12,9 @@ func _ready():
 		# run at the same frame rate as the display, which makes things look smoother in VR!
 	SceneDecoder.create("stars")
 	SceneDecoder.create("solar_system")
+	
+func _process(delta):
+	var node := get_node("/root/Main/Objects/Space/saturn/ringsOfSaturn")
+	if node == null:
+		return
+	node._process(delta)

@@ -179,7 +179,7 @@
 		{
 			"child_of": "saturn",
 			"name": "ringsOfSaturn",
-			"speed": 1.0,
+			"speed": 1.0
 		},
 		{
 			"child_of": "ringsOfSaturn",
