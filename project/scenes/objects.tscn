@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://space.jpg" type="Texture" id=4]
 [ext_resource path="res://scenes/Space.gd" type="Script" id=13]
+
+[sub_resource type="SpatialMaterial" id=1]
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 0.5
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="MultiMesh" id=3]
+color_format = 2
+transform_format = 1
+custom_data_format = 2
+visible_instance_count = 0
+mesh = SubResource( 2 )
 
 [node name="Objects" type="Spatial"]
 
@@ -31,3 +49,7 @@ __meta__ = {
 script = ExtResource( 13 )
 
 [node name="Stars" type="Spatial" parent="Space"]
+
+[node name="MultiStar" type="MultiMeshInstance" parent="Space/Stars"]
+material_override = SubResource( 1 )
+multimesh = SubResource( 3 )

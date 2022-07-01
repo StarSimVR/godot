@@ -1,12 +1,13 @@
 {
     "config": {
-        "modelDir": "geometry/solarSystem/stars/"
+        "modelDir": "geometry/solarSystem/stars/",
+        "starFile": true
     },
     "geometries": [
         {
             "name": "star",
             "path": "star.glb",
-            "type": "mesh"
+            "type": "MultiMesh"
         }
     ],
     "materials": [
