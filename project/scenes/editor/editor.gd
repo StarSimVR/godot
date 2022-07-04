@@ -4,42 +4,51 @@ var scene: SceneEncoder = null
 var obj := {"not_found": true}
 var orig_mass := 0.0
 var orig_radius := 0.0
+var dragging := false
 
 func _ready():
 	scene = SceneEncoder.new("solar_system")
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+	if !dragging && event is InputEventMouseButton && !event.is_pressed() && event.button_index == BUTTON_LEFT:
 		var camera: Camera = get_node("/root/Main/3D/Camera")
 		var from: Vector3 = camera.project_ray_origin(event.position)
 		var to: Vector3 = from + camera.project_ray_normal(event.position) * 1000
 		var result := camera.get_world().direct_space_state.intersect_ray(from, to, [], 2147483647, true, true)
-		print(event.position, from, to, result)
 		if result.empty():
 			unload_object()
 		else:
 			load_object(result.collider.get_parent().name)
-	elif Input.is_action_just_released("click") && !obj.has("not_found"):
-		var mass_change: int = $Params/Mass.get_value()
-		var radius_change: int = $Params/Radius.get_value()
-		if mass_change == 50 && radius_change == 50:
-			return
-		if $Locked.is_pressed():
-			if mass_change == 50:
-				mass_change = radius_change
-			else:
-				radius_change = mass_change
 
-		calc_new_mass(mass_change)
-		calc_new_radius(radius_change)
+func _on_slider_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
+		dragging = event.is_pressed()
+		if !dragging:
+			update_params()
 
-		orig_mass = get_mass()
-		orig_radius = get_radius()
-
+func update_params() -> void:
+	if obj.has("not_found"):
 		$Params/Mass.set_value(50)
 		$Params/Radius.set_value(50)
+		return
 
-		save()
+	var mass_change: int = $Params/Mass.get_value()
+	var radius_change: int = $Params/Radius.get_value()
+	if mass_change == 50 && radius_change == 50:
+		return
+	if $Locked.is_pressed():
+		if mass_change == 50:
+			mass_change = radius_change
+		else:
+			radius_change = mass_change
+
+	calc_new_mass(mass_change)
+	calc_new_radius(radius_change)
+	orig_mass = get_mass()
+	orig_radius = get_radius()
+	$Params/Mass.set_value(50)
+	$Params/Radius.set_value(50)
+	save()
 
 func save():
 	var name: String = obj.name
@@ -112,3 +121,7 @@ func update_radius(change: int) -> void:
 	if $Locked.is_pressed():
 		calc_new_mass(change)
 	update_info()
+
+func _on_Locked_gui_input(event):
+	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
+		dragging = event.is_pressed()

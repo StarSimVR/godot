@@ -87,8 +87,7 @@ func get_geometries(data: Dictionary) -> Dictionary:
 	for geometry in data.geometries:
 		if "name" in geometry && "path" in geometry && "type" in geometry && geometry.type == "mesh":
 			if is_editor:
-				var sphere := SphereMesh.new()
-				geometries[geometry.name] = sphere
+				geometries[geometry.name] = SphereMesh.new()
 			else:
 				geometries[geometry.name] = load(model_dir + geometry.path)
 	return geometries
@@ -219,9 +218,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node = geometry.instance()
 		mesh = node.get_child(0)
 	elif geometry:
-		node = MeshInstance.new()
-		mesh = node
-		node.set_mesh(geometry)
+		node = Spatial.new()
+		mesh = MeshInstance.new()
+		mesh.set_mesh(geometry)
+		node.add_child(mesh)
 	else:
 		node = Spatial.new()
 		mesh = node
@@ -232,7 +232,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "is_collision_object" in object && object.is_collision_object:
 		colObject = collision_object.instance()
 		if "name" in object:
-			colObject.name = object.name
+			colObject.name = "CollisionObject"
 
 		if "scale" in object:
 			colObject.set_scale(Vector3(object.scale[0], object.scale[1], object.scale[2]))

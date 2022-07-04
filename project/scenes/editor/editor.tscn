@@ -97,6 +97,7 @@ margin_right = 438.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 value = 50.0
+scrollable = false
 
 [node name="RadiusLabel" type="Label" parent="HUD/MarginContainer/Editor/Params"]
 margin_top = 33.0
@@ -111,11 +112,15 @@ margin_right = 438.0
 margin_bottom = 49.0
 size_flags_horizontal = 3
 value = 50.0
+scrollable = false
 
 [node name="Info" type="Label" parent="HUD/MarginContainer/Editor"]
 margin_top = 119.0
 margin_right = 438.0
 margin_bottom = 148.0
 
+[connection signal="gui_input" from="HUD/MarginContainer/Editor/Locked" to="HUD/MarginContainer/Editor" method="_on_Locked_gui_input"]
+[connection signal="gui_input" from="HUD/MarginContainer/Editor/Params/Mass" to="HUD/MarginContainer/Editor" method="_on_slider_input"]
 [connection signal="value_changed" from="HUD/MarginContainer/Editor/Params/Mass" to="HUD/MarginContainer/Editor" method="update_mass"]
+[connection signal="gui_input" from="HUD/MarginContainer/Editor/Params/Radius" to="HUD/MarginContainer/Editor" method="_on_slider_input"]
 [connection signal="value_changed" from="HUD/MarginContainer/Editor/Params/Radius" to="HUD/MarginContainer/Editor" method="update_radius"]
