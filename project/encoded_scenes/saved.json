@@ -1,0 +1,11309 @@
+{
+	"config": {
+		"model_dir": "geometry/solarSystem/glTF2/",
+		"params": [
+			"speed",
+			"radius",
+			"eccentricity",
+			"centre",
+			"normal",
+			"tangent"
+		]
+	},
+	"lights": [
+		{
+			"name": "OmniLight",
+			"child_of": "sun",
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"radius": 4096,
+			"attenuation": 3
+		}
+	],
+	"geometries": [
+		{
+			"name": "sun",
+			"type": "mesh",
+			"path": "sun.glb"
+		},
+		{
+			"name": "mercury",
+			"type": "mesh",
+			"path": "mercury.glb"
+		},
+		{
+			"name": "venus",
+			"type": "mesh",
+			"path": "venus.glb"
+		},
+		{
+			"name": "earth",
+			"type": "mesh",
+			"path": "earth.glb"
+		},
+		{
+			"name": "mars",
+			"type": "mesh",
+			"path": "mars.glb"
+		},
+		{
+			"name": "jupiter",
+			"type": "mesh",
+			"path": "jupiter.glb"
+		},
+		{
+			"name": "saturn",
+			"type": "mesh",
+			"path": "saturn.glb"
+		},
+		{
+			"name": "uranus",
+			"type": "mesh",
+			"path": "uranus.glb"
+		},
+		{
+			"name": "neptune",
+			"type": "mesh",
+			"path": "neptune.glb"
+		}
+	],
+	"planet_data": [
+		{
+			"name": "asteroid5",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.828573,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 104.201118,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid4",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.459105,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 58.840538,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid9",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.985633,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 126.938164,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid1",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 2.310128,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 99.424721,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid8",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.179887,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 98.486382,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid14",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.874485,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 148.346558,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid12",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.649187,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 118.732887,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid13",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.855355,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 101.556381,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid6",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.178463,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 77.002762,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid10",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.56547,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 139.293335,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid2",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.987794,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 145.247406,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid11",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 2.297167,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 62.908451,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid0",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 2.650113,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 61.248734,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid3",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.478204,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 140.83049,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		},
+		{
+			"name": "asteroid7",
+			"radius": 0.0009,
+			"resolution": 20,
+			"planet_color": {
+				"width": 128,
+				"offsets": [
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1
+				],
+				"colors": [
+					0.1,
+					0.1,
+					0.1,
+					1,
+					0.3,
+					0.3,
+					0.3,
+					1,
+					0.5,
+					0.5,
+					0.5,
+					1,
+					0.7,
+					0.7,
+					0.7,
+					1,
+					0.9,
+					0.9,
+					0.9,
+					1
+				]
+			},
+			"planet_noise": [
+				{
+					"amplitude": 1.098784,
+					"min_height": 0,
+					"use_first_layer_as_mask": false,
+					"octaves": 4,
+					"period": 139.625458,
+					"persistence": 0.5,
+					"lacunarity": 2
+				}
+			]
+		}
+	],
+	"objects": [
+		{
+			"name": "sun",
+			"with_script": true,
+			"geometry": "sun",
+			"scale": [
+				3,
+				3,
+				3
+			],
+			"speed": 1,
+			"radius": 0,
+			"eccentricity": 0,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "mercury",
+			"with_script": true,
+			"geometry": "mercury",
+			"scale": [
+				0.009,
+				0.009,
+				0.009
+			],
+			"position": [
+				3.077459,
+				-0.840964,
+				0
+			],
+			"speed": 2,
+			"radius": 3,
+			"eccentricity": 0.206,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "venus",
+			"with_script": true,
+			"geometry": "venus",
+			"scale": [
+				0.026,
+				0.026,
+				0.026
+			],
+			"position": [
+				-2.81187,
+				2.849735,
+				0
+			],
+			"speed": 0.783,
+			"radius": 4,
+			"eccentricity": 0.007,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "earth",
+			"with_script": true,
+			"geometry": "earth",
+			"scale": [
+				0.027,
+				0.027,
+				0.027
+			],
+			"position": [
+				0.625615,
+				4.960973,
+				0
+			],
+			"speed": 0.482,
+			"radius": 5,
+			"eccentricity": 0.017,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "mars",
+			"with_script": true,
+			"geometry": "mars",
+			"scale": [
+				0.015,
+				0.015,
+				0.015
+			],
+			"position": [
+				4.383209,
+				4.167673,
+				0
+			],
+			"speed": 0.256,
+			"radius": 6,
+			"eccentricity": 0.093,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid1",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.618629,
+				6.871558,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid2",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.648919,
+				-2.937905,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid3",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.477046,
+				-1.834752,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid4",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.32606,
+				4.469839,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid5",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.208208,
+				-1.113018,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid6",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.938262,
+				-6.862954,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid7",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.722603,
+				-6.479418,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid8",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.021352,
+				2.306173,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid9",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.93598,
+				-3.616836,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid10",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.741571,
+				0.245668,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid11",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.893968,
+				-6.743287,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid12",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.233209,
+				-6.693172,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid13",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.307905,
+				-6.095309,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid14",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.47202,
+				-6.287584,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid15",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.202154,
+				0.447932,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid16",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.090412,
+				2.164943,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid17",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.440052,
+				-6.607121,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid18",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.973999,
+				-3.674578,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid19",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.949082,
+				0.830473,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid20",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.211845,
+				-1.38473,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid21",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.334963,
+				6.51463,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid22",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.306423,
+				6.547071,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid23",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.383238,
+				-7.386606,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid24",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.261888,
+				-3.08198,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid25",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.845827,
+				5.676911,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid26",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.231425,
+				4.390574,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid27",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.249122,
+				1.884554,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid28",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.516522,
+				7.375414,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid29",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.872385,
+				-6.362187,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid30",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.544078,
+				2.40464,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid31",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.955258,
+				7.510271,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid32",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.200921,
+				-0.873409,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid33",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.439267,
+				7.203779,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid34",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.147932,
+				6.569366,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid35",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.997949,
+				-5.721908,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid36",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.203239,
+				3.97677,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid37",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.910031,
+				-8.904238,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid38",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.485397,
+				3.831969,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid39",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.453851,
+				-4.784364,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid40",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.626898,
+				2.139051,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid41",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.550717,
+				7.800824,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid42",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.664758,
+				7.776209,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid43",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.181462,
+				7.751595,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid44",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.836727,
+				1.009874,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid45",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.503213,
+				1.292671,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid46",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.888151,
+				-7.759171,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid47",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.951863,
+				-3.927019,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid48",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.102248,
+				-5.45403,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid49",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.296007,
+				3.044503,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid50",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.698448,
+				1.147955,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid51",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.092343,
+				7.052372,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid52",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-2.502446,
+				-5.284877,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid53",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.096203,
+				3.450122,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid54",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.266095,
+				-6.20359,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid55",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.692797,
+				-0.580729,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid56",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.679764,
+				-4.699308,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid57",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.829736,
+				-0.06416,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid58",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.919195,
+				5.452981,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid59",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.397363,
+				1.514516,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid60",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.009136,
+				3.684003,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid61",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.592284,
+				-6.107766,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid62",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.312266,
+				5.489113,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid63",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.185531,
+				7.739134,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid64",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.330191,
+				-0.383457,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid65",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.670762,
+				0.983632,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid66",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.331497,
+				-0.106435,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid67",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.038106,
+				0.397948,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid68",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.021618,
+				4.509604,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid69",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.879419,
+				-7.346583,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid70",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.266794,
+				8.351787,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid71",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.296246,
+				-7.249977,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid72",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.064407,
+				-7.839241,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid73",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.338553,
+				3.72415,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid74",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.241101,
+				5.806759,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid75",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.935065,
+				4.241027,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid76",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.988082,
+				-5.212803,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid77",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.368062,
+				-4.268203,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid78",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.810537,
+				-1.681148,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid79",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.989084,
+				4.780327,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid80",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.68183,
+				1.610709,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid81",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.190532,
+				7.069527,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid82",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.368296,
+				-7.742713,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid83",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.733937,
+				2.984299,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid84",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.965071,
+				-3.827937,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid85",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.201515,
+				-1.308173,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid86",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.625742,
+				-7.720189,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid87",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.89239,
+				1.975032,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid88",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.217533,
+				-6.038131,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid89",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.838233,
+				-2.753641,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid90",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.778898,
+				1.620405,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid91",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.555255,
+				-1.760565,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid92",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.965491,
+				-1.713968,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid93",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.246291,
+				-8.381008,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid94",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.792069,
+				-6.686949,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid95",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.764443,
+				3.71663,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid96",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.546304,
+				-6.575767,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid97",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.943676,
+				-1.497358,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid98",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.638899,
+				2.306005,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid99",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.636188,
+				1.173366,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid100",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.142828,
+				0.095336,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid101",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.019859,
+				-5.859641,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid102",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.514894,
+				-5.429473,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid103",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.759243,
+				-6.849382,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid104",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.401101,
+				2.828473,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid105",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.315867,
+				-5.405114,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid106",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.071065,
+				2.186816,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid107",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.614766,
+				-5.851044,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid108",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.936124,
+				-6.651535,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid109",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-2.005967,
+				-1.626885,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid110",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.850812,
+				-6.401442,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid111",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.399636,
+				-5.952655,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid112",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.174862,
+				5.307303,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid113",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.498416,
+				4.661236,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid114",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.675927,
+				-6.201627,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid115",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.678933,
+				-2.95141,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid116",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.012863,
+				7.922264,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid117",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.112172,
+				5.735557,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid118",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.025797,
+				-0.232543,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid119",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.863443,
+				-0.731209,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid120",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.966766,
+				0.881464,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid121",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.093976,
+				2.236739,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid122",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.830516,
+				8.829423,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid123",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.608731,
+				7.192391,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid124",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.274092,
+				-6.827516,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid125",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.021078,
+				7.390609,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid126",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.146856,
+				-3.334096,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid127",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.996776,
+				-5.723226,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid128",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.705011,
+				-7.761519,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid129",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.657265,
+				-2.256852,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid130",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.058981,
+				-3.522301,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid131",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.87645,
+				-4.192679,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid132",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.535512,
+				-1.003704,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid133",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.191182,
+				6.028896,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid134",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.514825,
+				-1.512533,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid135",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.953998,
+				-7.942262,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid136",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.250776,
+				5.990561,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid137",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.122019,
+				-7.836171,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid138",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.396996,
+				-5.573513,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid139",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.105527,
+				-5.52419,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid140",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.046661,
+				-4.93711,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid141",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.602798,
+				-0.051004,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid142",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.73262,
+				-7.612458,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid143",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.796558,
+				-7.518721,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid144",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.674518,
+				1.212438,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid145",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.650712,
+				1.33285,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid146",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.389642,
+				-4.601991,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid147",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.29628,
+				-6.866785,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid148",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.980196,
+				-4.289478,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid149",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.998086,
+				-7.218464,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid150",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.815336,
+				5.610948,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid151",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.050441,
+				7.301949,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid152",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.526217,
+				-0.187219,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid153",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.220179,
+				-8.094439,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid154",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.440264,
+				-2.310942,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid155",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.091005,
+				-4.874814,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid156",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.024427,
+				7.098927,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid157",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.3024,
+				-6.324526,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid158",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.614976,
+				1.048575,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid159",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.634493,
+				0.274376,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid160",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.034067,
+				3.850428,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid161",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.026001,
+				-0.94293,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid162",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.952384,
+				-6.048859,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid163",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.193856,
+				3.20489,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid164",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.778503,
+				-4.006857,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid165",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.085599,
+				5.736552,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid166",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.85949,
+				2.337551,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid167",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.676094,
+				1.78054,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid168",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.678164,
+				7.874449,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid169",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.004325,
+				0.560659,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid170",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.390373,
+				4.813027,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid171",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.12952,
+				7.897943,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid172",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.632903,
+				-5.515858,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid173",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.883216,
+				-6.201866,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid174",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.884695,
+				-6.35455,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid175",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.962807,
+				-0.363485,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid176",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.270999,
+				7.535953,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid177",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.230095,
+				-7.563666,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid178",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.84695,
+				-6.256723,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid179",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.309173,
+				1.077082,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid180",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.62943,
+				-6.191388,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid181",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.66074,
+				-5.290322,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid182",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.263077,
+				6.533383,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid183",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.720375,
+				-1.795328,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid184",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.724543,
+				1.504691,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid185",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.317038,
+				-7.179054,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid186",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.740725,
+				5.003131,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid187",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.07297,
+				-5.942014,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid188",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.631207,
+				-4.455342,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid189",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.913079,
+				2.869519,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid190",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.806806,
+				3.32919,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid191",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.827414,
+				6.016143,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid192",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.123328,
+				-4.650808,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid193",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.015938,
+				-6.884908,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid194",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.1674,
+				5.737655,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid195",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.405663,
+				0.482939,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid196",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.040681,
+				7.860229,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid197",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.514585,
+				-2.370328,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid198",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.586318,
+				-4.004005,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid199",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.636826,
+				-5.501157,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid200",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.77906,
+				4.05822,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid201",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.283135,
+				7.74969,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid202",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.13103,
+				-1.020313,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid203",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.00893,
+				-3.240968,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid204",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.359574,
+				-8.070438,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid205",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.547071,
+				-4.348768,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid206",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.408187,
+				2.201147,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid207",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.595451,
+				-3.303756,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid208",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.514817,
+				-2.282903,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid209",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.728173,
+				5.15696,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid210",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.368237,
+				2.583182,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid211",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.209418,
+				-8.23467,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid212",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.834823,
+				6.44798,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid213",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-1.348301,
+				-0.851604,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid214",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.430522,
+				-1.567425,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid215",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.400481,
+				4.196935,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid216",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.551531,
+				7.430656,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid217",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.0095,
+				0.674949,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid218",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.79306,
+				2.744973,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid219",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.063869,
+				8.061306,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid220",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.103552,
+				-4.51972,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid221",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.112846,
+				-3.081985,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid222",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.454821,
+				8.18747,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid223",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.598998,
+				-4.570499,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid224",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.341569,
+				-7.484523,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid225",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.304174,
+				-2.254927,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid226",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.388239,
+				7.33169,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid227",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.541021,
+				-2.847825,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid228",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.210343,
+				6.761597,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid229",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.85303,
+				8.416161,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid230",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.940465,
+				7.993937,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid231",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.987854,
+				7.944285,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid232",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.278046,
+				-6.649154,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid233",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.321851,
+				-8.54423,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid234",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.64582,
+				-3.711015,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid235",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.442615,
+				-2.63825,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid236",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.111629,
+				5.40635,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid237",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.518858,
+				6.790753,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid238",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.976897,
+				7.217073,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid239",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.094307,
+				-8.153419,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid240",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				1.135089,
+				7.512091,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid241",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.254355,
+				8.34353,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid242",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.938539,
+				3.211818,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid243",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.304144,
+				4.541773,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid244",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.550125,
+				-7.302132,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid245",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.804695,
+				-5.917101,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid246",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.782621,
+				-5.906369,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid247",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-3.71724,
+				-7.321392,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid248",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.378775,
+				7.022892,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid249",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.301227,
+				-7.882852,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid250",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.175327,
+				-5.061304,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid251",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.693316,
+				-4.730261,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid252",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.98489,
+				6.607469,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid253",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.3557,
+				-7.099488,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid254",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.296731,
+				-4.961028,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid255",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.734924,
+				5.271419,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid256",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.791187,
+				5.468603,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid257",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.853682,
+				-4.124149,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid258",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.536038,
+				-1.217844,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid259",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.200873,
+				3.229278,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid260",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.799757,
+				5.472419,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid261",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.869411,
+				-3.20678,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid262",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.902359,
+				-2.92461,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid263",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.463806,
+				1.091005,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid264",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.066236,
+				-5.100963,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid265",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.012417,
+				-0.288382,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid266",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.977775,
+				3.563707,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid267",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.171641,
+				-4.288237,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid268",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.199328,
+				-6.742268,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid269",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.808917,
+				-2.784804,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid270",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.818509,
+				-3.385096,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid271",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.108477,
+				-7.382723,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid272",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				5.648994,
+				1.413789,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid273",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.947187,
+				-4.31334,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid274",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.588879,
+				-8.117245,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid275",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-2.65829,
+				0.461274,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid276",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.073983,
+				4.948783,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid277",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.77126,
+				8.023201,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid278",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				2.387991,
+				2.800315,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid279",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.567103,
+				0.424617,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid280",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.47053,
+				-0.167208,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid281",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.00255,
+				-8.455315,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid282",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.864522,
+				-0.367109,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid283",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-8.349514,
+				-7.716576,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid284",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.505387,
+				4.592675,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid285",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-5.61813,
+				4.060611,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid286",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.650444,
+				6.197057,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid287",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.27017,
+				-6.071677,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid288",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				3.839366,
+				-6.043764,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid289",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				8.366523,
+				6.778045,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid290",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.412705,
+				6.666036,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid291",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.91559,
+				4.905292,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid292",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				7.349246,
+				2.646132,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid293",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.440429,
+				6.136237,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid294",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				4.241292,
+				-2.782281,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid295",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.299464,
+				-4.329214,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid296",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.616955,
+				3.823456,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid297",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-7.223244,
+				3.774543,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid298",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-4.843015,
+				-4.274885,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid299",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				6.488313,
+				6.143863,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "asteroid300",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "asteroidBelt",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-6.721545,
+				3.692395,
+				0
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "jupiter",
+			"with_script": true,
+			"geometry": "jupiter",
+			"scale": [
+				0.3,
+				0.3,
+				0.3
+			],
+			"position": [
+				8.980657,
+				1.104037,
+				0
+			],
+			"speed": 0.041,
+			"radius": 9,
+			"eccentricity": 0.049,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "saturn",
+			"with_script": true,
+			"geometry": "saturn",
+			"scale": [
+				0.25,
+				0.25,
+				0.25
+			],
+			"position": [
+				11.041272,
+				0.527715,
+				0
+			],
+			"speed": 0.016,
+			"radius": 11,
+			"eccentricity": 0.054,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "ringsOfSaturn",
+			"child_of": "saturn",
+			"scale": [
+				1.000001,
+				1.000001,
+				1
+			],
+			"speed": 1
+		},
+		{
+			"name": "ring1",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.049722,
+				-0.087709,
+				-0.007507
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring2",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.243211,
+				-0.431904,
+				-0.013426
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring3",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.351538,
+				-0.378086,
+				0.01862
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring4",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.354172,
+				-0.370185,
+				-0.015264
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring5",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.226474,
+				0.3312,
+				0.018139
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring6",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.267871,
+				-0.29801,
+				0.000306
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring7",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.086691,
+				-0.161958,
+				0.018448
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring8",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.269133,
+				-0.269208,
+				-0.013433
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring9",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.225701,
+				0.104113,
+				-0.00365
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring10",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.291674,
+				0.02875,
+				0.013141
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring11",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.308634,
+				-0.456386,
+				-0.010247
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring12",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.055079,
+				0.206921,
+				-0.004704
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring13",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.159002,
+				0.114858,
+				-0.004144
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring14",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.377273,
+				-0.198784,
+				-0.010452
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring15",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.379374,
+				0.284388,
+				-0.005882
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring16",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.297307,
+				0.139681,
+				0.011594
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring17",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.13504,
+				-0.168669,
+				-0.011895
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring18",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.170704,
+				0.218252,
+				-0.004266
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring19",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.290999,
+				0.069509,
+				0.002293
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring20",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.302696,
+				-0.374287,
+				0.007135
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring21",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.274571,
+				0.098577,
+				-0.00528
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring22",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.149837,
+				0.248083,
+				0.011802
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring23",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.416622,
+				-0.414598,
+				0.002885
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring24",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.259208,
+				-0.257822,
+				-0.002196
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring25",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.39546,
+				0.077707,
+				-0.013771
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring26",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.444897,
+				-0.451316,
+				-0.002464
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring27",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.091615,
+				-0.264882,
+				0.007689
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring28",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.217614,
+				0.16632,
+				-0.008784
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring29",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.04057,
+				0.314027,
+				0.019504
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring30",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.155362,
+				-0.164354,
+				0.014918
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring31",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.279604,
+				0.303203,
+				0.014711
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring32",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.093469,
+				0.212299,
+				0.018899
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring33",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.389639,
+				-0.490018,
+				0.018006
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring34",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.307346,
+				0.125778,
+				0.007837
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring35",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.252487,
+				0.059308,
+				0.001219
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring36",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.035242,
+				0.27558,
+				0.004293
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring37",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.417192,
+				0.293451,
+				-0.001342
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring38",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.403206,
+				0.424759,
+				0.004413
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring39",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.175306,
+				-0.4294,
+				0.012615
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring40",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.165277,
+				0.398895,
+				-0.012025
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring41",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.287434,
+				-0.269045,
+				0.010989
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring42",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.291343,
+				-0.343209,
+				-0.004612
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring43",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.254661,
+				0.248857,
+				0.003514
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring44",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.089729,
+				-0.383794,
+				0.008581
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring45",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.04505,
+				-0.16119,
+				0.00006
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring46",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.298111,
+				0.242585,
+				0.018276
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring47",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.470916,
+				0.109198,
+				0.003153
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring48",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.250479,
+				-0.237019,
+				0.01876
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring49",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.009637,
+				0.401973,
+				-0.014831
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring50",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.421079,
+				0.049383,
+				0.013502
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring51",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.009566,
+				0.103189,
+				-0.013177
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring52",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.418695,
+				-0.042615,
+				0.019895
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring53",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.051507,
+				-0.277399,
+				0.000789
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring54",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.426543,
+				-0.381786,
+				0.018154
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring55",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.345364,
+				-0.139468,
+				-0.010042
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring56",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.057105,
+				-0.420575,
+				0.006263
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring57",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.38445,
+				-0.056975,
+				-0.016466
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring58",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.097363,
+				0.012069,
+				0.003349
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring59",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.192085,
+				-0.187294,
+				-0.003816
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring60",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.170801,
+				0.254459,
+				-0.019775
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring61",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.461523,
+				-0.089491,
+				-0.00855
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring62",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.072856,
+				-0.082696,
+				0.004659
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring63",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.359571,
+				0.35352,
+				-0.016757
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring64",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.15902,
+				0.272268,
+				0.011735
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring65",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.200955,
+				0.353849,
+				0.016157
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring66",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.34433,
+				0.312286,
+				0.016374
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring67",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.02447,
+				-0.363232,
+				0.005494
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring68",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.021566,
+				0.03083,
+				-0.005489
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring69",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.471755,
+				-0.477739,
+				-0.005023
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring70",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.205395,
+				0.069644,
+				0.015972
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring71",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.375687,
+				-0.277402,
+				-0.018372
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring72",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.482817,
+				0.142831,
+				-0.00216
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring73",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.18189,
+				-0.165025,
+				0.008186
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring74",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.262432,
+				-0.224699,
+				0.018619
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring75",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.072938,
+				-0.330071,
+				-0.001432
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring76",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.385713,
+				0.41954,
+				-0.01483
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring77",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.303686,
+				0.053696,
+				0.010314
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring78",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.335841,
+				-0.055158,
+				-0.000316
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring79",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.463146,
+				0.231821,
+				0.013692
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring80",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.24713,
+				0.022708,
+				0.007191
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring81",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.449581,
+				0.121061,
+				0.018118
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring82",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.297783,
+				-0.300421,
+				-0.003524
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring83",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.094728,
+				-0.006861,
+				0.017429
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring84",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.048827,
+				-0.346936,
+				0.004089
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring85",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.315723,
+				-0.187848,
+				0.003365
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring86",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.320635,
+				0.102738,
+				0.010665
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring87",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.245295,
+				0.261939,
+				0.004953
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring88",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.389014,
+				-0.338044,
+				0.012609
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring89",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.131461,
+				0.363976,
+				0.002594
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring90",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.455912,
+				0.286969,
+				-0.001167
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring91",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.365364,
+				0.294645,
+				-0.013125
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring92",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.457187,
+				0.388895,
+				-0.016257
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring93",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.486908,
+				0.159988,
+				0.008185
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring94",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.231858,
+				0.439372,
+				-0.000645
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring95",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.349447,
+				0.124549,
+				-0.014157
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring96",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.268376,
+				-0.369505,
+				0.019496
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring97",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.172438,
+				0.149804,
+				0.011607
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring98",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.306424,
+				-0.166206,
+				-0.013067
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring99",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.144002,
+				0.264134,
+				-0.009687
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring100",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.017637,
+				-0.02028,
+				0.008726
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring101",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.301781,
+				-0.375854,
+				0.018007
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring102",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.205708,
+				0.355743,
+				0.006008
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring103",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.243023,
+				-0.320604,
+				-0.006715
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring104",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.182557,
+				-0.202237,
+				0.006736
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring105",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.207986,
+				-0.417775,
+				0.003684
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring106",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.24465,
+				-0.299979,
+				-0.005387
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring107",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.349298,
+				-0.095831,
+				0.016224
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring108",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.083609,
+				-0.257483,
+				0.006054
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring109",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.381732,
+				0.266282,
+				0.001062
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring110",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.330012,
+				-0.289769,
+				-0.009933
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring111",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.438244,
+				-0.286949,
+				-0.011304
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring112",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.160848,
+				0.053073,
+				-0.005307
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring113",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.469973,
+				0.317753,
+				-0.014594
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring114",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.453926,
+				0.473706,
+				0.001824
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring115",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.041834,
+				0.367162,
+				0.008935
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring116",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.159952,
+				-0.298921,
+				0.002952
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring117",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.033217,
+				0.105745,
+				0.018154
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring118",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.231111,
+				0.34576,
+				0.007192
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring119",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.224476,
+				-0.430552,
+				0.014083
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring120",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.414209,
+				-0.42794,
+				0.000482
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring121",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.465955,
+				-0.360234,
+				0.010088
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring122",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.417323,
+				0.012759,
+				-0.007003
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring123",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.278222,
+				-0.276063,
+				0.006293
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring124",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.138995,
+				-0.414516,
+				-0.002311
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring125",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.246636,
+				0.218776,
+				0.015528
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring126",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.216794,
+				-0.331788,
+				0.018872
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring127",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.335488,
+				-0.386269,
+				-0.013889
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring128",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.377021,
+				0.400396,
+				-0.016728
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring129",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.490958,
+				0.107065,
+				-0.014242
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring130",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.182481,
+				-0.122852,
+				0.017419
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring131",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.364309,
+				-0.008268,
+				0.006541
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring132",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.206393,
+				0.017263,
+				0.000392
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring133",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.43429,
+				0.421919,
+				-0.017894
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring134",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.157618,
+				-0.186422,
+				-0.013107
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring135",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.38318,
+				0.142346,
+				-0.017766
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring136",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.180999,
+				-0.459126,
+				0.014982
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring137",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.052978,
+				0.086192,
+				0.012082
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring138",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.083409,
+				0.400016,
+				-0.010374
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring139",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.097995,
+				0.222948,
+				0.015228
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring140",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.027056,
+				-0.266132,
+				-0.000081
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring141",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.209972,
+				-0.218011,
+				0.006131
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring142",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.265183,
+				0.218184,
+				0.012251
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring143",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.347254,
+				-0.067337,
+				0.001685
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring144",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.251935,
+				-0.264688,
+				0.003689
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring145",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.491011,
+				0.202215,
+				-0.017957
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring146",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.204493,
+				0.120919,
+				-0.001469
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring147",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.260753,
+				0.126539,
+				0.008705
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring148",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.232626,
+				-0.168483,
+				0.005471
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring149",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.158334,
+				-0.244441,
+				-0.017711
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring150",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.102,
+				-0.280119,
+				0.004362
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring151",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.252253,
+				0.258548,
+				-0.011212
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring152",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.130447,
+				-0.399228,
+				-0.003498
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring153",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.38549,
+				0.307793,
+				0.005895
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring154",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.325285,
+				-0.19775,
+				-0.007418
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring155",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.168407,
+				0.300606,
+				-0.011711
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring156",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.265878,
+				0.203925,
+				0.014903
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring157",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.338797,
+				-0.283287,
+				-0.007855
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring158",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.309963,
+				-0.283926,
+				0.006373
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring159",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.298846,
+				-0.314735,
+				0.017403
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring160",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.383484,
+				-0.2193,
+				0.012807
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring161",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.346104,
+				-0.173368,
+				-0.00364
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring162",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.359508,
+				-0.093428,
+				0.000362
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring163",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.287973,
+				0.111764,
+				0.014645
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring164",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.4189,
+				-0.381071,
+				-0.01743
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring165",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.142312,
+				0.300217,
+				0.008117
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring166",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.272491,
+				0.105198,
+				-0.015512
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring167",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.193916,
+				-0.060327,
+				-0.00275
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring168",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.462984,
+				0.402299,
+				0.000844
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring169",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.296951,
+				0.112946,
+				0.011959
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring170",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.353403,
+				-0.002232,
+				0.003937
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring171",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.139094,
+				0.344379,
+				-0.009832
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring172",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.108259,
+				0.244518,
+				0.012805
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring173",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.212622,
+				-0.132726,
+				-0.01133
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring174",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.334102,
+				0.225164,
+				-0.005922
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring175",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.449422,
+				-0.122037,
+				-0.006793
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring176",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.042149,
+				0.325355,
+				-0.001685
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring177",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.154833,
+				0.038431,
+				-0.015607
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring178",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.320456,
+				0.065904,
+				-0.009865
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring179",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.193336,
+				0.277947,
+				-0.009828
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring180",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.354986,
+				0.366166,
+				-0.011148
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring181",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.395554,
+				0.149497,
+				-0.016284
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring182",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.348736,
+				-0.194733,
+				0.008296
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring183",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.286396,
+				0.189369,
+				-0.007998
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring184",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.032694,
+				-0.194918,
+				-0.011936
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring185",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.270845,
+				-0.172909,
+				-0.011423
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring186",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.35782,
+				-0.248922,
+				-0.00155
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring187",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.365321,
+				-0.189892,
+				0.009161
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring188",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.027485,
+				0.322942,
+				0.006932
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring189",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.359984,
+				0.223841,
+				-0.009175
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring190",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.048611,
+				0.277773,
+				-0.001124
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring191",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.359221,
+				-0.394245,
+				-0.014675
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring192",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.254678,
+				-0.399534,
+				0.005617
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring193",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.005277,
+				-0.380722,
+				0.019459
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring194",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.208641,
+				0.14387,
+				0.01957
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring195",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.339291,
+				0.225163,
+				-0.000381
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring196",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.302341,
+				0.333792,
+				0.008887
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring197",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.138009,
+				-0.443431,
+				-0.001138
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring198",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.228167,
+				-0.385494,
+				-0.017842
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring199",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.305588,
+				-0.22599,
+				-0.005968
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring200",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.17791,
+				0.263024,
+				0.002066
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring201",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.384293,
+				0.338744,
+				-0.002544
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring202",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.279769,
+				0.09471,
+				-0.007674
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring203",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.295234,
+				-0.161303,
+				-0.0107
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring204",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.284308,
+				0.013648,
+				0.001796
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring205",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.212367,
+				-0.048712,
+				0.013216
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring206",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.191447,
+				0.412513,
+				0.014975
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring207",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.34305,
+				-0.140189,
+				-0.00949
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring208",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.325408,
+				0.44565,
+				-0.007334
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring209",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.177485,
+				-0.060472,
+				0.017695
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring210",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.208825,
+				-0.146704,
+				0.011549
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring211",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.018663,
+				-0.390914,
+				-0.00146
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring212",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.012295,
+				0.184738,
+				-0.015891
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring213",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.123203,
+				0.068668,
+				0.014939
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring214",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.112758,
+				0.419236,
+				-0.006308
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring215",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.334108,
+				-0.369507,
+				-0.010757
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring216",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.011068,
+				-0.316124,
+				0.008236
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring217",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.297467,
+				0.019234,
+				-0.017576
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring218",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.289548,
+				-0.11373,
+				-0.014826
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring219",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.038342,
+				0.436746,
+				0.005992
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring220",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.299132,
+				-0.1147,
+				0.019676
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring221",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.253816,
+				0.255958,
+				0.018484
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring222",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.028455,
+				0.183637,
+				0.006924
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring223",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.376889,
+				-0.409468,
+				-0.006303
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring224",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.191186,
+				-0.300956,
+				0.011221
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring225",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.159621,
+				0.250769,
+				0.014676
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring226",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.173504,
+				-0.317457,
+				0.005549
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring227",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.341904,
+				-0.107982,
+				-0.015776
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring228",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.200495,
+				-0.396543,
+				0.005135
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring229",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.006856,
+				-0.47409,
+				-0.009294
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring230",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.015644,
+				-0.193253,
+				0.01119
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring231",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.352452,
+				0.184176,
+				0.018163
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring232",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.271885,
+				0.311675,
+				-0.006413
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring233",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.324768,
+				-0.223687,
+				0.019821
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring234",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.264017,
+				-0.084465,
+				-0.016978
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring235",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.220567,
+				-0.447305,
+				-0.008292
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring236",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.374919,
+				-0.115943,
+				-0.010668
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring237",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.280341,
+				0.187098,
+				-0.010624
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring238",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.081406,
+				-0.315445,
+				0.010158
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring239",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.395278,
+				-0.207954,
+				0.012464
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring240",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.187302,
+				-0.429885,
+				-0.017411
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring241",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.001603,
+				0.34473,
+				0.005214
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring242",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.012506,
+				-0.041639,
+				0.009614
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring243",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.020543,
+				0.36887,
+				0.00952
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring244",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.229998,
+				-0.210946,
+				0.014676
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring245",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.036918,
+				-0.363968,
+				-0.009362
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring246",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.071742,
+				-0.252152,
+				0.000375
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring247",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.028456,
+				0.233092,
+				0.000501
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring248",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.100683,
+				0.231578,
+				-0.003106
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring249",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.196134,
+				0.228683,
+				0.013348
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring250",
+			"geometry": "planet",
+			"planet_data": "asteroid0",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.195274,
+				0.337577,
+				-0.01244
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring251",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.26849,
+				-0.351937,
+				-0.014429
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring252",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.260032,
+				0.260269,
+				0.013355
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring253",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.338381,
+				-0.233822,
+				-0.00498
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring254",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.020885,
+				0.270439,
+				0.013717
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring255",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.176476,
+				-0.191445,
+				-0.015083
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring256",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.330058,
+				-0.333325,
+				0.019629
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring257",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.139237,
+				-0.422423,
+				0.009332
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring258",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.230834,
+				0.064064,
+				-0.018635
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring259",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.017767,
+				-0.194573,
+				-0.019815
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring260",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.009203,
+				-0.290303,
+				-0.011878
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring261",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.069687,
+				0.344579,
+				-0.018209
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring262",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.395573,
+				0.167594,
+				-0.007666
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring263",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.171111,
+				-0.227185,
+				0.016809
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring264",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.108684,
+				0.014576,
+				-0.012525
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring265",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.026596,
+				0.380273,
+				-0.008451
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring266",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.192677,
+				0.334061,
+				-0.016321
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring267",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.353585,
+				-0.359167,
+				0.015177
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring268",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.40007,
+				0.407367,
+				-0.001591
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring269",
+			"geometry": "planet",
+			"planet_data": "asteroid3",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.103193,
+				0.361698,
+				-0.001166
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring270",
+			"geometry": "planet",
+			"planet_data": "asteroid7",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.18451,
+				0.131893,
+				0.004292
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring271",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.108101,
+				-0.176805,
+				0.019364
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring272",
+			"geometry": "planet",
+			"planet_data": "asteroid1",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.038349,
+				-0.165437,
+				-0.014915
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring273",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.280565,
+				-0.021791,
+				-0.017069
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring274",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.106296,
+				-0.280686,
+				-0.007847
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring275",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.276533,
+				0.154101,
+				0.014083
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring276",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.212176,
+				-0.320289,
+				0.011235
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring277",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.385678,
+				-0.106293,
+				0.017971
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring278",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.219982,
+				-0.015879,
+				-0.013913
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring279",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.094723,
+				0.305023,
+				0.005044
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring280",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.195228,
+				0.274706,
+				-0.018405
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring281",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.353951,
+				0.312929,
+				-0.016111
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring282",
+			"geometry": "planet",
+			"planet_data": "asteroid2",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.302188,
+				-0.086095,
+				0.015791
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring283",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.266908,
+				-0.019377,
+				0.015308
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring284",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.141656,
+				-0.003325,
+				-0.019437
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring285",
+			"geometry": "planet",
+			"planet_data": "asteroid5",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.436794,
+				0.041135,
+				-0.01419
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring286",
+			"geometry": "planet",
+			"planet_data": "asteroid9",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.239531,
+				0.351241,
+				0.01499
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring287",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.259992,
+				0.158463,
+				0.004424
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring288",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.25846,
+				0.044979,
+				0.013181
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring289",
+			"geometry": "planet",
+			"planet_data": "asteroid13",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.41932,
+				0.42163,
+				0.019405
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring290",
+			"geometry": "planet",
+			"planet_data": "asteroid12",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.111404,
+				0.440648,
+				0.01195
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring291",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.309808,
+				-0.377058,
+				0.010126
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring292",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.072125,
+				-0.09428,
+				-0.003125
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring293",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.192681,
+				-0.257947,
+				-0.012877
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring294",
+			"geometry": "planet",
+			"planet_data": "asteroid6",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.142763,
+				-0.398747,
+				-0.008372
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring295",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.241727,
+				-0.247713,
+				0.015117
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring296",
+			"geometry": "planet",
+			"planet_data": "asteroid8",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.026933,
+				0.179479,
+				-0.010975
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring297",
+			"geometry": "planet",
+			"planet_data": "asteroid14",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.356715,
+				0.401523,
+				-0.007874
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring298",
+			"geometry": "planet",
+			"planet_data": "asteroid11",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.235836,
+				-0.337043,
+				-0.017268
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring299",
+			"geometry": "planet",
+			"planet_data": "asteroid10",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				-0.224855,
+				0.384344,
+				0.000208
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "ring300",
+			"geometry": "planet",
+			"planet_data": "asteroid4",
+			"child_of": "ringsOfSaturn",
+			"scale": [
+				1.000002,
+				1.000002,
+				1
+			],
+			"position": [
+				0.225746,
+				-0.216023,
+				-0.001543
+			],
+			"speed": 0.01
+		},
+		{
+			"name": "uranus",
+			"with_script": true,
+			"geometry": "uranus",
+			"scale": [
+				0.1,
+				0.1,
+				0.1
+			],
+			"position": [
+				13.044887,
+				0.23395,
+				0
+			],
+			"speed": 0.006,
+			"radius": 13,
+			"eccentricity": 0.047,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		},
+		{
+			"name": "neptune",
+			"with_script": true,
+			"geometry": "neptune",
+			"scale": [
+				0.1,
+				0.1,
+				0.1
+			],
+			"position": [
+				15.010392,
+				0.134977,
+				0
+			],
+			"speed": 0.003,
+			"radius": 15,
+			"eccentricity": 0.011,
+			"centre": [
+				1,
+				1,
+				1
+			],
+			"normal": [
+				1,
+				1,
+				1
+			],
+			"tangent": [
+				1,
+				1,
+				1
+			]
+		}
+	]
+}

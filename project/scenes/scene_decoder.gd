@@ -25,11 +25,12 @@ func create(scene_name: String) -> void:
 
 	if data.has("objects"):
 		var textures := get_textures(data)
-		var geometries := get_geometries(data)
-		var materials := get_materials(data, textures)
+		var pd_count := get_pd_count(data)
 		var planet_data := get_planet_data(data)
+		var geometries := get_geometries(data, planet_data)
+		var materials := get_materials(data, textures)
 		var params: Array = data.config.params if "config" in data && "params" in data.config else []
-		
+
 		#create MultiMesh if stars are loaded
 		if "config" in data && "starFile" in data.config && data.config.starFile:
 			var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
@@ -40,25 +41,25 @@ func create(scene_name: String) -> void:
 				index+=1
 			multiStar.multimesh.visible_instance_count = -1
 			return
-		
+
 		for object in data.objects:
-			create_object(object, geometries, materials, planet_data, params)
+			create_object(object, geometries, materials, pd_count, params)
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
-			
-			
+
+
 func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
 	#Set the position of the star
 	var position = Transform()
 	position = position.translated(Vector3(object.position[0], object.position[1], object.position[2]))
 	multiStar.multimesh.set_instance_transform(index, position)
-	
+
 	#Set the material of the star
 	#+++Currently not working+++
 	multiStar.multimesh.set_instance_custom_data(index, materials[object.material].emission)
-	
+
 
 
 func get_textures(data: Dictionary) -> Dictionary:
@@ -77,11 +78,18 @@ func get_textures(data: Dictionary) -> Dictionary:
 
 	return textures
 
-func get_geometries(data: Dictionary) -> Dictionary:
+func get_geometries(data: Dictionary, planet_data: Dictionary) -> Dictionary:
 	var model_dir := "res://"
 	if "config" in data && ("modelDir" in data.config || "model_dir" in data.config):
 		model_dir += data.config.modelDir if "modelDir" in data.config else data.config.model_dir
-	var geometries := {"planet": planet_scene}
+
+	var geometries := {}
+	for planet_name in planet_data:
+		var planet_instance := planet_scene.instance()
+		var planet_spatial := planet_instance.get_child(0)
+		planet_spatial.set_planet_data(planet_data[planet_name])
+		var planet_mesh: ArrayMesh = planet_spatial.get_child(0).get_mesh()
+		geometries[planet_name] = planet_mesh
 	if !data.has("geometries"):
 		return geometries
 	for geometry in data.geometries:
@@ -139,6 +147,18 @@ func get_randomized_vector3(value: Array, rng: RandomNumberGenerator) -> Vector3
 			get_randomized(value[2], rng)
 		)
 
+func get_pd_count(data: Dictionary) -> Dictionary:
+	var pd_count := {}
+	if !data.has("planet_data"):
+		return pd_count
+	for pd_info in data.planet_data:
+		if !pd_info.has("name"):
+			continue
+
+		var count: int = pd_info.count if "count" in pd_info else 1
+		pd_count[pd_info.name] = count
+	return pd_count
+
 func get_planet_data(data: Dictionary) -> Dictionary:
 	var planet_data := {}
 	if !data.has("planet_data"):
@@ -153,7 +173,6 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 		else:
 			rng.randomize()
 		var count: int = pd_info.count if "count" in pd_info else 1
-		planet_data[pd_info.name] = []
 
 		for n in count:
 			var pd_instance := PlanetData.new()
@@ -189,10 +208,10 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 					pd_instance[key] = get_randomized(pd_info[key], rng)
 				elif key == "name":
 					pd_instance[key] = pd_info[key] + (str(n) if count > 1 else "")
-			planet_data[pd_info.name].push_back(pd_instance)
+			planet_data[pd_instance.name] = pd_instance
 	return planet_data
 
-func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, planet_data: Dictionary,
+func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, pd_count: Dictionary,
 				   params: Array, number := 0, rng: RandomNumberGenerator = null) -> void:
 	var space := get_node("/root/Main/Objects/Space")
 
@@ -206,7 +225,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	var count: int = object.count if "count" in object else 1
 	if count > 1 && number == 0:
 		for i in count:
-			create_object(object, geometries, materials, planet_data, params, i + 1, rng)
+			create_object(object, geometries, materials, pd_count, params, i + 1, rng)
 		return
 
 	var geometry = geometries[object.geometry] if "geometry" in object else null
@@ -214,6 +233,9 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	var mesh = null
 	var colObject: CollisionObject
 
+	if "planet_data" in object:
+		var pd_name: String = object.planet_data + str(rng.randi_range(0, pd_count[object.planet_data] - 1))
+		geometry = geometries[pd_name]
 	if geometry is PackedScene:
 		node = geometry.instance()
 		mesh = node.get_child(0)
@@ -253,9 +275,6 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		mesh.set_scale( Vector3(object.scale[0], object.scale[1], object.scale[2]) )
 	if "material" in object:
 		mesh.set_surface_material(0, materials[object.material])
-	if "planet_data" in object:
-		var pd: Array = planet_data[object.planet_data]
-		mesh.planet_data = pd[rng.randi_range(0, pd.size() - 1)]
 	if "position" in object:
 		node.transform.origin = get_randomized_vector3(object.position, rng)
 	elif "centre" in object && "radius" in object && (!object.has("with_script") || !object.with_script):
