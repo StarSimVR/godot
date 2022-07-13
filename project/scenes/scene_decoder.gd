@@ -1,5 +1,7 @@
 extends Node
 
+const DEFAULT_SEED := 1234
+
 const collision_object := preload("collision_object.tscn")
 const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
@@ -27,6 +29,7 @@ func create(scene_name: String) -> void:
 		var textures := get_textures(data)
 		var pd_count := get_pd_count(data)
 		var planet_data := get_planet_data(data)
+		var planet_count := get_planet_count(data, planet_data, pd_count)
 		var geometries := get_geometries(data, planet_data)
 		var materials := get_materials(data, textures)
 		var params: Array = data.config.params if "config" in data && "params" in data.config else []
@@ -159,6 +162,26 @@ func get_pd_count(data: Dictionary) -> Dictionary:
 		pd_count[pd_info.name] = count
 	return pd_count
 
+func get_planet_count(data: Dictionary, planet_data: Dictionary, pd_count: Dictionary) -> Dictionary:
+	var planet_count := {}
+	if !data.has("planet_data"):
+		return planet_count
+	for planet_name in planet_data:
+		planet_count[planet_name] = 0
+	for object in data.objects:
+		if !object.has("planet_data"):
+			continue
+		var rng := RandomNumberGenerator.new()
+		rng.seed = object.seed if "seed" in object else DEFAULT_SEED
+		var count: int = object.count if "count" in object else 1
+		var planet_name: String = object.planet_data
+		var max_num: int = pd_count[planet_name] - 1
+		for i in count:
+			var pd_name := planet_name + str(rng.randi_range(0, max_num))
+			planet_count[pd_name] += 1
+
+	return planet_count
+
 func get_planet_data(data: Dictionary) -> Dictionary:
 	var planet_data := {}
 	if !data.has("planet_data"):
@@ -168,10 +191,7 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 			continue
 
 		var rng := RandomNumberGenerator.new()
-		if "seed" in pd_info:
-			rng.seed = pd_info.seed
-		else:
-			rng.randomize()
+		rng.seed = pd_info.seed if "seed" in pd_info else DEFAULT_SEED
 		var count: int = pd_info.count if "count" in pd_info else 1
 
 		for n in count:
@@ -217,10 +237,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 
 	if rng == null:
 		rng = RandomNumberGenerator.new()
-		if "seed" in object:
-			rng.seed = object.seed
-		else:
-			rng.randomize()
+		rng.seed = object.seed if "seed" in object else DEFAULT_SEED
 
 	var count: int = object.count if "count" in object else 1
 	if count > 1 && number == 0:
