@@ -187,8 +187,8 @@
 			"name": "ring",
 			"scale": [1.0, 1.0, 1.0],
 			"planet_data": "asteroid",
-			"centre": [0, 0, [-0.02, 0.02]],
-			"radius": [0.25, 0.5],
+			"centre": [0, 0, [-0.1, 0.1]],
+			"radius": [0.3, 0.5],
 			"speed": 0.01
 		},
 		{

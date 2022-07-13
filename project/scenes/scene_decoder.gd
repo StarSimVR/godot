@@ -296,12 +296,24 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node.transform.origin = get_randomized_vector3(object.position, rng)
 	elif "centre" in object && "radius" in object && (!object.has("with_script") || !object.with_script):
 		var centre := get_randomized_vector3(object.centre, rng)
-		var radius: float = get_randomized(object.radius, rng)
-		node.transform.origin = centre + radius * Vector3(
-			cos(rng.randf_range(0, 2 * PI)),
-			sin(rng.randf_range(0, 2 * PI)),
-			0
-		)
+		var axis := -1
+		for i in 3:
+			if typeof(object.centre[i]) == TYPE_ARRAY:
+				axis = i
+		var min_radius: float = object.radius if typeof(object.radius) != TYPE_ARRAY else object.radius[0]
+		var max_radius: float = object.radius if typeof(object.radius) != TYPE_ARRAY else object.radius[1]
+		var k: float
+		if axis >= 0:
+			var min_coord: float = object.centre[axis][0]
+			var max_coord: float = object.centre[axis][1]
+			var coord := centre[axis]
+			var t := (coord - min_coord) / (max_coord - min_coord)
+			k = 4 * (-pow(t, 2) + t)
+		else:
+			k = 1
+		var radius = min_radius + k * rng.randf_range(0, max_radius - min_radius)
+		var phi := rng.randf_range(0, 2 * PI)
+		node.transform.origin = centre + radius * Vector3(cos(phi), sin(phi), 0)
 	if "speed" in object && (!object.has("with_script") || !object.with_script):
 		node.set_script(rotate)
 		node.is_editor = is_editor
