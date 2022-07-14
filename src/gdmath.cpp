@@ -35,7 +35,7 @@
  * Includes.
  */
 
-#include "GDMath.h"
+#include "gdmath.h"
 
 using namespace godot;
 
