@@ -1,5 +1,6 @@
-extends Node
+extends Control
 
+var saved_margin_bottom := self.margin_bottom
 var scene: SceneEncoder = null
 var obj := {"not_found": true}
 var orig_mass := 0.0
@@ -8,6 +9,7 @@ var dragging := false
 
 func _ready():
 	scene = SceneEncoder.new("solar_system")
+	init()
 
 func _input(event: InputEvent) -> void:
 	if !dragging && event is InputEventMouseButton && !event.is_pressed() && event.button_index == BUTTON_LEFT:
@@ -25,6 +27,9 @@ func _on_slider_input(event: InputEvent) -> void:
 		dragging = event.is_pressed()
 		if !dragging:
 			update_params()
+
+func init():
+	get_node("/root/Main/HUD/Background").set_margin(MARGIN_BOTTOM, saved_margin_bottom + 40)
 
 func update_params() -> void:
 	if obj.has("not_found"):
@@ -51,7 +56,9 @@ func update_params() -> void:
 	save()
 
 func save():
-	var name: String = obj.name
+	var name: String = ""
+	if "name" in obj:
+		name = obj.name
 	scene.save("solar_system")
 
 	var space := get_node("/root/Main/Objects/Space")
@@ -61,7 +68,8 @@ func save():
 
 	var camera := get_node("/root/Main/3D/Camera")
 	camera.start()
-	load_object(name)
+	if name:
+		load_object(name)
 
 func get_mass() -> float:
 	return obj.mass if "mass" in obj else 0.0
@@ -122,6 +130,19 @@ func update_radius(change: int) -> void:
 		calc_new_mass(change)
 	update_info()
 
-func _on_Locked_gui_input(event):
+func _on_gui_input(event):
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
 		dragging = event.is_pressed()
+
+func to_creator():
+	var creator := get_node("../Creator")
+	self.hide()
+	creator.show()
+	creator.init()
+
+func delete():
+	if "name" in obj:
+		print(obj)
+		scene.delete_object(obj.name, obj.parent if "parent" in obj else "")
+		unload_object()
+		save()

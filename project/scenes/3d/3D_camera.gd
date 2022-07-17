@@ -16,6 +16,13 @@ func start() -> void:
 	create_trails()
 	#create_collision_objects()
 
+func is_focused() -> bool:
+	var gui: Control = get_node_or_null("/root/Main/HUD/GUI")
+	if gui == null:
+		return false
+	var focus_owner := gui.get_focus_owner()
+	return focus_owner != null && (focus_owner is LineEdit || focus_owner is TextEdit)
+
 func move_in_free_flight_mode(delta: float) -> void:
 	var input := Vector3()
 	if Input.is_action_pressed("move_forward"):
@@ -38,6 +45,9 @@ func move_in_free_flight_mode(delta: float) -> void:
 	translate(velocity)
 
 func _process(delta: float) -> void:
+	if is_focused():
+		return
+
 	if _free_flight_mode:
 		move_in_free_flight_mode(delta)
 	else:
@@ -63,6 +73,8 @@ func _input(event: InputEvent) -> void:
 		_rotation.x = fmod(_rotation.x, 2 * PI)
 		_rotation.y = fmod(_rotation.y, 2 * PI)
 
+	if is_focused():
+		return
 	if Input.is_action_pressed("zoom_in"):
 		zoom_in()
 	if Input.is_action_pressed("zoom_out"):

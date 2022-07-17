@@ -12,6 +12,8 @@ func _process(delta):
 		print("FPS: ", Engine.get_frames_per_second())
 
 func slower() -> void:
+	if SceneDecoder.is_editor:
+		return
 	var _objects := get_node("/root/Main/Objects/Space/").get_children()
 	for object in _objects:
 		if object.name == "Stars":
@@ -19,6 +21,8 @@ func slower() -> void:
 		object.slower()
 
 func faster() -> void:
+	if SceneDecoder.is_editor:
+		return
 	var _objects := get_node("/root/Main/Objects/Space/").get_children()
 	for object in _objects:
 		if object.name == "Stars":
