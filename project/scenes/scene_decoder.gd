@@ -268,7 +268,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "with_script" in object && object.with_script && !is_editor:
 		node.set_script(gdmath)
 
-	if "is_collision_object" in object && object.is_collision_object:
+	if "has_collision_object" in object && object.has_collision_object:
 		colObject = collision_object.instance()
 		if "name" in object:
 			colObject.name = "CollisionObject"

@@ -97,7 +97,7 @@
 			"scale": [3, 3, 3],
 			"radius": 0,
 			"eccentricity": 0,
-			"is_collision_object": true,
+			"has_collision_object": true,
 			"material": "sun_material"
 		},
 		{
@@ -108,7 +108,7 @@
 			"speed": 2,
 			"radius": 3,
 			"eccentricity": 0.206,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"with_script": true,
@@ -118,7 +118,7 @@
 			"speed": 0.783,
 			"radius": 4,
 			"eccentricity": 0.007,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"with_script": true,
@@ -128,7 +128,7 @@
 			"speed": 0.482,
 			"radius": 5,
 			"eccentricity": 0.017,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"with_script": true,
@@ -138,7 +138,7 @@
 			"speed": 0.256,
 			"radius": 6,
 			"eccentricity": 0.093,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"name": "asteroidBelt",
@@ -163,7 +163,7 @@
 			"speed": 0.041,
 			"radius": 9,
 			"eccentricity": 0.049,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"with_script": true,
@@ -173,7 +173,7 @@
 			"speed": 0.016,
 			"radius": 11,
 			"eccentricity": 0.054,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"child_of": "saturn",
@@ -199,7 +199,7 @@
 			"speed": 0.006,
 			"radius": 13,
 			"eccentricity": 0.047,
-			"is_collision_object": true
+			"has_collision_object": true
 		},
 		{
 			"with_script": true,
@@ -209,7 +209,7 @@
 			"speed": 0.003,
 			"radius": 15,
 			"eccentricity": 0.011,
-			"is_collision_object": true
+			"has_collision_object": true
 		}
 	],
 	"materials": [
