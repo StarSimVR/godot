@@ -31,14 +31,18 @@ func faster() -> void:
 
 func prev_warp_point() -> void:
 	_space._curr_object -= 1
-	if _space.get_children()[_space._curr_object].name == "Stars":
-		_space._curu_object -= 1
+	var name = _space.get_children()[_space._curr_object].name
+	if name == "Stars" or name == "Asteroids":
+		prev_warp_point()
+		return
 	if _space._curr_object == 0:
 		_space._curr_object = _space.get_child_count() - 1
 
 func next_warp_point() -> void:
 	_space._curr_object += 1
-	if _space.get_children()[_space._curr_object].name == "Stars":
-		_space._curu_object += 1
+	var name = _space.get_children()[_space._curr_object].name
+	if name == "Stars" or name == "Asteroids":
+		next_warp_point()
+		return
 	if _space._curr_object == _space.get_child_count():
 		_space._curr_object = 1

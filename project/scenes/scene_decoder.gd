@@ -44,8 +44,10 @@ func create(scene_name: String) -> void:
 				index+=1
 			multiStar.multimesh.visible_instance_count = -1
 			return
+		init_multimesh_asteroids(pd_count, planet_data, planet_count, geometries)
 
 		for object in data.objects:
+			pass
 			create_object(object, geometries, materials, pd_count, params)
 	if data.has("lights"):
 		for light in data.lights:
@@ -62,7 +64,23 @@ func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	#Set the material of the star
 	#+++Currently not working+++
 	multiStar.multimesh.set_instance_custom_data(index, materials[object.material].emission)
-
+	
+	
+func init_multimesh_asteroids(pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary, 
+								geometries:Dictionary):
+	var asteroids = get_node("/root/Main/Objects/Space/Asteroids")
+	for i in pd_count["asteroid"]:
+		var index_name = "asteroid" + str(i)
+		var multi = MultiMeshInstance.new()
+		multi.name = index_name
+		multi.multimesh = MultiMesh.new()
+		multi.multimesh.visible_instance_count = -1
+		multi.multimesh.transform_format = MultiMesh.TRANSFORM_3D
+		multi.multimesh.color_format = MultiMesh.COLOR_FLOAT
+		multi.multimesh.custom_data_format = MultiMesh.CUSTOM_DATA_FLOAT
+		multi.multimesh.mesh = geometries[planet_data[index_name].name]
+		multi.multimesh.instance_count = int(planet_count[index_name])
+		asteroids.add_child(multi)
 
 
 func get_textures(data: Dictionary) -> Dictionary:
