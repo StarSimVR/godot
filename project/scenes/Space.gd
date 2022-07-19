@@ -16,9 +16,10 @@ func get_cur_object():
 	return _objects[_curr_object]
 
 func set_cur_object(object):
+	var parent_name = object.get_parent().name
 	var _objects = self.get_children()
 	for i in range(len(_objects)):
-		if(object.name == _objects[i].name):
+		if(parent_name == _objects[i].name):
 			_curr_object = i
 			return
 

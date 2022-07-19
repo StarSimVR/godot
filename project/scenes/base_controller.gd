@@ -23,7 +23,7 @@ func slower() -> void:
 func faster() -> void:
 	if SceneDecoder.is_editor:
 		return
-	var _objects := get_node("/root/Main/Objects/Space/").get_children()
+	var _objects := _space.get_children()
 	for object in _objects:
 		if object.name == "Stars":
 			continue
@@ -31,10 +31,14 @@ func faster() -> void:
 
 func prev_warp_point() -> void:
 	_space._curr_object -= 1
+	if _space.get_children()[_space._curr_object].name == "Stars":
+		_space._curu_object -= 1
 	if _space._curr_object == 0:
 		_space._curr_object = _space.get_child_count() - 1
 
 func next_warp_point() -> void:
 	_space._curr_object += 1
+	if _space.get_children()[_space._curr_object].name == "Stars":
+		_space._curu_object += 1
 	if _space._curr_object == _space.get_child_count():
 		_space._curr_object = 1
