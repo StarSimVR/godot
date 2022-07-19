@@ -147,7 +147,7 @@
 		{
 			"child_of": "asteroidBelt",
 			"seed": 1111,
-			"count": 300,
+			"count": 5000,
 			"name": "asteroid",
 			"scale": [1.0, 1.0, 1.0],
 			"planet_data": "asteroid",
@@ -178,12 +178,12 @@
 		{
 			"child_of": "saturn",
 			"name": "ringsOfSaturn",
-			"speed": 1.0,
+			"speed": 1.0
 		},
 		{
 			"child_of": "ringsOfSaturn",
 			"seed": 1111,
-			"count": 300,
+			"count": 5000,
 			"name": "ring",
 			"scale": [1.0, 1.0, 1.0],
 			"planet_data": "asteroid",

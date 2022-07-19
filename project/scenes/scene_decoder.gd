@@ -74,12 +74,13 @@ func init_multimesh_asteroids(pd_count: Dictionary, planet_data: Dictionary, pla
 		var multi = MultiMeshInstance.new()
 		multi.name = index_name
 		multi.multimesh = MultiMesh.new()
-		multi.multimesh.visible_instance_count = -1
+		multi.multimesh.visible_instance_count = 1
 		multi.multimesh.transform_format = MultiMesh.TRANSFORM_3D
 		multi.multimesh.color_format = MultiMesh.COLOR_FLOAT
 		multi.multimesh.custom_data_format = MultiMesh.CUSTOM_DATA_FLOAT
 		multi.multimesh.mesh = geometries[planet_data[index_name].name]
 		multi.multimesh.instance_count = int(planet_count[index_name])
+		multi.set_script(rotate)
 		asteroids.add_child(multi)
 
 
@@ -260,7 +261,8 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	var count: int = object.count if "count" in object else 1
 	if count > 1 && number == 0:
 		for i in count:
-			create_object(object, geometries, materials, pd_count, params, i + 1, rng)
+			create_auto_generated(object, pd_count, rng)
+			#create_object(object, geometries, materials, pd_count, params, i + 1, rng)
 		return
 
 	var geometry = geometries[object.geometry] if "geometry" in object else null
@@ -268,9 +270,6 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	var mesh = null
 	var colObject: CollisionObject
 
-	if "planet_data" in object:
-		var pd_name: String = object.planet_data + str(rng.randi_range(0, pd_count[object.planet_data] - 1))
-		geometry = geometries[pd_name]
 	if geometry is PackedScene:
 		node = geometry.instance()
 		mesh = node.get_child(0)
@@ -312,26 +311,6 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		mesh.set_surface_material(0, materials[object.material])
 	if "position" in object:
 		node.transform.origin = get_randomized_vector3(object.position, rng)
-	elif "centre" in object && "radius" in object && (!object.has("with_script") || !object.with_script):
-		var centre := get_randomized_vector3(object.centre, rng)
-		var axis := -1
-		for i in 3:
-			if typeof(object.centre[i]) == TYPE_ARRAY:
-				axis = i
-		var min_radius: float = object.radius if typeof(object.radius) != TYPE_ARRAY else object.radius[0]
-		var max_radius: float = object.radius if typeof(object.radius) != TYPE_ARRAY else object.radius[1]
-		var k: float
-		if axis >= 0:
-			var min_coord: float = object.centre[axis][0]
-			var max_coord: float = object.centre[axis][1]
-			var coord := centre[axis]
-			var t := (coord - min_coord) / (max_coord - min_coord)
-			k = 4 * (-pow(t, 2) + t)
-		else:
-			k = 1
-		var radius = min_radius + k * rng.randf_range(0, max_radius - min_radius)
-		var phi := rng.randf_range(0, 2 * PI)
-		node.transform.origin = centre + radius * Vector3(cos(phi), sin(phi), 0)
 	if "speed" in object && (!object.has("with_script") || !object.with_script):
 		node.set_script(rotate)
 		node.is_editor = is_editor
@@ -342,6 +321,46 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 			var val = object[param]
 			val = Vector3(val[0], val[1], val[2]) if val is Array else val
 			node[param] = val
+
+func create_auto_generated(object: Dictionary, pd_count: Dictionary, rng: RandomNumberGenerator = null):
+	var asteroids := get_node("/root/Main/Objects/Space/Asteroids")
+	var pd_name: String = object.planet_data + str(rng.randi_range(0, pd_count[object.planet_data] - 1))
+	for i in asteroids.get_child_count():
+		var cur_child = asteroids.get_child(i)
+		if cur_child.name == pd_name:
+			if cur_child.multimesh.visible_instance_count > cur_child.multimesh.instance_count:
+				continue
+			var position = Transform()
+			position = position.translated(calculate_asteroid_position(object))
+			cur_child.multimesh.set_instance_transform(cur_child.multimesh.visible_instance_count - 1, position)
+			cur_child.multimesh.visible_instance_count += 1
+			break
+			
+			
+func calculate_asteroid_position(object: Dictionary):
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	
+	var centre := get_randomized_vector3(object.centre, rng)
+	var axis := -1
+	for i in 3:
+		if typeof(object.centre[i]) == TYPE_ARRAY:
+			axis = i
+	var min_radius: float = object.radius if typeof(object.radius) != TYPE_ARRAY else object.radius[0]
+	var max_radius: float = object.radius if typeof(object.radius) != TYPE_ARRAY else object.radius[1]
+	var k: float
+	if axis >= 0:
+		var min_coord: float = object.centre[axis][0]
+		var max_coord: float = object.centre[axis][1]
+		var coord := centre[axis]
+		var t := (coord - min_coord) / (max_coord - min_coord)
+		k = 4 * (-pow(t, 2) + t)
+	else:
+		k = 1
+	var radius = min_radius + k * rng.randf_range(0, max_radius - min_radius)
+	var phi := float(rng.randf_range(0, 2 * PI))
+	return centre + radius * Vector3(cos(phi), sin(phi), 0)
+	
 
 func create_light(light: Dictionary) -> void:
 	var space := get_node("/root/Main/Objects/Space")
