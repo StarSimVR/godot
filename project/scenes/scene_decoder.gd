@@ -7,6 +7,7 @@ const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
 var is_editor := false
+const default_asteroid_path = "/root/Main/Objects/Space/Asteroids"
 
 func load_scene(scene_name: String) -> Dictionary:
 	var file := File.new()
@@ -44,11 +45,11 @@ func create(scene_name: String) -> void:
 				index+=1
 			multiStar.multimesh.visible_instance_count = -1
 			return
-		init_multimesh_asteroids(pd_count, planet_data, planet_count, geometries)
+		init_multimesh_asteroids(default_asteroid_path, pd_count, planet_data, planet_count, geometries)
 
 		for object in data.objects:
 			pass
-			create_object(object, geometries, materials, pd_count, params)
+			create_object(object, geometries, materials, pd_count, params, planet_data, planet_count)
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
@@ -66,9 +67,13 @@ func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	multiStar.multimesh.set_instance_custom_data(index, materials[object.material].emission)
 	
 	
-func init_multimesh_asteroids(pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary, 
+func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary, 
 								geometries:Dictionary):
-	var asteroids = get_node("/root/Main/Objects/Space/Asteroids")
+	#var asteroids = get_node("/root/Main/Objects/Space/Asteroids")
+	var asteroids = get_node(path)
+	if asteroids == null:
+		print("An invalid path has been entered")
+		return
 	for i in pd_count["asteroid"]:
 		var index_name = "asteroid" + str(i)
 		var multi = MultiMeshInstance.new()
@@ -251,7 +256,8 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 	return planet_data
 
 func create_object(object: Dictionary, geometries: Dictionary, materials: Dictionary, pd_count: Dictionary,
-				   params: Array, number := 0, rng: RandomNumberGenerator = null) -> void:
+				   params: Array, planet_data: Dictionary, planet_count: Dictionary,
+					number := 0, rng: RandomNumberGenerator = null) -> void:
 	var space := get_node("/root/Main/Objects/Space")
 
 	if rng == null:
@@ -260,8 +266,15 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 
 	var count: int = object.count if "count" in object else 1
 	if count > 1 && number == 0:
+		var path = ""
+		if  "child_of" in object:
+			path = space.find_node(object.child_of, true, false).get_path()
+		if get_node(path) == null:
+			path = default_asteroid_path
+		else:
+			init_multimesh_asteroids(path, pd_count, planet_data, planet_count, geometries)
 		for i in count:
-			create_auto_generated(object, pd_count, rng)
+			create_auto_generated(path, object, pd_count, rng)
 			#create_object(object, geometries, materials, pd_count, params, i + 1, rng)
 		return
 
@@ -322,8 +335,8 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 			val = Vector3(val[0], val[1], val[2]) if val is Array else val
 			node[param] = val
 
-func create_auto_generated(object: Dictionary, pd_count: Dictionary, rng: RandomNumberGenerator = null):
-	var asteroids := get_node("/root/Main/Objects/Space/Asteroids")
+func create_auto_generated(path: String, object: Dictionary, pd_count: Dictionary, rng: RandomNumberGenerator = null):
+	var asteroids := get_node(path)
 	var pd_name: String = object.planet_data + str(rng.randi_range(0, pd_count[object.planet_data] - 1))
 	for i in asteroids.get_child_count():
 		var cur_child = asteroids.get_child(i)
