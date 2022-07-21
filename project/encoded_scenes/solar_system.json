@@ -141,11 +141,6 @@
 			"has_collision_object": true
 		},
 		{
-			"name": "asteroidBelt",
-			"speed": 0.01
-		},
-		{
-			"child_of": "asteroidBelt",
 			"seed": 1111,
 			"count": 5000,
 			"name": "asteroid",

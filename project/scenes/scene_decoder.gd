@@ -69,7 +69,6 @@ func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	
 func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary, 
 								geometries:Dictionary):
-	#var asteroids = get_node("/root/Main/Objects/Space/Asteroids")
 	var asteroids = get_node(path)
 	if asteroids == null:
 		print("An invalid path has been entered")
@@ -271,7 +270,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 			path = space.find_node(object.child_of, true, false).get_path()
 		if get_node(path) == null:
 			path = default_asteroid_path
-		else:
+		if !has_multimesh(path):
 			init_multimesh_asteroids(path, pd_count, planet_data, planet_count, geometries)
 		for i in count:
 			create_auto_generated(path, object, pd_count, rng)
@@ -349,6 +348,15 @@ func create_auto_generated(path: String, object: Dictionary, pd_count: Dictionar
 			cur_child.multimesh.visible_instance_count += 1
 			break
 			
+			
+func has_multimesh(path: String):
+	var node = get_node(path)
+	var children = node.get_children()
+	for child in children:
+		if child.get_class() == "MultiMeshInstance":
+			return true
+			
+	return false
 			
 func calculate_asteroid_position(object: Dictionary):
 	var rng = RandomNumberGenerator.new()
