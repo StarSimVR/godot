@@ -7,7 +7,7 @@ const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
 var is_editor := false
-const default_asteroid_path = "/root/Main/Objects/Space/Asteroids"
+const default_asteroid_path = "/root/Main/Objects/Space/MultiMeshObjects"
 
 func load_scene(scene_name: String) -> Dictionary:
 	var file := File.new()
@@ -37,7 +37,7 @@ func create(scene_name: String) -> void:
 
 		#create MultiMesh if stars are loaded
 		if "config" in data && "starFile" in data.config && data.config.starFile:
-			var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
+			var multiStar := get_node("/root/Main/Objects/Space/MultiMeshObjects/Star")
 			multiStar.multimesh.instance_count = data.objects.size()
 			var index = 0
 			for star in data.objects:
@@ -55,7 +55,7 @@ func create(scene_name: String) -> void:
 			create_light(light)
 
 func create_star(object: Dictionary, materials: Dictionary, index) -> void:
-	var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
+	var multiStar := get_node("/root/Main/Objects/Space/MultiMeshObjects/Star")
 	#Set the position of the star
 	var position = Transform()
 	position = position.translated(Vector3(object.position[0], object.position[1], object.position[2]))
