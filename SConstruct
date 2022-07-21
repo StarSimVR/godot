@@ -27,7 +27,7 @@ opts.Add(EnumVariable('platform', "Compilation platform", '', ['', 'windows', 'x
 opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'project/bin/'))
-opts.Add(PathVariable('target_name', 'The library name.', 'libgdmath', PathVariable.PathAccept))
+opts.Add(PathVariable('target_name', 'The library name.', 'libastroobject', PathVariable.PathAccept))
 
 # Local dependency paths, adapt them to your setup
 godot_headers_path = "godot-cpp/godot-headers/"
@@ -108,13 +108,13 @@ else:
 cpp_library += '.' + str(bits)
 
 # make sure our binding library is properly includes
-env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/', 'ellipse/lib/'])
-env.Append(LIBPATH=[cpp_bindings_path + 'bin/'])
+env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/'])
+env.Append(LIBPATH=[cpp_bindings_path + 'bin/', 'dll/'])
 env.Append(LIBS=[cpp_library])
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
-env.Append(CPPPATH=['src/'])
-sources = Glob('src/*.cpp') + Glob('ellipse/lib/*.cpp')
+env.Append(CPPPATH=['astobj/'])
+sources = Glob('astobj/*.cpp') 
 
 library = env.SharedLibrary(target=env['target_path'] + env['target_name'] , source=sources)
 
