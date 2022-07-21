@@ -61,9 +61,8 @@ func save():
 		name = obj.name
 	scene.save("solar_system")
 
-	var space := get_node("/root/Main/Objects/Space")
+	var space := get_node("/root/Main/Objects/Space/MathObjects")
 	for planet in space.get_children():
-		if planet.name != "Stars":
 			planet.free()
 
 	var camera := get_node("/root/Main/3D/Camera")
