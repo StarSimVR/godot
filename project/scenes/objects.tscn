@@ -46,7 +46,6 @@ __meta__ = {
 }
 
 [node name="Space" type="Spatial" parent="."]
-script = ExtResource( 13 )
 
 [node name="Stars" type="Spatial" parent="Space"]
 
@@ -55,3 +54,6 @@ material_override = SubResource( 1 )
 multimesh = SubResource( 3 )
 
 [node name="Asteroids" type="Spatial" parent="Space"]
+
+[node name="MathObjects" type="Spatial" parent="Space"]
+script = ExtResource( 13 )

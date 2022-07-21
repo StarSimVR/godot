@@ -81,11 +81,11 @@ func _input(event: InputEvent) -> void:
 		zoom_out()
 
 func look_at_current_object() -> void:
-	var _objects := _space.get_children()
+	var _objects := _math_objects.get_children()
 	if len(_objects) < 1:
 		return
 	var sun: Spatial = _objects[0]
-	var object :Spatial = _space.get_cur_object()
+	var object :Spatial = _math_objects.get_cur_object()
 	var origin := object.transform.origin
 	var sun_origin := sun.transform.origin
 	var position := origin + origin.normalized() * 1
@@ -93,7 +93,7 @@ func look_at_current_object() -> void:
 		look_at_from_position(position, sun_origin, Vector3(0, 0, 1))
 
 func render_labels() -> void:
-	for object in _space.get_children():
+	for object in _math_objects.get_children():
 		if object.name == "sun":
 			continue
 		var label: Label = _labels.get_node(object.name)
@@ -115,7 +115,7 @@ func render_labels() -> void:
 			label.hide()
 
 func create_labels() -> void:
-	for object in _space.get_children():
+	for object in _math_objects.get_children():
 		if object.name == "sun":
 			continue
 		var label := Label.new()
@@ -124,7 +124,7 @@ func create_labels() -> void:
 		_labels.add_child(label)
 
 func create_trails() -> void:
-	for object in _space.get_children():
+	for object in _math_objects.get_children():
 		if object.name == "sun":
 			continue
 		var motion_trail = motion_trail_scene.instance()
@@ -135,7 +135,7 @@ func create_trails() -> void:
 		object.add_child(motion_trail)
 
 func create_collision_objects() -> void:
-	for object in _space.get_children():
+	for object in _math_objects.get_children():
 		if object.name == "Stars":
 			continue
 		var collision_object := collision_object_scene.instance()

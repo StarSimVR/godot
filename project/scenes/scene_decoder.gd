@@ -54,7 +54,6 @@ func create(scene_name: String) -> void:
 		for light in data.lights:
 			create_light(light)
 
-
 func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	var multiStar := get_node("/root/Main/Objects/Space/Stars/MultiStar")
 	#Set the position of the star
@@ -65,8 +64,7 @@ func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	#Set the material of the star
 	#+++Currently not working+++
 	multiStar.multimesh.set_instance_custom_data(index, materials[object.material].emission)
-	
-	
+		
 func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary, 
 								geometries:Dictionary):
 	var asteroids = get_node(path)
@@ -86,7 +84,6 @@ func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: D
 		multi.multimesh.instance_count = int(planet_count[index_name])
 		multi.set_script(rotate)
 		asteroids.add_child(multi)
-
 
 func get_textures(data: Dictionary) -> Dictionary:
 	var texture_dir := "res://"
@@ -258,6 +255,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 				   params: Array, planet_data: Dictionary, planet_count: Dictionary,
 					number := 0, rng: RandomNumberGenerator = null) -> void:
 	var space := get_node("/root/Main/Objects/Space")
+	var math_objects := get_node("/root/Main/Objects/Space/MathObjects")
 
 	if rng == null:
 		rng = RandomNumberGenerator.new()
@@ -267,7 +265,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if count > 1 && number == 0:
 		var path = ""
 		if  "child_of" in object:
-			path = space.find_node(object.child_of, true, false).get_path()
+			path = math_objects.find_node(object.child_of, true, false).get_path()
 		if get_node(path) == null:
 			path = default_asteroid_path
 		if !has_multimesh(path):
@@ -309,10 +307,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node.add_child(colObject)
 
 	if "child_of" in object:
-		space.find_node(object.child_of, true, false).add_child(node)
+		math_objects.find_node(object.child_of, true, false).add_child(node)
 	else:
 		if ("with_script" in object && object.with_script) || "centre" in object || "speed" in object || !object.has("geometry"):
-			space.add_child(node)
+			math_objects.add_child(node)
 		else:
 			space.get_node("Stars").add_child(node)
 	if "name" in object:
@@ -385,6 +383,7 @@ func calculate_asteroid_position(object: Dictionary):
 
 func create_light(light: Dictionary) -> void:
 	var space := get_node("/root/Main/Objects/Space")
+	var math_objects := get_node("/root/Main/Objects/Space/MathObjects")
 	var node: Light
 	if "direction" in light:
 		node = DirectionalLight.new()
@@ -395,7 +394,7 @@ func create_light(light: Dictionary) -> void:
 		node.name = light.name
 
 	if "child_of" in light:
-		space.get_node(light.child_of).add_child(node)
+		math_objects.get_node(light.child_of).add_child(node)
 	else:
 		space.add_child(node)
 

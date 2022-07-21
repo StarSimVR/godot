@@ -7,7 +7,7 @@ const BUTTON = {
 }
 #Load Nodes
 onready var StarSimVRCamera := get_node("../StarSimVRCamera")
-onready var Space := get_node("/root/Main/Objects/Space")
+onready var _math_objects := get_node("/root/Main/Objects/Space/MathObjects")
 onready var BaseController := get_node("../Controller")
 onready var grabCast := get_node("GrabCast")
 
@@ -174,7 +174,7 @@ func change_warp_point_forwards():
 	
 	#Function to specify how to update and redisplay a scene in VR upon a warp point change
 func update_camera_position_on_warp():
-	var object: Spatial = Space.get_cur_object()
+	var object: Spatial = _math_objects.get_cur_object()
 	if(object == null): return
 	var origin := object.transform.origin
 	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
@@ -184,7 +184,7 @@ func update_camera_position_on_warp():
 		
 #Function to specify how to update and redisplay a scene in VR upon a teleport
 func update_camera_position_on_teleport():
-	var object: Spatial = Space.get_cur_object()
+	var object: Spatial = _math_objects.get_cur_object()
 	if(object == null): return
 	var object_origin := object.transform.origin
 	var camera_direction = get_parent().get_node("StarSimVRCamera").global_transform.origin - object_origin
@@ -199,7 +199,7 @@ func teleport():
 	#when a collision is detected, teleport the user to the location
 	if(rightRayCast.is_colliding()):
 		var body = rightRayCast.get_collider()
-		Space.set_cur_object(body)
+		_math_objects.set_cur_object(body)
 		update_camera_position_on_teleport()
 
 func sleep_area_entered(body):

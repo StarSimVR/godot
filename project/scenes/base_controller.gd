@@ -1,7 +1,7 @@
 class_name BaseController
 extends Spatial
 
-onready var _space := get_node("/root/Main/Objects/Space")
+onready var _math_objects := get_node("/root/Main/Objects/Space/MathObjects")
 const TIMER_LIMIT = 1.0
 var timer = 0.0
 
@@ -14,35 +14,23 @@ func _process(delta):
 func slower() -> void:
 	if SceneDecoder.is_editor:
 		return
-	var _objects := get_node("/root/Main/Objects/Space/").get_children()
+	var _objects := _math_objects.get_children()
 	for object in _objects:
-		if object.name == "Stars":
-			continue
 		object.slower()
 
 func faster() -> void:
 	if SceneDecoder.is_editor:
 		return
-	var _objects := _space.get_children()
+	var _objects := _math_objects.get_children()
 	for object in _objects:
-		if object.name == "Stars":
-			continue
 		object.faster()
 
 func prev_warp_point() -> void:
-	_space._curr_object -= 1
-	var name = _space.get_children()[_space._curr_object].name
-	if name == "Stars" or name == "Asteroids":
-		prev_warp_point()
-		return
-	if _space._curr_object == 0:
-		_space._curr_object = _space.get_child_count() - 1
+	_math_objects._curr_object -= 1
+	if _math_objects._curr_object == 0:
+		_math_objects._curr_object = _math_objects.get_child_count() - 1
 
 func next_warp_point() -> void:
-	_space._curr_object += 1
-	var name = _space.get_children()[_space._curr_object].name
-	if name == "Stars" or name == "Asteroids":
-		next_warp_point()
-		return
-	if _space._curr_object == _space.get_child_count():
-		_space._curr_object = 1
+	_math_objects._curr_object += 1
+	if _math_objects._curr_object == _math_objects.get_child_count():
+		_math_objects._curr_object = 1
