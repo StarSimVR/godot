@@ -24,6 +24,9 @@ func get_object(name: String, parent := "") -> Dictionary:
 			return object
 	return {"not_found": true}
 
+func get_objects() -> Array:
+	return data.objects if "objects" in data else []
+
 func get_entry(array_name: String, name: String) -> Dictionary:
 	if !data.has(array_name):
 		return {"not_found": true}

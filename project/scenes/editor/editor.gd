@@ -7,7 +7,7 @@ var orig_mass := 0.0
 var orig_radius := 0.0
 var dragging := false
 
-func _ready():
+func _ready() -> void:
 	scene = SceneEncoder.new("solar_system")
 	init()
 
@@ -28,7 +28,7 @@ func _on_slider_input(event: InputEvent) -> void:
 		if !dragging:
 			update_params()
 
-func init():
+func init() -> void:
 	get_node("/root/Main/HUD/Background").set_margin(MARGIN_BOTTOM, saved_margin_bottom + 40)
 
 func update_params() -> void:
@@ -55,7 +55,7 @@ func update_params() -> void:
 	$Params/Radius.set_value(50)
 	save()
 
-func save():
+func save() -> void:
 	var name: String = ""
 	if "name" in obj:
 		name = obj.name
@@ -130,19 +130,30 @@ func update_radius(change: int) -> void:
 		calc_new_mass(change)
 	update_info()
 
-func _on_gui_input(event):
+func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
 		dragging = event.is_pressed()
 
-func to_creator():
+func to_creator() -> void:
 	var creator := get_node("../Creator")
 	self.hide()
 	creator.show()
 	creator.init()
 
-func delete():
+func delete_objects_with_parent(parent: String) -> void:
+	var objects := scene.get_objects()
+	for object in objects:
+		if "parent" in object && object.parent == parent:
+			if "with_script" in object && object.with_script:
+				object.erase("parent")
+			else:
+				scene.delete_object(object.name, parent)
+			delete_objects_with_parent(name)
+
+func delete() -> void:
 	if "name" in obj:
 		print(obj)
 		scene.delete_object(obj.name, obj.parent if "parent" in obj else "")
+		delete_objects_with_parent(obj.name)
 		unload_object()
 		save()
