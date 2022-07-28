@@ -7,9 +7,6 @@
 [submodule "godot-cpp"]
 	path = godot-cpp
 	url = https://github.com/godotengine/godot-cpp.git
-[submodule "ellipse"]
-	path = ellipse
-	url = https://github.com/StarSimVR/ellipse
 [submodule "astobj"]
 	path = astobj
 	url = https://github.com/StarSimVR/astobj.git
