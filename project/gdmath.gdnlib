@@ -7,8 +7,8 @@ reloadable=false
 
 [entry]
 
-Windows.64="res://bin/win64/libgdmath.dll"
-X11.64="res://bin/x11/libgdmath.so"
+Windows.64="res://bin/win64/libastobj.dll"
+X11.64="res://bin/x11/libastobj.so"
 
 [dependencies]
 

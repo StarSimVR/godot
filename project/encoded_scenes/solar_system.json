@@ -2,12 +2,12 @@
 	"config": {
 		"model_dir": "geometry/solarSystem/glTF2/",
 		"params": [
-			"speed",
-			"radius",
-			"eccentricity",
-			"centre",
-			"normal",
-			"tangent"
+			"position",
+			"velocity",
+			"acceleration",
+			"orientation",
+			"rotationSpeed",
+			"mass"
 		]
 	},
 	"lights": [
@@ -136,11 +136,14 @@
 				3,
 				3
 			],
-			"radius": 0,
-			"eccentricity": 0,
+			"position": [0, 0, 0],
+			"velocity": [0, 0, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
 			"has_collision_object": true,
 			"material": "sun_material",
-			"mass": 0
+			"mass": 27.9
 		},
 		{
 			"with_script": true,
@@ -151,10 +154,13 @@
 				0.009,
 				0.009
 			],
-			"speed": 2,
-			"radius": 3,
-			"eccentricity": 0.206,
-			"has_collision_object": true
+			"position": [20, 0, 0],
+			"velocity": [0, 0.0106245, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"has_collision_object": true,
+			"mass": 0.377
 		},
 		{
 			"with_script": true,
@@ -165,9 +171,12 @@
 				0.026,
 				0.026
 			],
-			"speed": 0.783,
-			"radius": 4,
-			"eccentricity": 0.007,
+			"position": [-24, 0, 0],
+			"velocity": [0, -0.0106245, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 0.9032,
 			"has_collision_object": true
 		},
 		{
@@ -179,9 +188,12 @@
 				0.027,
 				0.027
 			],
-			"speed": 0.482,
-			"radius": 5,
-			"eccentricity": 0.017,
+			"position": [10, 30, 0],
+			"velocity": [0.002, 0.0106245, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 1.0,
 			"has_collision_object": true
 		},
 		{
@@ -193,14 +205,17 @@
 				0.015,
 				0.015
 			],
-			"speed": 0.256,
-			"radius": 6,
-			"eccentricity": 0.093,
+			"position": [20, 30, 0],
+			"velocity": [0.01, 0.002, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 0.3895,
 			"has_collision_object": true
 		},
 		{
 			"seed": 1111,
-			"count": 5000,
+			"count": 50,
 			"name": "asteroid",
 			"scale": [
 				1,
@@ -228,9 +243,12 @@
 				0.3,
 				0.3
 			],
-			"speed": 0.041,
-			"radius": 9,
-			"eccentricity": 0.049,
+			"position": [20, -30, 0],
+			"velocity": [0.01, 0.002, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 2.640,
 			"has_collision_object": true
 		},
 		{
@@ -242,20 +260,18 @@
 				0.25,
 				0.25
 			],
-			"speed": 0.016,
-			"radius": 11,
-			"eccentricity": 0.054,
+			"position": [0, 50, 0],
+			"velocity": [-0.01, 0.0002, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 1.139,
 			"has_collision_object": true
 		},
 		{
 			"child_of": "saturn",
-			"name": "ringsOfSaturn",
-			"speed": 1
-		},
-		{
-			"child_of": "ringsOfSaturn",
 			"seed": 1111,
-			"count": 5000,
+			"count": 50,
 			"name": "ring",
 			"scale": [
 				1,
@@ -286,9 +302,12 @@
 				0.1,
 				0.1
 			],
-			"speed": 0.006,
-			"radius": 13,
-			"eccentricity": 0.047,
+			"position": [-20, 30, 0],
+			"velocity": [-0.001, -0.02, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 0.917,
 			"has_collision_object": true
 		},
 		{
@@ -300,9 +319,12 @@
 				0.1,
 				0.1
 			],
-			"speed": 0.003,
-			"radius": 15,
-			"eccentricity": 0.011,
+			"position": [20, -30, 0],
+			"velocity": [0.01, 0.002, 0],
+			"acceleration": [0, 0, 0],
+			"orientation" : [0, 0, 0],
+			"rotationSpeed": 0,
+			"mass" : 1.148,
 			"has_collision_object": true
 		}
 	],
@@ -316,7 +338,7 @@
 				0.95,
 				0.69
 			],
-			"use_as_albedo": true
+			"use_as_albedo": true,
 		}
 	]
 }

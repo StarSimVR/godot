@@ -3,6 +3,7 @@ extends Spatial
 
 
 var _curr_object := 1
+var first_draw := true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +23,34 @@ func set_cur_object(object):
 		if(parent_name == _objects[i].name):
 			_curr_object = i
 			return
+				
+func _process(delta):
+	if first_draw:
+		first_draw = false
+		init()
+	iter()
+	update_position()
+			
+			
+func iter():
+	var children = self.get_children()
+	for child in children:
+		child.updateInfluence()
+			
+			
+func update_position():
+	var children = self.get_children()
+	for child in children:
+		child.updatePosition()
+			
+			
+func init():
+	for child in self.get_children():
+		child._init()
+		for object in self.get_children():
+			if child == object:
+				continue
+			child.addObject(object)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
