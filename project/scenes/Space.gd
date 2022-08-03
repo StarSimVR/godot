@@ -25,7 +25,6 @@ func set_cur_object(object):
 			return
 				
 func _process(delta):
-	return
 	if first_draw:
 		first_draw = false
 		init()
@@ -34,24 +33,24 @@ func _process(delta):
 			
 			
 func iter():
-	return 
 	var children = self.get_children()
 	for child in children:
 		child.updateInfluence()
 			
 			
 func update_position():
-	return 
 	var children = self.get_children()
 	for child in children:
 		child.updatePosition()
 			
 			
 func init():
-	return
-	var children = self.get_children()
-	for child in children:
-		child.init(self.get_children())
+	for child in self.get_children():
+		child._init()
+		for object in self.get_children():
+			if child == object:
+				continue
+			child.addObject(object)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

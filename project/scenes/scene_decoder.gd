@@ -48,7 +48,6 @@ func create(scene_name: String) -> void:
 		init_multimesh_asteroids(default_asteroid_path, pd_count, planet_data, planet_count, geometries)
 
 		for object in data.objects:
-			pass
 			create_object(object, geometries, materials, pd_count, params, planet_data, planet_count)
 	if data.has("lights"):
 		for light in data.lights:
