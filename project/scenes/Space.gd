@@ -45,6 +45,9 @@ func update_position():
 
 			
 func init():
+	# Since the force from A to B is the same as from B to A, just with the opposite direction,
+	# we can use this to only do the calculation once and act on both bodies.
+	# Hence adding the objects in the following pattern: (n-1) -> (n-2) -> ... -> 1 -> 0
 	var children = self.get_children()
 	var index = 0
 	for child in children:
@@ -54,8 +57,4 @@ func init():
 				continue
 			child.addObject(children[i])
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass_curr_object -= 1
 
