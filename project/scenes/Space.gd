@@ -42,15 +42,17 @@ func update_position():
 	var children = self.get_children()
 	for child in children:
 		child.updatePosition()
-			
+
 			
 func init():
-	for child in self.get_children():
-		child._init()
-		for object in self.get_children():
-			if child == object:
+	var children = self.get_children()
+	var index = 0
+	for child in children:
+		index += 1
+		for i in children.size():
+			if i < index:
 				continue
-			child.addObject(object)
+			child.addObject(children[i])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
