@@ -23,27 +23,30 @@ func set_cur_object(object):
 		if(parent_name == _objects[i].name):
 			_curr_object = i
 			return
-				
+
 func _process(delta):
+	if SceneDecoder.is_editor:
+		return
+
 	if first_draw:
 		first_draw = false
 		init()
 	iter()
 	update_position()
-			
-			
+
+
 func iter():
 	var children = self.get_children()
 	for child in children:
 		child.updateInfluence()
-			
-			
+
+
 func update_position():
 	var children = self.get_children()
 	for child in children:
 		child.updatePosition()
 
-			
+
 func init():
 	# Since the force from A to B is the same as from B to A, just with the opposite direction,
 	# we can use this to only do the calculation once and act on both bodies.
