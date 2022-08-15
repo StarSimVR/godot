@@ -149,10 +149,18 @@ func delete_objects_with_parent(parent: String) -> void:
 				scene.delete_object(object.name, parent)
 			delete_objects_with_parent(name)
 
+	var lights := scene.get_lights()
+	for light in lights:
+		if "child_of" in light && light.child_of == parent:
+			scene.delete_light(light.name)
+
 func delete() -> void:
-	if "name" in obj:
-		print(obj)
-		scene.delete_object(obj.name, obj.parent if "parent" in obj else "")
-		delete_objects_with_parent(obj.name)
+	var name: String = obj.name if "name" in obj else ""
+	var parent: String = obj.parent if "parent" in obj else ""
+	if name && yield($Confirm.ask("Are you sure to delete this object with all nested objects or their scripts?"), "completed"):
+		scene.delete_object(name, parent)
+		delete_objects_with_parent(name)
 		unload_object()
 		save()
+	elif !name:
+		$Alert.info("No object is selected for deletion.")
