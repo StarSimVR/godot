@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/editor/camera.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/editor/creator.gd" type="Script" id=7]
 [ext_resource path="res://scenes/editor/numeric_field.gd" type="Script" id=8]
 [ext_resource path="res://scenes/editor/release_focus.gd" type="Script" id=9]
+[ext_resource path="res://scenes/editor/confirm.gd" type="Script" id=10]
+[ext_resource path="res://scenes/editor/alert.gd" type="Script" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -139,6 +141,18 @@ margin_left = 87.0
 margin_right = 206.0
 margin_bottom = 35.0
 text = "To creator"
+
+[node name="Confirm" type="ConfirmationDialog" parent="HUD/GUI/Editor"]
+margin_top = 203.0
+margin_right = 418.0
+margin_bottom = 291.0
+script = ExtResource( 10 )
+
+[node name="Alert" type="AcceptDialog" parent="HUD/GUI/Editor"]
+margin_top = 203.0
+margin_right = 418.0
+margin_bottom = 291.0
+script = ExtResource( 11 )
 
 [node name="Creator" type="VBoxContainer" parent="HUD/GUI"]
 visible = false
