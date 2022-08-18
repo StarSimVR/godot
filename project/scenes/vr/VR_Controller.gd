@@ -97,7 +97,7 @@ func _physics_process_directional_movement(delta):
 	
 #Function to init the scene upon the first load
 func init():
-	if(self.controller_id == 2):
+	if(self.name == "RightController"):
 		grabCast.visible = true
 		grabCast.collide_with_areas = true
 		grabCast.collide_with_bodies = false
@@ -128,26 +128,27 @@ func _process(_delta):
 func button_pressed(button_index):
 	match button_index:
 		BUTTON.Trigger:
-			match self.controller_id:
-				1:
+			match self.name:
+				"LeftController":
 					change_to_god_view()
-				2:
+					print(self.controller_id)
+				"RightController":
 					teleport()
 				_:
 					print("Trigger__ControllerID: %d" % self.controller_id)
 		BUTTON.TouchPad:
-			match self.controller_id:
-				1: 
+			match self.name:
+				"LeftController": 
 					change_warp_point_backwards()
-				2:
+				"RightController":
 					change_warp_point_forwards()
 				_:
 					print("TouchPad__ControllerID: %d" % self.controller_id)
 		BUTTON.SideButton:
-			match self.controller_id:
-				1:
+			match self.name:
+				"LeftController":
 					BaseController.slower()
-				2:
+				"RightController":
 					BaseController.faster()
 				_:
 					print("SideButton__ControllerID: %d" % self.controller_id)
