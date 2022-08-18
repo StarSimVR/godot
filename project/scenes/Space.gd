@@ -23,42 +23,24 @@ func set_cur_object(object):
 		if(parent_name == _objects[i].name):
 			_curr_object = i
 			return
-<<<<<<< HEAD
 				
 func _physics_process(delta):
-=======
-
-func _process(delta):
 	if SceneDecoder.is_editor:
 		return
-
->>>>>>> b865407cb75e93329c07579ca061d5388c71747a
+		
 	if first_draw:
 		first_draw = false
 		init()
 	iter()
-<<<<<<< HEAD
 	update_position(delta)
-			
-			
-=======
-	update_position()
 
-
->>>>>>> b865407cb75e93329c07579ca061d5388c71747a
 func iter():
 	var children = self.get_children()
 	for child in children:
 		child.updateInfluence()
-<<<<<<< HEAD
 			
 			
 func update_position(delta):
-=======
-
-
-func update_position():
->>>>>>> b865407cb75e93329c07579ca061d5388c71747a
 	var children = self.get_children()
 	for child in children:
 		child.updatePosition(delta)

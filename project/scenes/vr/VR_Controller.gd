@@ -131,7 +131,6 @@ func button_pressed(button_index):
 			match self.name:
 				"LeftController":
 					change_to_god_view()
-					print(self.controller_id)
 				"RightController":
 					teleport()
 				_:
@@ -188,8 +187,8 @@ func update_camera_position_on_teleport():
 	var object: Spatial = _math_objects.get_cur_object()
 	if(object == null): return
 	var object_origin := object.transform.origin
-	var camera_direction = get_parent().get_node("StarSimVRCamera").global_transform.origin - object_origin
-	camera_direction.y = 0
+	var camera_direction = get_parent().global_transform.origin - object_origin
+	#camera_direction.y = 0
 	get_parent().global_transform.origin = object_origin + 2 * camera_direction.normalized()
 		
 
