@@ -24,12 +24,12 @@ func set_cur_object(object):
 			_curr_object = i
 			return
 				
-func _process(delta):
+func _physics_process(delta):
 	if first_draw:
 		first_draw = false
 		init()
 	iter()
-	update_position()
+	update_position(delta)
 			
 			
 func iter():
@@ -38,10 +38,11 @@ func iter():
 		child.updateInfluence()
 			
 			
-func update_position():
+func update_position(delta):
 	var children = self.get_children()
 	for child in children:
-		child.updatePosition()
+		child.updatePosition(delta)
+
 
 			
 func init():
