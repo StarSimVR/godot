@@ -14,6 +14,8 @@ onready var grabCast := get_node("GrabCast")
 #Setup const
 const CONTROLLER_DEADZONE = 0.65
 const MOVEMENT_SPEED = 0.5
+const ColorNotColliding = Color(0, 0, 1, 0.5)
+const ColorColliding = Color(1, 0, 0, 0.5)
 
 var isInited = false
 
@@ -120,8 +122,11 @@ func _process(_delta):
 		#If the raycast is hitting and object, notify the user by rumbling the controller
 		if(rightRayCast.is_colliding()):
 			leftController.rumble = 0.3
+			get_node("../RightController/GrabCast/Mesh").get_mesh().surface_get_material(0).emission = ColorColliding
 		else:
 			leftController.rumble = 0
+			get_node("../RightController/GrabCast/Mesh").get_mesh().surface_get_material(0).emission = ColorNotColliding
+			
 
 
 #Function to specify the behaviour once a button is pressed

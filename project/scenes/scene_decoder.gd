@@ -300,7 +300,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 			colObject.name = "CollisionObject"
 
 		if "scale" in object:
-			colObject.set_scale(Vector3(object.scale[0], object.scale[1], object.scale[2]))
+			var scaling = 1.0
+			if object.scale[0] < 0.2:
+				scaling = 1.0 / (8.0 * object.scale[0])
+			colObject.set_scale(Vector3(object.scale[0] * scaling, object.scale[1] * scaling, object.scale[2] * scaling))
 
 		colObject.input_ray_pickable = true
 		node.add_child(colObject)

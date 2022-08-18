@@ -26,7 +26,7 @@ emission_on_uv2 = false
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 3 )
-size = Vector3( 0.01, 0.01, 1 )
+size = Vector3( 0.01, 0.01, 10000 )
 
 [sub_resource type="SpatialMaterial" id=5]
 vertex_color_use_as_albedo = true
@@ -75,7 +75,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0274399, -0.249455 )
 collide_with_areas = true
 
 [node name="Mesh" type="MeshInstance" parent="ARVROrigin/RightController/GrabCast"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.233433 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4999.7 )
 mesh = SubResource( 2 )
 material/0 = null
 
