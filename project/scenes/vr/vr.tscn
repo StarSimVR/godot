@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/vr/vr.gd" type="Script" id=2]
@@ -7,6 +7,17 @@
 [ext_resource path="res://geometry/Controller/hand_right.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://scenes/base_controller.gd" type="Script" id=6]
 [ext_resource path="res://geometry/Controller/hand_left.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://scenes/vr/GUI.gd" type="Script" id=8]
+
+[sub_resource type="QuadMesh" id=6]
+size = Vector2( 2, 2 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://roboto.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 42
+font_data = SubResource( 7 )
 
 [sub_resource type="SpatialMaterial" id=4]
 vertex_color_use_as_albedo = true
@@ -47,6 +58,39 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
 script = ExtResource( 4 )
 
+[node name="Controller_GUI" type="Spatial" parent="ARVROrigin/LeftController"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.326175 )
+
+[node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/LeftController/Controller_GUI"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+script = ExtResource( 8 )
+gui_viewport_path = NodePath("../GUI")
+
+[node name="GUI" type="Viewport" parent="ARVROrigin/LeftController/Controller_GUI"]
+size = Vector2( 800, 800 )
+transparent_bg = true
+hdr = false
+usage = 1
+render_target_v_flip = true
+gui_snap_controls_to_pixels = false
+
+[node name="GUI_Control" type="Control" parent="ARVROrigin/LeftController/Controller_GUI/GUI"]
+margin_right = 800.0
+margin_bottom = 800.0
+
+[node name="help" type="Label" parent="ARVROrigin/LeftController/Controller_GUI/GUI/GUI_Control"]
+anchor_right = 1.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0.937255, 0.905882, 0.105882, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Trigger 		= God View
+Touch Pad	 = Prev Object
+Side Button = Help"
+align = 1
+valign = 1
+
 [node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/LeftController"]
 transform = Transform( -0.1, 8.74228e-09, 0, -8.74228e-09, -0.1, 0, 0, 0, 0.1, 0.0302044, -0.0179302, 0.139203 )
 mesh = ExtResource( 7 )
@@ -78,6 +122,39 @@ collide_with_areas = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4999.7 )
 mesh = SubResource( 2 )
 material/0 = null
+
+[node name="Controller_GUI" type="Spatial" parent="ARVROrigin/RightController"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.326175 )
+
+[node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/RightController/Controller_GUI"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+script = ExtResource( 8 )
+gui_viewport_path = NodePath("../GUI")
+
+[node name="GUI" type="Viewport" parent="ARVROrigin/RightController/Controller_GUI"]
+size = Vector2( 800, 800 )
+transparent_bg = true
+hdr = false
+usage = 1
+render_target_v_flip = true
+gui_snap_controls_to_pixels = false
+
+[node name="GUI_Control" type="Control" parent="ARVROrigin/RightController/Controller_GUI/GUI"]
+margin_right = 800.0
+margin_bottom = 800.0
+
+[node name="help" type="Label" parent="ARVROrigin/RightController/Controller_GUI/GUI/GUI_Control"]
+anchor_right = 1.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0.937255, 0.905882, 0.105882, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Trigger 		= Teleport
+Touch Pad	 = Next Object
+Side Button = Help"
+align = 1
+valign = 1
 
 [node name="StarSimVRCamera" type="ARVRCamera" parent="ARVROrigin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
