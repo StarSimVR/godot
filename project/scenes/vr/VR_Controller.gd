@@ -150,14 +150,14 @@ func button_pressed(button_index):
 				_:
 					print("TouchPad__ControllerID: %d" % self.controller_id)
 		BUTTON.SideButton:
-			help_text.visible = !help_text.visible
-#			match self.name:
-#				"LeftController":
-#					#BaseController.slower()
-#				"RightController":
-#					#BaseController.faster()
-#				_:
-#					print("SideButton__ControllerID: %d" % self.controller_id)
+			#help_text.visible = !help_text.visible
+			match self.name:
+				"LeftController":
+					BaseController.slower()
+				"RightController":
+					BaseController.faster()
+				_:
+					print("SideButton__ControllerID: %d" % self.controller_id)
 		_:
 			print("Did not match. pressed: %d" % button_index)
 

@@ -59,7 +59,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 script = ExtResource( 4 )
 
 [node name="Controller_GUI" type="Spatial" parent="ARVROrigin/LeftController"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.326175 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.1, 0, 0.1 )
 
 [node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/LeftController/Controller_GUI"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
@@ -87,7 +87,7 @@ custom_colors/font_color = Color( 0.937255, 0.905882, 0.105882, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "Trigger 		= God View
 Touch Pad	 = Prev Object
-Side Button = Help"
+Side Button = Slower"
 align = 1
 valign = 1
 
@@ -124,7 +124,7 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Controller_GUI" type="Spatial" parent="ARVROrigin/RightController"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.326175 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.1, 0, 0.1 )
 
 [node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/RightController/Controller_GUI"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
@@ -152,7 +152,9 @@ custom_colors/font_color = Color( 0.937255, 0.905882, 0.105882, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "Trigger 		= Teleport
 Touch Pad	 = Next Object
-Side Button = Help"
+Side Button = +++Careful+++
+						Faster
+						"
 align = 1
 valign = 1
 
