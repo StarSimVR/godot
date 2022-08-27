@@ -14,16 +14,24 @@ func _process(delta):
 func slower() -> void:
 	if SceneDecoder.is_editor:
 		return
-	var _objects := _math_objects.get_children()
-	for object in _objects:
-		object.slower()
+	if _math_objects.speed <= 1:
+		_math_objects.speed = 0
+		return
+	_math_objects.speed /= 2
+#	var _objects := _math_objects.get_children()
+#	for object in _objects:
+#		object.slower()
 
 func faster() -> void:
 	if SceneDecoder.is_editor:
 		return
-	var _objects := _math_objects.get_children()
-	for object in _objects:
-		object.faster()
+	if _math_objects.speed == 0:
+		_math_objects.speed = 1
+		return
+	_math_objects.speed *= 2
+#	var _objects := _math_objects.get_children()
+#	for object in _objects:
+#		object.faster()
 
 func prev_warp_point() -> void:
 	_math_objects._curr_object -= 1

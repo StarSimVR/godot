@@ -64,7 +64,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.1, 0
 [node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/LeftController/Controller_GUI"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 mesh = SubResource( 6 )
-material/0 = null
 script = ExtResource( 8 )
 gui_viewport_path = NodePath("../GUI")
 
@@ -103,7 +102,6 @@ collide_with_areas = true
 [node name="Mesh" type="MeshInstance" parent="ARVROrigin/LeftController/GrabCast"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.233433 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="RightController" type="ARVRController" parent="ARVROrigin"]
 controller_id = 2
@@ -121,7 +119,6 @@ collide_with_areas = true
 [node name="Mesh" type="MeshInstance" parent="ARVROrigin/RightController/GrabCast"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4999.7 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Controller_GUI" type="Spatial" parent="ARVROrigin/RightController"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.1, 0, 0.1 )
@@ -129,7 +126,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.1, 0,
 [node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/RightController/Controller_GUI"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 mesh = SubResource( 6 )
-material/0 = null
 script = ExtResource( 8 )
 gui_viewport_path = NodePath("../GUI")
 

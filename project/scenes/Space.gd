@@ -4,6 +4,7 @@ extends Spatial
 
 var _curr_object := 1
 var first_draw := true
+var speed := 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,8 +32,9 @@ func _physics_process(delta):
 	if first_draw:
 		first_draw = false
 		init()
-	iter()
-	update_position(delta)
+	for i in range(speed):
+		iter()
+		update_position(delta)
 
 func iter():
 	var children = self.get_children()
