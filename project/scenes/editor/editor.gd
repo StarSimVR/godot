@@ -5,27 +5,16 @@ var scene: SceneEncoder = null
 var obj := {"not_found": true}
 var orig_mass := 0.0
 var orig_radius := 0.0
-var dragging := false
+var gui_dragging := false
 
 func _ready() -> void:
 	scene = SceneEncoder.new("solar_system")
 	init()
 
-func _input(event: InputEvent) -> void:
-	if !dragging && event is InputEventMouseButton && !event.is_pressed() && event.button_index == BUTTON_LEFT:
-		var camera: Camera = get_node("/root/Main/3D/Camera")
-		var from: Vector3 = camera.project_ray_origin(event.position)
-		var to: Vector3 = from + camera.project_ray_normal(event.position) * 1000
-		var result := camera.get_world().direct_space_state.intersect_ray(from, to, [], 2147483647, true, true)
-		if result.empty():
-			unload_object()
-		else:
-			load_object(result.collider.get_parent().name)
-
 func _on_slider_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
-		dragging = event.is_pressed()
-		if !dragging:
+		gui_dragging = event.is_pressed()
+		if !gui_dragging:
 			update_params()
 
 func init() -> void:
@@ -131,7 +120,7 @@ func update_radius(change: int) -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
-		dragging = event.is_pressed()
+		gui_dragging = event.is_pressed()
 
 func to_creator() -> void:
 	var creator := get_node("../Creator")

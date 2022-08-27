@@ -63,8 +63,8 @@ func create_star(object: Dictionary, materials: Dictionary, index) -> void:
 	#Set the material of the star
 	#+++Currently not working+++
 	multiStar.multimesh.set_instance_custom_data(index, materials[object.material].emission)
-		
-func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary, 
+
+func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: Dictionary, planet_count:Dictionary,
 								geometries:Dictionary):
 	var asteroids = get_node(path)
 	if asteroids == null:
@@ -322,7 +322,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "material" in object:
 		mesh.set_surface_material(0, materials[object.material])
 	if "position" in object:
-		node.transform.origin = get_randomized_vector3(object.position, rng)
+		node.transform.origin = get_randomized_vector3(object.position, rng) / 1e7;
 	if "speed" in object && (!object.has("with_script") || !object.with_script):
 		node.set_script(rotate)
 		node.is_editor = is_editor
@@ -347,21 +347,21 @@ func create_auto_generated(path: String, object: Dictionary, pd_count: Dictionar
 			cur_child.multimesh.set_instance_transform(cur_child.multimesh.visible_instance_count - 1, position)
 			cur_child.multimesh.visible_instance_count += 1
 			break
-			
-			
+
+
 func has_multimesh(path: String):
 	var node = get_node(path)
 	var children = node.get_children()
 	for child in children:
 		if child.get_class() == "MultiMeshInstance":
 			return true
-			
+
 	return false
-			
+
 func calculate_asteroid_position(object: Dictionary):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	
+
 	var centre := get_randomized_vector3(object.centre, rng)
 	var axis := -1
 	for i in 3:
@@ -381,7 +381,7 @@ func calculate_asteroid_position(object: Dictionary):
 	var radius = min_radius + k * rng.randf_range(0, max_radius - min_radius)
 	var phi := float(rng.randf_range(0, 2 * PI))
 	return centre + radius * Vector3(cos(phi), sin(phi), 0)
-	
+
 
 func create_light(light: Dictionary) -> void:
 	var space := get_node("/root/Main/Objects/Space")
