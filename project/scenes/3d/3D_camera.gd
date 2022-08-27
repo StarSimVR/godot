@@ -5,6 +5,7 @@ export var speed_with_shift := 25.0
 export var look_sensitivity := 1.0
 var _rotation := Vector2()
 var _free_flight_mode := false
+var _enabled := true
 
 func _ready() -> void:
 	start()
@@ -15,6 +16,12 @@ func start() -> void:
 	create_labels()
 	create_trails()
 	#create_collision_objects()
+
+func disable() -> void:
+	_enabled = false
+
+func enable() -> void:
+	_enabled = true
 
 func is_focused() -> bool:
 	var gui: Control = get_node_or_null("/root/Main/HUD/GUI")
@@ -48,7 +55,7 @@ func _process(delta: float) -> void:
 	if is_focused():
 		return
 
-	if _free_flight_mode:
+	if _free_flight_mode || SceneDecoder.is_editor:
 		move_in_free_flight_mode(delta)
 	else:
 		look_at_current_object()
@@ -68,7 +75,7 @@ func zoom_out() -> void:
 	fov = min(fov + 0.5, 179)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion && Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if _enabled && event is InputEventMouseMotion && Input.is_mouse_button_pressed(BUTTON_LEFT):
 		_rotation += event.relative * look_sensitivity * (-0.001)
 		_rotation.x = fmod(_rotation.x, 2 * PI)
 		_rotation.y = fmod(_rotation.y, 2 * PI)

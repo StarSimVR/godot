@@ -7,4 +7,5 @@ func _on_StartVR_pressed():
 	var _err = get_tree().change_scene("res://scenes/vr/vr.tscn")
 
 func _on_StartEditor_pressed():
+	get_tree().set_debug_collisions_hint(true)
 	var _err = get_tree().change_scene("res://scenes/editor/editor.tscn")
