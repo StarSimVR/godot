@@ -155,7 +155,14 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.emission = Color(m_info.emission[0], m_info.emission[1], m_info.emission[2])
 		if "use_as_albedo" in m_info:
 			m_instance.vertex_color_use_as_albedo = m_info.use_as_albedo
-
+		if "emission_operator" in m_info:
+			match str(m_info.emission_operator):
+				"0":
+					m_instance.emission_operator = SpatialMaterial.EMISSION_OP_ADD
+				"1":
+					m_instance.emission_operator = SpatialMaterial.EMISSION_OP_MULTIPLY
+				_:
+					print("Unknown emission operator " + str(m_info.emission_operator))
 		materials[m_info.name] = m_instance
 	return materials
 
@@ -296,8 +303,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 
 	if "has_collision_object" in object && object.has_collision_object:
 		colObject = collision_object.instance()
-		if "name" in object:
-			colObject.name = "CollisionObject"
+		colObject.name = "CollisionObject"
 
 		if "scale" in object:
 			var scaling = 1.0

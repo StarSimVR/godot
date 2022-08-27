@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if first_draw:
 		first_draw = false
 		init()
-	for i in range(speed):
+	for _i in range(speed):
 		iter()
 		update_position(delta)
 

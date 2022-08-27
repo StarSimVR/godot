@@ -318,7 +318,8 @@
 				0.95,
 				0.69
 			],
-			"use_as_albedo": true
+			"use_as_albedo": false,
+			"emission_operator": 1
 		}
 	]
 }
