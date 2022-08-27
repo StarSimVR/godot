@@ -15,6 +15,8 @@ func _ready():
 func get_cur_object():
 	var _objects = self.get_children()
 	if(_objects.size() == 0): return null
+	if _curr_object >= _objects.size():
+		_curr_object = _objects.size() - 1
 	return _objects[_curr_object]
 
 func set_cur_object(object):

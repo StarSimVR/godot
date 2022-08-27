@@ -155,6 +155,8 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.emission = Color(m_info.emission[0], m_info.emission[1], m_info.emission[2])
 		if "use_as_albedo" in m_info:
 			m_instance.vertex_color_use_as_albedo = m_info.use_as_albedo
+		if "flags_unshaded" in m_info:
+			m_instance.flags_unshaded = m_info.flags_unshaded
 		if "emission_operator" in m_info:
 			match str(m_info.emission_operator):
 				"0":

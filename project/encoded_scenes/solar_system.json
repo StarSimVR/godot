@@ -142,7 +142,6 @@
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
 			"has_collision_object": true,
-			"material": "sun_material",
 			"mass": 295912208285591100
 		},
 		{
@@ -311,7 +310,8 @@
 	"materials": [
 		{
 			"name": "sun_material",
-			"emission_enabled": true,
+			"flags_unshaded": true,
+			"emission_enabled": false,
 			"emission_energy": 1,
 			"emission": [
 				0.94,
