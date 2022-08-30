@@ -146,7 +146,7 @@ func calc_dir(origin_world: Vector3, dir_screen: Vector2) -> Vector3:
 func show_vector() -> void:
 	origin = clicked_obj.transform.origin
 	var vec: Array = editor.obj.velocity if is_velocity else editor.obj.orientation
-	dir = Vector3(vec[0], vec[1], vec[2]) / (1e4 if is_velocity else 1.0)
+	dir = Vector3(vec[0], vec[1], vec[2]) / (SceneDecoder.SCALE_VELOCITY if is_velocity else 1.0)
 
 func arr_to_vec(arr: Array) -> Vector3:
 	return Vector3(arr[0], arr[1], arr[2])
@@ -163,7 +163,7 @@ func set_vector(finally := false) -> void:
 		var new_dir_screen := motion_end - motion_start
 		dir = calc_dir(origin, new_dir_screen)
 	if finally && is_velocity && dir != Vector3.ZERO:
-		editor.obj.velocity = vec_to_arr(1e4 * dir)
+		editor.obj.velocity = vec_to_arr(SceneDecoder.SCALE_VELOCITY * dir)
 	elif finally && dir != Vector3.ZERO:
 		editor.obj.orientation = vec_to_arr(dir)
 
@@ -179,8 +179,8 @@ func drag_planet() -> void:
 	var new_pos := start_position + move
 	clicked_obj.transform.origin = new_pos
 	zero_point = new_pos
-	full_editor.get_node("Params/Position").set_text(new_pos * 1e7)
-	editor.obj.position = [new_pos.x * 1e7, new_pos.y * 1e7, new_pos.z * 1e7]
+	full_editor.get_node("Params/Position").set_text(new_pos * SceneDecoder.SCALE_POSITION)
+	editor.obj.position = vec_to_arr(new_pos * SceneDecoder.SCALE_POSITION)
 
 func calc_distance_to_axis(pos: Vector2, axis: Vector3) -> float:
 	var axis_end := camera.unproject_position(zero_point + axis_length * axis)

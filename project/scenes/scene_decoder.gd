@@ -1,6 +1,8 @@
 extends Node
 
 const DEFAULT_SEED := 1234
+const SCALE_POSITION := 149597870700
+const SCALE_VELOCITY := 1e4
 
 const collision_object := preload("collision_object.tscn")
 const gdmath := preload("res://gdmath.gdns")
@@ -147,6 +149,8 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.normal_texture = textures[m_info.normal_map]
 		if "normalMap" in m_info:
 			m_instance.normal_texture = textures[m_info.normalMap]
+		if "flags_unshaded" in m_info:
+			m_instance.flags_unshaded = m_info.flags_unshaded
 		if "emission_enabled" in m_info:
 			m_instance.emission_enabled = m_info.emission_enabled
 		if "emission_energy" in m_info:
@@ -155,8 +159,6 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.emission = Color(m_info.emission[0], m_info.emission[1], m_info.emission[2])
 		if "use_as_albedo" in m_info:
 			m_instance.vertex_color_use_as_albedo = m_info.use_as_albedo
-		if "flags_unshaded" in m_info:
-			m_instance.flags_unshaded = m_info.flags_unshaded
 		if "emission_operator" in m_info:
 			match str(m_info.emission_operator):
 				"0":
@@ -330,7 +332,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 	if "material" in object:
 		mesh.set_surface_material(0, materials[object.material])
 	if "position" in object:
-		node.transform.origin = get_randomized_vector3(object.position, rng) / 1e7;
+		node.transform.origin = get_randomized_vector3(object.position, rng) / SCALE_POSITION
 	if "speed" in object && (!object.has("with_script") || !object.with_script):
 		node.set_script(rotate)
 		node.is_editor = is_editor

@@ -155,12 +155,14 @@ fit_content_height = true
 margin_top = 203.0
 margin_right = 418.0
 margin_bottom = 291.0
+window_title = "Bitte bestätigen..."
 script = ExtResource( 10 )
 
 [node name="Alert" type="AcceptDialog" parent="HUD/GUI/Editor"]
 margin_top = 203.0
 margin_right = 418.0
 margin_bottom = 291.0
+window_title = "Warnung!"
 script = ExtResource( 11 )
 
 [node name="FullEditor" type="VBoxContainer" parent="HUD/GUI"]
