@@ -3,7 +3,9 @@ extends Control
 const WIDTH := 5
 
 onready var camera: Camera = get_node("/root/Main/3D/Camera")
-onready var editor: Control = get_parent().get_node("GUI/Editor")
+onready var editor := get_parent().get_node("GUI/Editor")
+onready var full_editor := get_parent().get_node("GUI/FullEditor")
+onready var draw_button := get_parent().get_node("GUI/FullEditor/Buttons/Draw")
 
 # Local coordinate system
 var zero_point := Vector3.ZERO
@@ -12,16 +14,19 @@ var axis_length := 0
 # Drawn vector
 var origin := Vector3.ZERO
 var dir := Vector3.ZERO
+var is_velocity := true
 
 # Vector drawing (data that is only important at drawing time)
-var offset_z := 0.0
+var offset_fixed_coord := 0.0
 var new_origin := Vector3.ZERO
 var motion_start := Vector2.ZERO
 var motion_end := Vector2.ZERO
+var fixed_coord := "z"
 
 # Selected object
 var clicked := ""
 var clicked_obj: Spatial
+var is_selected := false
 
 # Planet moving
 var dragging_axis := Vector3.ZERO
@@ -33,19 +38,16 @@ func _draw() -> void:
 
 	draw_vector(origin, origin + dir, Color(0, 1, 1), WIDTH)
 
-# If part of the vector is behind the camera, then this function cuts the vector using a binary search
-func _find_visible_start_recursive(start: Vector3, end: Vector3, l: Vector3, r: Vector3) -> Vector3:
-	if (r - l).length() < 0.1:
-		return r
-
-	var middle := 0.5 * (l + r)
-	if camera.is_position_behind(middle):
-		return _find_visible_start_recursive(start, end, middle, r)
-	else:
-		return _find_visible_start_recursive(start, end, l, middle)
-
+# If part of the vector is behind the camera, then this function cuts the vector using binary search
 func find_visible_start(start: Vector3, end: Vector3) -> Vector3:
-	return _find_visible_start_recursive(start, end, start, end)
+	if (end - start).length() < 0.1:
+		return end
+
+	var middle := 0.5 * (start + end)
+	if camera.is_position_behind(middle):
+		return find_visible_start(middle, end)
+	else:
+		return find_visible_start(start, middle)
 
 func has_collision(point: Vector3) -> bool:
 	var collision_check := camera.get_world().direct_space_state.intersect_ray(
@@ -87,31 +89,37 @@ func draw_axes() -> void:
 
 	# Markers
 	var end := origin + dir
-	draw_vector(
-		Vector3(end.x - 0.1, zero_point.y, zero_point.z),
-		Vector3(end.x + 0.1, zero_point.y, zero_point.z),
-		Color(1, 0.7, 0.7), WIDTH, true
-	)
-	draw_vector(
-		Vector3(zero_point.x, end.y - 0.1, zero_point.z),
-		Vector3(zero_point.x, end.y + 0.1, zero_point.z),
-		Color(0.7, 1, 0.7), WIDTH, true
-	)
-	draw_vector(
-		Vector3(zero_point.x, zero_point.y, zero_point.z + offset_z - 0.1),
-		Vector3(zero_point.x, zero_point.y, zero_point.z + offset_z + 0.1),
-		Color(0.7, 0.7, 1), WIDTH, true
-	)
+	var x_start := zero_point
+	var x_end := zero_point
+	var y_start := zero_point
+	var y_end := zero_point
+	var z_start := zero_point
+	var z_end := zero_point
+	x_start.x = (end.x if fixed_coord != "x" else zero_point.x + offset_fixed_coord) - 0.1
+	x_end.x   = (end.x if fixed_coord != "x" else zero_point.x + offset_fixed_coord) + 0.1
+	y_start.y = (end.y if fixed_coord != "y" else zero_point.y + offset_fixed_coord) - 0.1
+	y_end.y   = (end.y if fixed_coord != "y" else zero_point.y + offset_fixed_coord) + 0.1
+	z_start.z = (end.z if fixed_coord != "z" else zero_point.z + offset_fixed_coord) - 0.1
+	z_end.z   = (end.z if fixed_coord != "z" else zero_point.z + offset_fixed_coord) + 0.1
+	draw_vector(x_start, x_end, Color(1, 0.7, 0.7), WIDTH, true)
+	draw_vector(y_start, y_end, Color(0.7, 1, 0.7), WIDTH, true)
+	draw_vector(z_start, z_end, Color(0.7, 0.7, 1), WIDTH, true)
 
 func _process(delta: float) -> void:
 	update()
 
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		if Input.is_action_pressed("decrease_z_when_dragging_vector"):
-			offset_z -= delta
+	if Input.is_action_just_pressed("switch_to_plane_yz"):
+		fixed_coord = "x"
+	elif Input.is_action_just_pressed("switch_to_plane_xz"):
+		fixed_coord = "y"
+	elif Input.is_action_just_pressed("switch_to_plane_xy"):
+		fixed_coord = "z"
+	elif Input.is_mouse_button_pressed(BUTTON_LEFT):
+		if Input.is_action_pressed("decrease_fixed_coord_when_dragging_vector"):
+			offset_fixed_coord -= delta
 			set_vector()
-		elif Input.is_action_pressed("increase_z_when_dragging_vector"):
-			offset_z += delta
+		elif Input.is_action_pressed("increase_fixed_coord_when_dragging_vector"):
+			offset_fixed_coord += delta
 			set_vector()
 
 func calc_collision(event: InputEvent) -> Dictionary:
@@ -128,14 +136,25 @@ func calc_dir(origin_world: Vector3, dir_screen: Vector2) -> Vector3:
 	var end_screen := origin_screen + dir_screen
 	var end_world_ray_origin := camera.project_ray_origin(end_screen)
 	var end_world_ray_normal := camera.project_ray_normal(end_screen)
-	var target_z := origin_world.z + offset_z
-	# k is calculated so that end_world.z=target_z
-	var k := (target_z - end_world_ray_origin.z) / end_world_ray_normal.z
-	var end_world := end_world_ray_origin + k * end_world_ray_normal
+	var target_fixed_coord := origin_world[fixed_coord] + offset_fixed_coord
+	# k is calculated so that end_world.z=target_z (or x/y instead of z)
+	var k := (target_fixed_coord - end_world_ray_origin[fixed_coord]) / end_world_ray_normal[fixed_coord]
+	var end_world := end_world_ray_origin + abs(k) * end_world_ray_normal
 	var dir_world := end_world - origin_world
 	return dir_world
 
-func set_vector() -> void:
+func show_vector() -> void:
+	origin = clicked_obj.transform.origin
+	var vec: Array = editor.obj.velocity if is_velocity else editor.obj.orientation
+	dir = Vector3(vec[0], vec[1], vec[2]) / (1e4 if is_velocity else 1.0)
+
+func arr_to_vec(arr: Array) -> Vector3:
+	return Vector3(arr[0], arr[1], arr[2])
+
+func vec_to_arr(vec: Vector3) -> Array:
+	return [vec.x, vec.y, vec.z]
+
+func set_vector(finally := false) -> void:
 	if motion_end == Vector2.ZERO:
 		origin = Vector3.ZERO
 		dir = Vector3.ZERO
@@ -143,6 +162,10 @@ func set_vector() -> void:
 		origin = new_origin
 		var new_dir_screen := motion_end - motion_start
 		dir = calc_dir(origin, new_dir_screen)
+	if finally && is_velocity && dir != Vector3.ZERO:
+		editor.obj.velocity = vec_to_arr(1e4 * dir)
+	elif finally && dir != Vector3.ZERO:
+		editor.obj.orientation = vec_to_arr(dir)
 
 func drag_planet() -> void:
 	var obj: Dictionary = editor.obj
@@ -152,21 +175,16 @@ func drag_planet() -> void:
 	var zero := zero_point
 	var axis_end := zero_point + dragging_axis
 	var axis := axis_end - zero
-	var dir_corrected := dir if dragging_axis != Vector3.BACK else -Vector3(dir.x, 0, dir.y)
-	var move := dir_corrected.project(axis)
-	if true:
-		clicked_obj.transform.origin = start_position + move
-		zero_point = clicked_obj.transform.origin
-	else:
-		var new_pos := Vector3(obj.position[0], obj.position[1], obj.position[2]) + move
-		editor.obj.position = [new_pos.x * 1e7, new_pos.y * 1e7, new_pos.z * 1e7]
-		editor.save()
+	var move := dir.project(axis)
+	var new_pos := start_position + move
+	clicked_obj.transform.origin = new_pos
+	zero_point = new_pos
+	full_editor.get_node("Params/Position").set_text(new_pos * 1e7)
+	editor.obj.position = [new_pos.x * 1e7, new_pos.y * 1e7, new_pos.z * 1e7]
 
 func calc_distance_to_axis(pos: Vector2, axis: Vector3) -> float:
-	var zero := camera.unproject_position(zero_point)
-	var axis_end := camera.unproject_position(zero_point + axis)
-	var n: Vector2 = axis_end - zero
-	var distance := abs((pos - zero).cross(n) / n.length())
+	var axis_end := camera.unproject_position(zero_point + axis_length * axis)
+	var distance := (axis_end - pos).length()
 	return distance
 
 func set_dragging_axis(pos: Vector2) -> void:
@@ -176,46 +194,77 @@ func set_dragging_axis(pos: Vector2) -> void:
 	var z_distance := calc_distance_to_axis(pos, Vector3.BACK)
 	if x_distance < threshold && y_distance > x_distance && z_distance > x_distance:
 		dragging_axis = Vector3.RIGHT
+		fixed_coord = "z"
 	elif y_distance < threshold && z_distance > y_distance:
 		dragging_axis = Vector3.UP
+		fixed_coord = "z"
 	elif z_distance < threshold:
 		dragging_axis = Vector3.BACK
+		fixed_coord = "x"
 	else:
+		if dragging_axis != Vector3.ZERO:
+			fixed_coord = "z"
 		dragging_axis = Vector3.ZERO
 
+func clear() -> void:
+	zero_point = Vector3.ZERO
+	axis_length = 0
+	origin = Vector3.ZERO
+	dir = Vector3.ZERO
+	offset_fixed_coord = 0.0
+	new_origin = Vector3.ZERO
+	fixed_coord = "z"
+	clicked = ""
+	clicked_obj = null
+
 func _input(event: InputEvent) -> void:
-	if editor.gui_dragging:
+	if editor.gui_input:
 		return
 
 	if event is InputEventMouseButton && event.get_button_index() == BUTTON_LEFT:
 		# Left mouse button pressed
 		if event.is_pressed():
 			var pos: Vector2 = event.get_position()
-			var collision := calc_collision(event)
-			clicked = collision.name if "name" in collision else ""
-			clicked_obj = collision.object if clicked else null
-			new_origin = collision.position if clicked else Vector3.ZERO
-			motion_start = pos
-			offset_z = 0 if clicked else offset_z
 			set_dragging_axis(pos)
+			if dragging_axis == Vector3.ZERO || !clicked:
+				var collision := calc_collision(event)
+				is_selected = ("name" in collision)
+				if is_selected:
+					clicked = collision.name
+					clicked_obj = collision.object
+					new_origin = clicked_obj.transform.origin
+			motion_start = pos
+			offset_fixed_coord = 0.0 if clicked else offset_fixed_coord
 			start_position = clicked_obj.transform.origin if clicked else Vector3.ZERO
 		# Left mouse button released & a planet is selected
 		elif clicked:
-			set_vector()
+			set_vector(true)
 			drag_planet()
 
-			editor.load_object(clicked)
+			if is_selected:
+				editor.load_object(clicked)
+				zero_point = clicked_obj.transform.origin
+				var obj: Dictionary = editor.obj
+				axis_length = int(max(1, round(obj.scale[0] * 2)))
+				show_vector()
+			else:
+				editor.unload_object()
 			camera.enable()
-			clicked = ""
-			var obj: Dictionary = editor.obj
-			zero_point = clicked_obj.transform.origin
-			axis_length = int(max(1, round(obj.scale[0] * 2)))
+		# Left mouse button released & a planet was moved
+		elif dragging_axis != Vector3.ZERO:
+			drag_planet()
 		# Left mouse button released & no planet is selected
 		else:
 			editor.unload_object()
 		motion_end = Vector2.ZERO
-	elif event is InputEventMouseMotion && event.get_button_mask() == BUTTON_LEFT && clicked:
+	elif event is InputEventMouseMotion && event.get_button_mask() == BUTTON_LEFT && is_selected:
 		camera.disable()
 		motion_end = event.get_position()
 		set_vector()
 		drag_planet()
+
+func toggle_param():
+	is_velocity = !is_velocity
+	var param_name := "orientation" if is_velocity else "velocity"
+	draw_button.set_text("Draw " + param_name)
+	show_vector()

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/editor/numeric_field.gd" type="Script" id=1]
+[ext_resource path="res://scenes/editor/vector.gd" type="Script" id=2]
+
+[node name="Vector" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="X" type="LineEdit" parent="."]
+margin_right = 58.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+placeholder_text = "X"
+script = ExtResource( 1 )
+
+[node name="Y" type="LineEdit" parent="."]
+margin_left = 62.0
+margin_right = 120.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+placeholder_text = "Y"
+script = ExtResource( 1 )
+
+[node name="Z" type="LineEdit" parent="."]
+margin_left = 124.0
+margin_right = 182.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+placeholder_text = "Z"
+script = ExtResource( 1 )

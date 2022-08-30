@@ -1,6 +1,11 @@
-[gd_resource type="Theme" load_steps=3 format=2]
+[gd_resource type="Theme" load_steps=5 format=2]
 
 [ext_resource path="res://roboto.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://roboto-bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -9,4 +14,5 @@ font_data = ExtResource( 1 )
 [resource]
 default_font = SubResource( 1 )
 HBoxContainer/constants/separation = 10
+RichTextLabel/fonts/bold_font = SubResource( 2 )
 VBoxContainer/constants/separation = 10

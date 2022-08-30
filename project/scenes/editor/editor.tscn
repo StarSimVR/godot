@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/editor/camera.gd" type="Script" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://scenes/3d/3D_controller.gd" type="Script" id=4]
 [ext_resource path="res://scenes/3d/help.gd" type="Script" id=5]
 [ext_resource path="res://scenes/editor/editor.gd" type="Script" id=6]
-[ext_resource path="res://scenes/editor/creator.gd" type="Script" id=7]
+[ext_resource path="res://scenes/editor/full_editor.gd" type="Script" id=7]
 [ext_resource path="res://scenes/editor/numeric_field.gd" type="Script" id=8]
 [ext_resource path="res://scenes/editor/release_focus.gd" type="Script" id=9]
 [ext_resource path="res://scenes/editor/confirm.gd" type="Script" id=10]
 [ext_resource path="res://scenes/editor/alert.gd" type="Script" id=11]
 [ext_resource path="res://scenes/editor/draw.gd" type="Script" id=12]
+[ext_resource path="res://scenes/editor/vector.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -85,13 +86,13 @@ theme = ExtResource( 3 )
 
 [node name="Editor" type="VBoxContainer" parent="HUD/GUI"]
 margin_right = 418.0
-margin_bottom = 193.0
+margin_bottom = 194.0
 script = ExtResource( 6 )
 
 [node name="Locked" type="CheckBox" parent="HUD/GUI/Editor"]
 margin_right = 418.0
 margin_bottom = 37.0
-text = "Lock mass / radius ratio"
+text = "Lock mass / scaling factor ratio"
 
 [node name="Params" type="GridContainer" parent="HUD/GUI/Editor"]
 margin_top = 47.0
@@ -100,26 +101,26 @@ margin_bottom = 109.0
 columns = 2
 
 [node name="MassLabel" type="Label" parent="HUD/GUI/Editor/Params"]
-margin_right = 82.0
+margin_right = 153.0
 margin_bottom = 29.0
 text = "Mass: "
 
 [node name="Mass" type="HSlider" parent="HUD/GUI/Editor/Params"]
-margin_left = 86.0
+margin_left = 157.0
 margin_right = 418.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 value = 50.0
 scrollable = false
 
-[node name="RadiusLabel" type="Label" parent="HUD/GUI/Editor/Params"]
+[node name="ScalingFactorLabel" type="Label" parent="HUD/GUI/Editor/Params"]
 margin_top = 33.0
-margin_right = 82.0
+margin_right = 153.0
 margin_bottom = 62.0
-text = "Radius: "
+text = "Scaling factor: "
 
-[node name="Radius" type="HSlider" parent="HUD/GUI/Editor/Params"]
-margin_left = 86.0
+[node name="ScalingFactor" type="HSlider" parent="HUD/GUI/Editor/Params"]
+margin_left = 157.0
 margin_top = 33.0
 margin_right = 418.0
 margin_bottom = 49.0
@@ -127,26 +128,28 @@ size_flags_horizontal = 3
 value = 50.0
 scrollable = false
 
-[node name="Info" type="Label" parent="HUD/GUI/Editor"]
+[node name="Buttons" type="HBoxContainer" parent="HUD/GUI/Editor"]
 margin_top = 119.0
 margin_right = 418.0
-margin_bottom = 148.0
-
-[node name="Buttons" type="HBoxContainer" parent="HUD/GUI/Editor"]
-margin_top = 158.0
-margin_right = 418.0
-margin_bottom = 193.0
+margin_bottom = 154.0
 
 [node name="Delete" type="Button" parent="HUD/GUI/Editor/Buttons"]
 margin_right = 77.0
 margin_bottom = 35.0
 text = "Delete"
 
-[node name="ToCreator" type="Button" parent="HUD/GUI/Editor/Buttons"]
+[node name="ToFullEditor" type="Button" parent="HUD/GUI/Editor/Buttons"]
 margin_left = 87.0
-margin_right = 206.0
+margin_right = 228.0
 margin_bottom = 35.0
-text = "To creator"
+text = "To full editor"
+
+[node name="Info" type="RichTextLabel" parent="HUD/GUI/Editor"]
+margin_top = 164.0
+margin_right = 418.0
+margin_bottom = 194.0
+bbcode_enabled = true
+fit_content_height = true
 
 [node name="Confirm" type="ConfirmationDialog" parent="HUD/GUI/Editor"]
 margin_top = 203.0
@@ -160,132 +163,171 @@ margin_right = 418.0
 margin_bottom = 291.0
 script = ExtResource( 11 )
 
-[node name="Creator" type="VBoxContainer" parent="HUD/GUI"]
+[node name="FullEditor" type="VBoxContainer" parent="HUD/GUI"]
 visible = false
 margin_right = 418.0
-margin_bottom = 342.0
+margin_bottom = 385.0
 script = ExtResource( 7 )
 
-[node name="Params" type="GridContainer" parent="HUD/GUI/Creator"]
-margin_right = 418.0
-margin_bottom = 297.0
+[node name="Params" type="GridContainer" parent="HUD/GUI/FullEditor"]
+margin_right = 423.0
+margin_bottom = 340.0
 columns = 2
 
-[node name="NameLabel" type="Label" parent="HUD/GUI/Creator/Params"]
+[node name="NameLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
 margin_top = 5.0
-margin_right = 130.0
+margin_right = 153.0
 margin_bottom = 34.0
 text = "Name: "
 
-[node name="Name" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
-margin_right = 418.0
+[node name="Name" type="LineEdit" parent="HUD/GUI/FullEditor/Params"]
+margin_left = 157.0
+margin_right = 423.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 script = ExtResource( 9 )
 
-[node name="GeometryLabel" type="Label" parent="HUD/GUI/Creator/Params"]
-margin_top = 134.0
-margin_right = 130.0
-margin_bottom = 163.0
+[node name="GeometryLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
+margin_top = 48.0
+margin_right = 153.0
+margin_bottom = 77.0
 text = "Geometry: "
 
-[node name="Geometry" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
-margin_top = 129.0
-margin_right = 418.0
-margin_bottom = 168.0
+[node name="Geometry" type="LineEdit" parent="HUD/GUI/FullEditor/Params"]
+margin_left = 157.0
+margin_top = 43.0
+margin_right = 423.0
+margin_bottom = 82.0
 script = ExtResource( 9 )
 
-[node name="MassLabel" type="Label" parent="HUD/GUI/Creator/Params"]
-margin_top = 48.0
-margin_right = 130.0
-margin_bottom = 77.0
-text = "Mass: "
-
-[node name="Mass" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
-margin_top = 43.0
-margin_right = 418.0
-margin_bottom = 82.0
-script = ExtResource( 8 )
-
-[node name="RadiusLabel" type="Label" parent="HUD/GUI/Creator/Params"]
+[node name="ScaleLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
 margin_top = 91.0
-margin_right = 130.0
+margin_right = 153.0
 margin_bottom = 120.0
-text = "Radius: "
+hint_tooltip = "Scaling factor"
+mouse_filter = 1
+text = "Scaling f.:  "
 
-[node name="Radius" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
+[node name="Scale" type="LineEdit" parent="HUD/GUI/FullEditor/Params"]
+margin_left = 157.0
 margin_top = 86.0
-margin_right = 418.0
+margin_right = 423.0
 margin_bottom = 125.0
 script = ExtResource( 8 )
 
-[node name="ScaleLabel" type="Label" parent="HUD/GUI/Creator/Params"]
-margin_top = 177.0
-margin_right = 130.0
-margin_bottom = 206.0
-text = "Scale: "
+[node name="MassLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
+margin_top = 134.0
+margin_right = 153.0
+margin_bottom = 163.0
+text = "Mass: "
 
-[node name="Scale" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
+[node name="Mass" type="LineEdit" parent="HUD/GUI/FullEditor/Params"]
+margin_left = 157.0
+margin_top = 129.0
+margin_right = 423.0
+margin_bottom = 168.0
+script = ExtResource( 8 )
+
+[node name="RotationSpeedLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
+margin_top = 177.0
+margin_right = 153.0
+margin_bottom = 206.0
+hint_tooltip = "Rotation speed"
+mouse_filter = 1
+text = "Rot. speed: "
+
+[node name="RotationSpeed" type="LineEdit" parent="HUD/GUI/FullEditor/Params"]
+margin_left = 157.0
 margin_top = 172.0
-margin_right = 418.0
+margin_right = 423.0
 margin_bottom = 211.0
 script = ExtResource( 8 )
+is_integer = true
 
-[node name="SpeedLabel" type="Label" parent="HUD/GUI/Creator/Params"]
+[node name="PositionLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
 margin_top = 220.0
-margin_right = 130.0
+margin_right = 153.0
 margin_bottom = 249.0
-text = "Speed: "
+text = "Position: "
 
-[node name="Speed" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
+[node name="Position" parent="HUD/GUI/FullEditor/Params" instance=ExtResource( 13 )]
+margin_left = 157.0
 margin_top = 215.0
-margin_right = 418.0
+margin_right = 423.0
 margin_bottom = 254.0
-script = ExtResource( 8 )
 
-[node name="EccentricityLabel" type="Label" parent="HUD/GUI/Creator/Params"]
+[node name="VelocityLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
 margin_top = 263.0
-margin_right = 130.0
+margin_right = 153.0
 margin_bottom = 292.0
-text = "Eccentricity: "
+text = "Velocity: "
 
-[node name="Eccentricity" type="LineEdit" parent="HUD/GUI/Creator/Params"]
-margin_left = 134.0
+[node name="Velocity" parent="HUD/GUI/FullEditor/Params" instance=ExtResource( 13 )]
+margin_left = 157.0
 margin_top = 258.0
-margin_right = 418.0
+margin_right = 423.0
 margin_bottom = 297.0
-script = ExtResource( 8 )
 
-[node name="Buttons" type="HBoxContainer" parent="HUD/GUI/Creator"]
-margin_top = 307.0
-margin_right = 418.0
-margin_bottom = 342.0
+[node name="OrientationLabel" type="Label" parent="HUD/GUI/FullEditor/Params"]
+margin_top = 306.0
+margin_right = 153.0
+margin_bottom = 335.0
+text = "Orientation: "
 
-[node name="Create" type="Button" parent="HUD/GUI/Creator/Buttons"]
+[node name="Orientation" parent="HUD/GUI/FullEditor/Params" instance=ExtResource( 13 )]
+margin_left = 157.0
+margin_top = 301.0
+margin_right = 423.0
+margin_bottom = 340.0
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/GUI/FullEditor"]
+margin_top = 350.0
+margin_right = 423.0
+margin_bottom = 385.0
+
+[node name="Save" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
 margin_right = 81.0
 margin_bottom = 35.0
-text = "Create"
+text = "Save"
 
-[node name="ToEditor" type="Button" parent="HUD/GUI/Creator/Buttons"]
+[node name="ToEditor" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
 margin_left = 91.0
 margin_right = 195.0
 margin_bottom = 35.0
 text = "To editor"
 
+[node name="Spacer" type="Control" parent="HUD/GUI/FullEditor/Buttons"]
+margin_left = 205.0
+margin_right = 229.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+
+[node name="Draw" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
+margin_left = 239.0
+margin_right = 423.0
+margin_bottom = 35.0
+text = "Draw orientation"
+
 [connection signal="gui_input" from="HUD/GUI/Editor/Locked" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Params/Mass" to="HUD/GUI/Editor" method="_on_slider_input"]
 [connection signal="value_changed" from="HUD/GUI/Editor/Params/Mass" to="HUD/GUI/Editor" method="update_mass"]
-[connection signal="gui_input" from="HUD/GUI/Editor/Params/Radius" to="HUD/GUI/Editor" method="_on_slider_input"]
-[connection signal="value_changed" from="HUD/GUI/Editor/Params/Radius" to="HUD/GUI/Editor" method="update_radius"]
+[connection signal="gui_input" from="HUD/GUI/Editor/Params/ScalingFactor" to="HUD/GUI/Editor" method="_on_slider_input"]
+[connection signal="value_changed" from="HUD/GUI/Editor/Params/ScalingFactor" to="HUD/GUI/Editor" method="update_scaling_factor"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Buttons/Delete" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="pressed" from="HUD/GUI/Editor/Buttons/Delete" to="HUD/GUI/Editor" method="delete"]
-[connection signal="gui_input" from="HUD/GUI/Editor/Buttons/ToCreator" to="HUD/GUI/Editor" method="_on_gui_input"]
-[connection signal="pressed" from="HUD/GUI/Editor/Buttons/ToCreator" to="HUD/GUI/Editor" method="to_creator"]
-[connection signal="pressed" from="HUD/GUI/Creator/Buttons/Create" to="HUD/GUI/Creator" method="create"]
-[connection signal="pressed" from="HUD/GUI/Creator/Buttons/ToEditor" to="HUD/GUI/Creator" method="to_editor"]
+[connection signal="gui_input" from="HUD/GUI/Editor/Buttons/ToFullEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/Editor/Buttons/ToFullEditor" to="HUD/GUI/Editor" method="to_full_editor"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Name" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Geometry" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Scale" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Mass" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/RotationSpeed" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Position" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Velocity" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Orientation" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/Save" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Save" to="HUD/GUI/FullEditor" method="save"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/ToEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/ToEditor" to="HUD/GUI/FullEditor" method="to_editor"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/Draw" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Draw" to="HUD/Draw" method="toggle_param"]
