@@ -47,7 +47,7 @@ func iter():
 func update_position(delta):
 	var children = self.get_children()
 	for child in children:
-		child.updatePosition(delta)
+		child.updatePosition(delta, Engine.get_frames_per_second())
 
 
 
