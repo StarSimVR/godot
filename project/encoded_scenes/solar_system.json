@@ -144,7 +144,7 @@
 			"rotationSpeed": 0,
 			"has_collision_object": true,
 			"material": "sun_material",
-			"mass": 1.9885477944116693e+19
+			"mass": 1.989e+18
 		},
 		{
 			"with_script": true,
@@ -161,7 +161,7 @@
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
 			"has_collision_object": true,
-			"mass": 3.301216337527821e+12
+			"mass": 3.30104e+11
 		},
 		{
 			"with_script": true,
@@ -177,7 +177,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 4.867643428250844e+13,
+			"mass" : 4.867e+12,
 			"has_collision_object": true
 		},
 		{
@@ -194,7 +194,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 6.046045636282655e+13,
+			"mass" : 5.9722e+12,
 			"has_collision_object": true
 		},
 		{
@@ -211,7 +211,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 6.41735402070229e+12,
+			"mass" : 6.39e+11,
 			"has_collision_object": true
 		},
 		{
@@ -228,7 +228,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 1.8986493571154056e+16,
+			"mass" : 1.898e+15,
 			"has_collision_object": true
 		},
 		{
@@ -245,7 +245,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 5.6849732394571e+15,
+			"mass" : 5.683e+14,
 			"has_collision_object": true
 		},
 		{
@@ -287,7 +287,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 8.682484350751037e+14,
+			"mass" : 8.681e+13,
 			"has_collision_object": true
 		},
 		{
@@ -304,7 +304,7 @@
 			"acceleration": [0, 0, 0],
 			"orientation" : [0, 0, 0],
 			"rotationSpeed": 0,
-			"mass" : 1.0243772839228813e+15,
+			"mass" : 1.024e+14,
 			"has_collision_object": true
 		}
 		
