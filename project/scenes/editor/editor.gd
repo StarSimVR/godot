@@ -27,6 +27,12 @@ func _on_slider_input(event: InputEvent) -> void:
 func init() -> void:
 	get_node("/root/Main/HUD/Background").set_margin(MARGIN_BOTTOM, saved_margin_bottom + 70)
 
+func not_saved() -> void:
+	$Buttons/Save.set_disabled(false)
+
+func saved() -> void:
+	$Buttons/Save.set_disabled(true)
+
 func update_params() -> void:
 	if obj.has("not_found"):
 		$Params/Mass.set_value(50)
@@ -49,7 +55,6 @@ func update_params() -> void:
 	orig_scaling_factor = get_scaling_factor()
 	$Params/Mass.set_value(50)
 	$Params/ScalingFactor.set_value(50)
-	save()
 
 func save() -> void:
 	var name: String = ""
@@ -64,6 +69,8 @@ func save() -> void:
 	camera.start()
 	if name:
 		load_object(name)
+	saved()
+	full_editor.saved()
 
 func get_mass() -> float:
 	return obj.mass if "mass" in obj else 0.0
@@ -74,13 +81,26 @@ func get_scaling_factor() -> float:
 	return obj.scale[0] if "with_script" in obj && obj.with_script else obj.radius
 
 func set_mass(mass: float) -> void:
+	if "not_found" in obj:
+		return
+
 	obj.mass = mass
+	not_saved()
+	full_editor.not_saved()
 
 func set_scaling_factor(scaling_factor: float) -> void:
+	if "not_found" in obj:
+		return
+
 	if "with_script" in obj && obj.with_script:
 		obj.scale = [scaling_factor, scaling_factor, scaling_factor]
 	else:
 		obj.radius = scaling_factor
+
+	var new_scale := Vector3(scaling_factor, scaling_factor, scaling_factor)
+	draw.clicked_obj.get_child(0).set_scale(new_scale)
+	not_saved()
+	full_editor.not_saved()
 
 func load_object(name: String) -> void:
 	obj = scene.get_object(name)
@@ -159,6 +179,5 @@ func delete() -> void:
 		scene.delete_object(name, parent)
 		delete_objects_with_parent(name)
 		unload_object()
-		save()
 	elif !name:
 		$Alert.info("No object is selected for deletion.")

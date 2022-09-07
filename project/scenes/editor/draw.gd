@@ -36,7 +36,8 @@ func _draw() -> void:
 	if axis_length > 0:
 		draw_axes()
 
-	draw_vector(origin, origin + dir, Color(0, 1, 1), WIDTH)
+	if dragging_axis == Vector3.ZERO:
+		draw_vector(origin, origin + dir, Color(0, 1, 1), WIDTH)
 
 # If part of the vector is behind the camera, then this function cuts the vector using binary search
 func find_visible_start(start: Vector3, end: Vector3) -> Vector3:
@@ -162,10 +163,10 @@ func set_vector(finally := false) -> void:
 		origin = new_origin
 		var new_dir_screen := motion_end - motion_start
 		dir = calc_dir(origin, new_dir_screen)
-	if finally && is_velocity && dir != Vector3.ZERO:
-		editor.obj.velocity = vec_to_arr(SceneDecoder.SCALE_VELOCITY * dir)
-	elif finally && dir != Vector3.ZERO:
-		editor.obj.orientation = vec_to_arr(dir)
+		if finally && is_velocity && dir != Vector3.ZERO && dragging_axis == Vector3.ZERO:
+			editor.obj.velocity = vec_to_arr(SceneDecoder.SCALE_VELOCITY * dir)
+		elif finally && dir != Vector3.ZERO && dragging_axis == Vector3.ZERO:
+			editor.obj.orientation = vec_to_arr(dir)
 
 func drag_planet() -> void:
 	var obj: Dictionary = editor.obj
@@ -240,6 +241,7 @@ func _input(event: InputEvent) -> void:
 		elif clicked:
 			set_vector(true)
 			drag_planet()
+			dragging_axis = Vector3.ZERO
 
 			if is_selected:
 				editor.load_object(clicked)
@@ -267,4 +269,5 @@ func toggle_param():
 	is_velocity = !is_velocity
 	var param_name := "orientation" if is_velocity else "velocity"
 	draw_button.set_text("Draw " + param_name)
-	show_vector()
+	if is_selected:
+		show_vector()

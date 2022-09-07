@@ -133,14 +133,21 @@ margin_top = 119.0
 margin_right = 418.0
 margin_bottom = 154.0
 
+[node name="Save" type="Button" parent="HUD/GUI/Editor/Buttons"]
+margin_right = 62.0
+margin_bottom = 35.0
+disabled = true
+text = "Save"
+
 [node name="Delete" type="Button" parent="HUD/GUI/Editor/Buttons"]
-margin_right = 77.0
+margin_left = 72.0
+margin_right = 149.0
 margin_bottom = 35.0
 text = "Delete"
 
 [node name="ToFullEditor" type="Button" parent="HUD/GUI/Editor/Buttons"]
-margin_left = 87.0
-margin_right = 228.0
+margin_left = 159.0
+margin_right = 300.0
 margin_bottom = 35.0
 text = "To full editor"
 
@@ -290,6 +297,7 @@ margin_bottom = 385.0
 [node name="Save" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
 margin_right = 81.0
 margin_bottom = 35.0
+disabled = true
 text = "Save"
 
 [node name="ToEditor" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
@@ -304,7 +312,13 @@ margin_right = 229.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 
+[node name="Create" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
+margin_right = 12.0
+margin_bottom = 35.0
+text = "Create"
+
 [node name="Draw" type="Button" parent="HUD/GUI/FullEditor/Buttons"]
+visible = false
 margin_left = 239.0
 margin_right = 423.0
 margin_bottom = 35.0
@@ -315,6 +329,8 @@ text = "Draw orientation"
 [connection signal="value_changed" from="HUD/GUI/Editor/Params/Mass" to="HUD/GUI/Editor" method="update_mass"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Params/ScalingFactor" to="HUD/GUI/Editor" method="_on_slider_input"]
 [connection signal="value_changed" from="HUD/GUI/Editor/Params/ScalingFactor" to="HUD/GUI/Editor" method="update_scaling_factor"]
+[connection signal="gui_input" from="HUD/GUI/Editor/Buttons/Save" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/Editor/Buttons/Save" to="HUD/GUI/Editor" method="save"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Buttons/Delete" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="pressed" from="HUD/GUI/Editor/Buttons/Delete" to="HUD/GUI/Editor" method="delete"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Buttons/ToFullEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
@@ -328,8 +344,10 @@ text = "Draw orientation"
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Velocity" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Orientation" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/Save" to="HUD/GUI/Editor" method="_on_gui_input"]
-[connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Save" to="HUD/GUI/FullEditor" method="save"]
+[connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Save" to="HUD/GUI/Editor" method="save"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/ToEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/ToEditor" to="HUD/GUI/FullEditor" method="to_editor"]
+[connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/Create" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Create" to="HUD/GUI/FullEditor" method="create"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/Draw" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Draw" to="HUD/Draw" method="toggle_param"]
