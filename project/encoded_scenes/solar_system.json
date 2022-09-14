@@ -1,326 +1,469 @@
 {
-	"config": {
-		"model_dir": "geometry/solarSystem/glTF2/",
-		"params": [
-			"position",
-			"velocity",
-			"acceleration",
-			"orientation",
-			"rotationSpeed",
-			"mass"
-		]
-	},
-	"lights": [
-		{
-			"name": "OmniLight",
-			"child_of": "sun",
-			"radius": 4096,
-			"attenuation": 3,
-			"color": [
-				1,
-				1,
-				1
-			]
-		}
-	],
-	"geometries": [
-		{
-			"name": "sun",
-			"type": "mesh",
-			"path": "sun.glb"
-		},
-		{
-			"name": "mercury",
-			"type": "mesh",
-			"path": "mercury.glb"
-		},
-		{
-			"name": "venus",
-			"type": "mesh",
-			"path": "venus.glb"
-		},
-		{
-			"name": "earth",
-			"type": "mesh",
-			"path": "earth.glb"
-		},
-		{
-			"name": "mars",
-			"type": "mesh",
-			"path": "mars.glb"
-		},
-		{
-			"name": "jupiter",
-			"type": "mesh",
-			"path": "jupiter.glb"
-		},
-		{
-			"name": "saturn",
-			"type": "mesh",
-			"path": "saturn.glb"
-		},
-		{
-			"name": "uranus",
-			"type": "mesh",
-			"path": "uranus.glb"
-		},
-		{
-			"name": "neptune",
-			"type": "mesh",
-			"path": "neptune.glb"
-		}
-	],
-	"planet_data": [
-		{
-			"name": "asteroid",
-			"seed": 1234,
-			"count": 15,
-			"radius": 0.0009,
-			"resolution": 20,
-			"planet_noise": {
-				"amplitude": [
-					1,
-					3
-				],
-				"min_height": 0,
-				"use_first_layer_as_mask": false,
-				"octaves": 4,
-				"period": [
-					30,
-					150
-				],
-				"persistence": 0.5,
-				"lacunarity": 2
-			},
-			"planet_color": {
-				"width": 128,
-				"offsets": [
-					0,
-					0.25,
-					0.5,
-					0.75,
-					1
-				],
-				"colors": [
-					0.1,
-					0.1,
-					0.1,
-					1,
-					0.3,
-					0.3,
-					0.3,
-					1,
-					0.5,
-					0.5,
-					0.5,
-					1,
-					0.7,
-					0.7,
-					0.7,
-					1,
-					0.9,
-					0.9,
-					0.9,
-					1
-				]
-			}
-		}
-	],
-	"objects": [
-		{
-			"with_script": true,
-			"name": "sun",
-			"geometry": "sun",
-			"scale": [
-				0.3,
-				0.3,
-				0.3
-			],
-			"position": [673565726.9902717, 114753000.15697846, 39801697.980815545],
-			"velocity": [-52620.98161661111, 774561.8861911629, 333468.93953797],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"has_collision_object": true,
-			"material": "sun_material",
-			"mass": 1.9885477944116693e+19
-		},
-		{
-			"with_script": true,
-			"name": "mercury",
-			"geometry": "mercury",
-			"scale": [
-				0.009,
-				0.009,
-				0.009
-			],
-			"position": [149597870700.36176, -13580789732.59888, -12822777382.496496],
-			"velocity": [503769927.80714697, 3724167267.526818, 1936738974.7342694],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"has_collision_object": true,
-			"mass": 3.301216337527821e+12
-		},
-		{
-			"with_script": true,
-			"name": "venus",
-			"geometry": "venus",
-			"scale": [
-				0.026,
-				0.026,
-				0.026
-			],
-			"position": [91666385616.2192, -52114717433.0496, -29213215880.66537],
-			"velocity": [1638406115.9205291, 2336372311.737893, 947119932.3421152],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 4.867643428250844e+13,
-			"has_collision_object": true
-		},
-		{
-			"with_script": true,
-			"name": "earth",
-			"geometry": "earth",
-			"scale": [
-				0.027,
-				0.027,
-				0.027
-			],
-			"position": [18029148531.837303, -138503464437.6003, -60069562877.78738],
-			"velocity": [2514929942.910043, 261543338.24301285, 113425539.00708671],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 6.046045636282655e+13,
-			"has_collision_object": true
-		},
-		{
-			"with_script": true,
-			"name": "mars",
-			"geometry": "mars",
-			"scale": [
-				0.015,
-				0.015,
-				0.015
-			],
-			"position": [-16483602522.246138, -198606050907.81674, -90639725296.70317],
-			"velocity": [2166424461.5504622, 36271960.0181062, -42114901.45539512],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 6.41735402070229e+12,
-			"has_collision_object": true
-		},
-		{
-			"with_script": true,
-			"name": "jupiter",
-			"geometry": "jupiter",
-			"scale": [
-				0.3,
-				0.3,
-				0.3
-			],
-			"position": [-804792677566.0466, -124238238109.99565, 149597870699.77518],
-			"velocity": [163362758.87548885, -975096366.250281, -421983094.9471466],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 1.8986493571154056e+16,
-			"has_collision_object": true
-		},
-		{
-			"with_script": true,
-			"name": "saturn",
-			"geometry": "saturn",
-			"scale": [
-				0.25,
-				0.25,
-				0.25
-			],
-			"position": [1180984036637.1848, 687623329772.8995, 233177579156.5941],
-			"velocity": [-481339603.72544646, 648627994.8843346, 288521382.3356767],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 5.6849732394571e+15,
-			"has_collision_object": true
-		},
-		{
-			"child_of": "saturn",
-			"seed": 1111,
-			"count": 50,
-			"name": "ring",
-			"scale": [
-				1,
-				1,
-				1
-			],
-			"planet_data": "asteroid",
-			"centre": [
-				0,
-				0,
-				[
-					-0.1,
-					0.1
-				]
-			],
-			"radius": [
-				0.3,
-				0.5
-			],
-			"speed": 0.01
-		},
-		{
-			"with_script": true,
-			"name": "uranus",
-			"geometry": "uranus",
-			"scale": [
-				0.1,
-				0.1,
-				0.1
-			],
-			"position": [-2732465284658.2856, -173826056482.23718, -37415333684.283455],
-			"velocity": [33089611.51523637,  -562858249.7750483, -246988332.59722263],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 8.682484350751037e+14,
-			"has_collision_object": true
-		},
-		{
-			"with_script": true,
-			"name": "neptune",
-			"geometry": "neptune",
-			"scale": [
-				0.1,
-				0.1,
-				0.1
-			],
-			"position": [-2401799166735.2256, -3581700877245.7764, -1406243616376.4753],
-			"velocity": [395352742.007979, -224144367.20401645, -101583231.45206869],
-			"acceleration": [0, 0, 0],
-			"orientation" : [0, 0, 0],
-			"rotationSpeed": 0,
-			"mass" : 1.0243772839228813e+15,
-			"has_collision_object": true
-		}
-		
-	],
-	"materials": [
-		{
-			"name": "sun_material",
-			"flags_unshaded": true,
-			"emission_enabled": false,
-			"emission_energy": 1,
-			"emission": [
-				0.94,
-				0.95,
-				0.69
-			],
-			"use_as_albedo": false,
-			"emission_operator": 1
-		}
-	]
+    "config": {
+        "model_dir": "geometry/solarSystem/glTF2/",
+        "params": [
+            "position",
+            "velocity",
+            "acceleration",
+            "orientation",
+            "rotationSpeed",
+            "mass"
+        ]
+    },
+    "lights": [
+        {
+            "name": "OmniLight",
+            "child_of": "sun",
+            "radius": 4096,
+            "attenuation": 3,
+            "color": [
+                1,
+                1,
+                1
+            ]
+        }
+    ],
+    "geometries": [
+        {
+            "name": "sun",
+            "type": "mesh",
+            "path": "sun.glb"
+        },
+        {
+            "name": "mercury",
+            "type": "mesh",
+            "path": "mercury.glb"
+        },
+        {
+            "name": "venus",
+            "type": "mesh",
+            "path": "venus.glb"
+        },
+        {
+            "name": "earth",
+            "type": "mesh",
+            "path": "earth.glb"
+        },
+        {
+            "name": "mars",
+            "type": "mesh",
+            "path": "mars.glb"
+        },
+        {
+            "name": "jupiter",
+            "type": "mesh",
+            "path": "jupiter.glb"
+        },
+        {
+            "name": "saturn",
+            "type": "mesh",
+            "path": "saturn.glb"
+        },
+        {
+            "name": "uranus",
+            "type": "mesh",
+            "path": "uranus.glb"
+        },
+        {
+            "name": "neptune",
+            "type": "mesh",
+            "path": "neptune.glb"
+        }
+    ],
+    "planet_data": [
+        {
+            "name": "asteroid",
+            "seed": 1234,
+            "count": 15,
+            "radius": 0.0009,
+            "resolution": 20,
+            "planet_noise": {
+                "amplitude": [
+                    1,
+                    3
+                ],
+                "min_height": 0,
+                "use_first_layer_as_mask": false,
+                "octaves": 4,
+                "period": [
+                    30,
+                    150
+                ],
+                "persistence": 0.5,
+                "lacunarity": 2
+            },
+            "planet_color": {
+                "width": 128,
+                "offsets": [
+                    0,
+                    0.25,
+                    0.5,
+                    0.75,
+                    1
+                ],
+                "colors": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    1,
+                    0.3,
+                    0.3,
+                    0.3,
+                    1,
+                    0.5,
+                    0.5,
+                    0.5,
+                    1,
+                    0.7,
+                    0.7,
+                    0.7,
+                    1,
+                    0.9,
+                    0.9,
+                    0.9,
+                    1
+                ]
+            }
+        }
+    ],
+    "objects": [
+        {
+            "with_script": true,
+            "name": "sun",
+            "geometry": "sun",
+            "scale": [
+                0.3,
+                0.3,
+                0.3
+            ],
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "velocity": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "has_collision_object": true,
+            "material": "sun_material",
+            "mass": 2959122.082855911
+        },
+        {
+            "with_script": true,
+            "name": "mercury",
+            "geometry": "mercury",
+            "scale": [
+                0.009,
+                0.009,
+                0.009
+            ],
+            "position": [
+                -21052620716.985004,
+                -59537684032.05016,
+                -29619300622.580265
+            ],
+            "velocity": [
+                131950753.26899019,
+                -34337324.58536709,
+                -32026816.732337635
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "has_collision_object": true,
+            "mass": 0.491248045036476
+        },
+        {
+            "with_script": true,
+            "name": "venus",
+            "geometry": "venus",
+            "scale": [
+                0.026,
+                0.026,
+                0.026
+            ],
+            "position": [
+                -107505550202.94443,
+                -5538719833.4915905,
+                4311849286.693078
+            ],
+            "velocity": [
+                3200975.5481362003,
+                -115366971.52846166,
+                -52104603.377209894
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 7.24345233264412,
+            "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "earth",
+            "geometry": "earth",
+            "scale": [
+                0.027,
+                0.027,
+                0.027
+            ],
+            "position": [
+                -25210929111.35985,
+                132969012040.4491,
+                57648449090.22513
+            ],
+            "velocity": [
+                -107423399.93611066,
+                -17200567.364040773,
+                -7457116.090021263
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 8.88682541524927,
+            "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "mars",
+            "geometry": "mars",
+            "scale": [
+                0.015,
+                0.015,
+                0.015
+            ],
+            "position": [
+                207995054987.51968,
+                -823653454.1587287,
+                -6001656443.915824
+            ],
+            "velocity": [
+                4662012.403896743,
+                86105553.00398704,
+                39367806.65900214
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 0.954954869555077,
+            "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "jupiter",
+            "geometry": "jupiter",
+            "scale": [
+                0.3,
+                0.3,
+                0.3
+            ],
+            "position": [
+                598909065700.3792,
+                408946329943.259,
+                160697419619.65527
+            ],
+            "velocity": [
+                -28445248.305944704,
+                36681208.375045665,
+                16415892.149426809
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 2825.34584083387,
+            "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "saturn",
+            "geometry": "saturn",
+            "scale": [
+                0.25,
+                0.25,
+                0.25
+            ],
+            "position": [
+                958706512223.463,
+                923451634014.7379,
+                340178299125.80225
+            ],
+            "velocity": [
+                -26747588.386660527,
+                22000445.82665139,
+                10237291.913329657
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 845.970607324503,
+            "has_collision_object": true
+        },
+        {
+            "child_of": "saturn",
+            "seed": 1111,
+            "count": 5000,
+            "name": "ring",
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "planet_data": "asteroid",
+            "centre": [
+                0,
+                0,
+                [
+                    -0.1,
+                    0.1
+                ]
+            ],
+            "radius": [
+                0.3,
+                0.5
+            ],
+            "speed": 0.01
+        },
+        {
+            "with_script": true,
+            "name": "uranus",
+            "geometry": "uranus",
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "position": [
+                2158775136352.6396,
+                -1871093976109.6072,
+                -850045383368.6394
+            ],
+            "velocity": [
+                16694992.688976744,
+                15344845.067886971,
+                6484476.1885223305
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 129.202482578296,
+            "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "neptune",
+            "geometry": "neptune",
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "position": [
+                2514854846376.6245,
+                -3437900268824.115,
+                -1469759315781.4236
+            ],
+            "velocity": [
+                16077849.769272294,
+                10398936.679568082,
+                3856903.2130071823
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "mass": 152.435734788511,
+            "has_collision_object": true
+        }
+    ],
+    "materials": [
+        {
+            "name": "sun_material",
+            "flags_unshaded": true,
+            "emission_enabled": false,
+            "emission_energy": 1,
+            "emission": [
+                0.94,
+                0.95,
+                0.69
+            ],
+            "use_as_albedo": false,
+            "emission_operator": 1
+        }
+    ]
 }

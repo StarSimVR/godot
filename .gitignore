@@ -3,6 +3,8 @@ build/
 addons/
 logs/
 
+*.bak
+
 bin/
 src/*.obj
 src/*.d
