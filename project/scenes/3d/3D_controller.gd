@@ -1,6 +1,5 @@
 extends BaseController
 
-
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("slower"):
 		slower()
@@ -10,3 +9,5 @@ func _input(_event: InputEvent) -> void:
 		prev_warp_point()
 	if Input.is_action_just_pressed("next_warp_point"):
 		next_warp_point()
+	if Input.is_action_just_pressed("ui_cancel"):
+		var _err = get_tree().change_scene("res://scenes/start.tscn")
