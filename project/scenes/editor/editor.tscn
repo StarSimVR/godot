@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/objects.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/editor/camera.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://scenes/editor/alert.gd" type="Script" id=11]
 [ext_resource path="res://scenes/editor/draw.gd" type="Script" id=12]
 [ext_resource path="res://scenes/editor/vector.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/editor/geometry_editor.gd" type="Script" id=14]
+[ext_resource path="res://scenes/editor/range.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -86,7 +88,7 @@ theme = ExtResource( 3 )
 
 [node name="Editor" type="VBoxContainer" parent="HUD/GUI"]
 margin_right = 418.0
-margin_bottom = 194.0
+margin_bottom = 239.0
 script = ExtResource( 6 )
 
 [node name="Locked" type="CheckBox" parent="HUD/GUI/Editor"]
@@ -151,10 +153,16 @@ margin_right = 300.0
 margin_bottom = 35.0
 text = "To full editor"
 
-[node name="Info" type="RichTextLabel" parent="HUD/GUI/Editor"]
+[node name="ToGeometryEditor" type="Button" parent="HUD/GUI/Editor"]
 margin_top = 164.0
 margin_right = 418.0
-margin_bottom = 194.0
+margin_bottom = 199.0
+text = "To procedural geometry editor"
+
+[node name="Info" type="RichTextLabel" parent="HUD/GUI/Editor"]
+margin_top = 209.0
+margin_right = 418.0
+margin_bottom = 239.0
 bbcode_enabled = true
 fit_content_height = true
 
@@ -324,6 +332,187 @@ margin_right = 423.0
 margin_bottom = 35.0
 text = "Draw orientation"
 
+[node name="GeometryEditor" type="VBoxContainer" parent="HUD/GUI"]
+visible = false
+margin_right = 418.0
+margin_bottom = 549.0
+script = ExtResource( 14 )
+
+[node name="Params" type="GridContainer" parent="HUD/GUI/GeometryEditor"]
+margin_right = 418.0
+margin_bottom = 504.0
+columns = 2
+
+[node name="EditLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 3.0
+margin_right = 130.0
+margin_bottom = 32.0
+text = "Edit: "
+
+[node name="Edit" type="OptionButton" parent="HUD/GUI/GeometryEditor/Params"]
+margin_left = 134.0
+margin_right = 418.0
+margin_bottom = 35.0
+text = "Create new"
+items = [ "Create new", null, false, 0, null ]
+selected = 0
+
+[node name="NameLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 44.0
+margin_right = 130.0
+margin_bottom = 73.0
+text = "Name: "
+
+[node name="Name" type="LineEdit" parent="HUD/GUI/GeometryEditor/Params"]
+margin_left = 134.0
+margin_top = 39.0
+margin_right = 418.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+
+[node name="SeedLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 87.0
+margin_right = 130.0
+margin_bottom = 116.0
+text = "Seed: "
+
+[node name="Seed" type="LineEdit" parent="HUD/GUI/GeometryEditor/Params"]
+margin_left = 134.0
+margin_top = 82.0
+margin_right = 418.0
+margin_bottom = 121.0
+script = ExtResource( 8 )
+is_integer = true
+
+[node name="CountLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 130.0
+margin_right = 130.0
+margin_bottom = 159.0
+text = "Count: "
+
+[node name="Count" type="LineEdit" parent="HUD/GUI/GeometryEditor/Params"]
+margin_left = 134.0
+margin_top = 125.0
+margin_right = 418.0
+margin_bottom = 164.0
+script = ExtResource( 8 )
+is_integer = true
+
+[node name="RadiusLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 173.0
+margin_right = 130.0
+margin_bottom = 202.0
+text = "Radius: "
+
+[node name="Radius" parent="HUD/GUI/GeometryEditor/Params" instance=ExtResource( 15 )]
+margin_left = 134.0
+margin_top = 168.0
+margin_right = 418.0
+margin_bottom = 207.0
+
+[node name="ResolutionLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 216.0
+margin_right = 130.0
+margin_bottom = 245.0
+text = "Resolution: "
+
+[node name="Resolution" type="LineEdit" parent="HUD/GUI/GeometryEditor/Params"]
+margin_left = 134.0
+margin_top = 211.0
+margin_right = 418.0
+margin_bottom = 250.0
+script = ExtResource( 8 )
+is_integer = true
+
+[node name="AmplitudeLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 259.0
+margin_right = 130.0
+margin_bottom = 288.0
+text = "Amplitude: "
+
+[node name="Amplitude" parent="HUD/GUI/GeometryEditor/Params" instance=ExtResource( 15 )]
+margin_left = 134.0
+margin_top = 254.0
+margin_right = 418.0
+margin_bottom = 293.0
+
+[node name="OctavesLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 302.0
+margin_right = 130.0
+margin_bottom = 331.0
+text = "Octaves: "
+
+[node name="Octaves" parent="HUD/GUI/GeometryEditor/Params" instance=ExtResource( 15 )]
+margin_left = 134.0
+margin_top = 297.0
+margin_right = 418.0
+margin_bottom = 336.0
+is_integer = true
+
+[node name="PeriodLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 345.0
+margin_right = 130.0
+margin_bottom = 374.0
+text = "Period: "
+
+[node name="Period" parent="HUD/GUI/GeometryEditor/Params" instance=ExtResource( 15 )]
+margin_left = 134.0
+margin_top = 340.0
+margin_right = 418.0
+margin_bottom = 379.0
+
+[node name="PersistenceLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 388.0
+margin_right = 130.0
+margin_bottom = 417.0
+text = "Persistence: "
+
+[node name="Persistence" parent="HUD/GUI/GeometryEditor/Params" instance=ExtResource( 15 )]
+margin_left = 134.0
+margin_top = 383.0
+margin_right = 418.0
+margin_bottom = 422.0
+
+[node name="LacunarityLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 431.0
+margin_right = 130.0
+margin_bottom = 460.0
+text = "Lacunarity: "
+
+[node name="Lacunarity" parent="HUD/GUI/GeometryEditor/Params" instance=ExtResource( 15 )]
+margin_left = 134.0
+margin_top = 426.0
+margin_right = 418.0
+margin_bottom = 465.0
+
+[node name="ColorLabel" type="Label" parent="HUD/GUI/GeometryEditor/Params"]
+margin_top = 472.0
+margin_right = 130.0
+margin_bottom = 501.0
+text = "Color: "
+
+[node name="Color" type="ColorPickerButton" parent="HUD/GUI/GeometryEditor/Params"]
+margin_left = 134.0
+margin_top = 469.0
+margin_right = 418.0
+margin_bottom = 504.0
+size_flags_horizontal = 3
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/GUI/GeometryEditor"]
+margin_top = 514.0
+margin_right = 418.0
+margin_bottom = 549.0
+
+[node name="Save" type="Button" parent="HUD/GUI/GeometryEditor/Buttons"]
+margin_right = 12.0
+margin_bottom = 35.0
+text = "Save"
+
+[node name="ToEditor" type="Button" parent="HUD/GUI/GeometryEditor/Buttons"]
+margin_right = 104.0
+margin_bottom = 35.0
+text = "To editor"
+
 [connection signal="gui_input" from="HUD/GUI/Editor/Locked" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Params/Mass" to="HUD/GUI/Editor" method="_on_slider_input"]
 [connection signal="value_changed" from="HUD/GUI/Editor/Params/Mass" to="HUD/GUI/Editor" method="update_mass"]
@@ -335,6 +524,8 @@ text = "Draw orientation"
 [connection signal="pressed" from="HUD/GUI/Editor/Buttons/Delete" to="HUD/GUI/Editor" method="delete"]
 [connection signal="gui_input" from="HUD/GUI/Editor/Buttons/ToFullEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="pressed" from="HUD/GUI/Editor/Buttons/ToFullEditor" to="HUD/GUI/Editor" method="to_full_editor"]
+[connection signal="gui_input" from="HUD/GUI/Editor/ToGeometryEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/Editor/ToGeometryEditor" to="HUD/GUI/Editor" method="to_geometry_editor"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Name" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Geometry" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Params/Scale" to="HUD/GUI/Editor" method="_on_gui_input"]
@@ -351,3 +542,22 @@ text = "Draw orientation"
 [connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Create" to="HUD/GUI/FullEditor" method="create"]
 [connection signal="gui_input" from="HUD/GUI/FullEditor/Buttons/Draw" to="HUD/GUI/Editor" method="_on_gui_input"]
 [connection signal="pressed" from="HUD/GUI/FullEditor/Buttons/Draw" to="HUD/Draw" method="toggle_param"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Edit" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="item_selected" from="HUD/GUI/GeometryEditor/Params/Edit" to="HUD/GUI/GeometryEditor" method="pd_name_changed"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Name" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Seed" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Count" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Radius" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Resolution" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Amplitude" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Octaves" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Period" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Persistence" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Lacunarity" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Params/Color" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="picker_created" from="HUD/GUI/GeometryEditor/Params/Color" to="HUD/GUI/GeometryEditor" method="_on_picker_created"]
+[connection signal="popup_closed" from="HUD/GUI/GeometryEditor/Params/Color" to="HUD/GUI/GeometryEditor" method="_on_Color_popup_closed"]
+[connection signal="pressed" from="HUD/GUI/GeometryEditor/Params/Color" to="HUD/GUI/GeometryEditor" method="_on_Color_pressed"]
+[connection signal="pressed" from="HUD/GUI/GeometryEditor/Buttons/Save" to="HUD/GUI/GeometryEditor" method="save"]
+[connection signal="gui_input" from="HUD/GUI/GeometryEditor/Buttons/ToEditor" to="HUD/GUI/Editor" method="_on_gui_input"]
+[connection signal="pressed" from="HUD/GUI/GeometryEditor/Buttons/ToEditor" to="HUD/GUI/GeometryEditor" method="to_editor"]

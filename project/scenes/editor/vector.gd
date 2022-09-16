@@ -30,11 +30,18 @@ func set_text(vec: Vector3) -> void:
 	$X.set_text(str(vec.x))
 	$Y.set_text(str(vec.y))
 	$Z.set_text(str(vec.z))
+	emit_text_changed()
 
 func clear() -> void:
 	$X.set_text("")
 	$Y.set_text("")
 	$Z.set_text("")
+	emit_text_changed()
+
+func emit_text_changed() -> void:
+	$X.emit_signal("text_changed", $X.get_text())
+	$Y.emit_signal("text_changed", $Y.get_text())
+	$Z.emit_signal("text_changed", $Z.get_text())
 
 func set_editable(editable: bool) -> void:
 	$X.set_editable(editable)

@@ -13,6 +13,8 @@ font_data = ExtResource( 1 )
 
 [resource]
 default_font = SubResource( 1 )
+ColorPicker/constants/label_width = 120
+ColorPicker/constants/margin = 0
 HBoxContainer/constants/separation = 10
 RichTextLabel/fonts/bold_font = SubResource( 2 )
 VBoxContainer/constants/separation = 10

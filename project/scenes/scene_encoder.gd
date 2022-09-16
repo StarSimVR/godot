@@ -28,7 +28,10 @@ func get_objects() -> Array:
 	return data.objects if "objects" in data else []
 
 func get_lights() -> Array:
-	return data.lights if "objects" in data else []
+	return data.lights if "lights" in data else []
+
+func get_all_planet_data() -> Array:
+	return data.planet_data if "planet_data" in data else []
 
 func get_entry(array_name: String, name: String) -> Dictionary:
 	if !data.has(array_name):

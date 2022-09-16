@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/editor/numeric_field.gd" type="Script" id=1]
+[ext_resource path="res://scenes/editor/range.gd" type="Script" id=2]
+
+[node name="Range" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="Min" type="LineEdit" parent="."]
+margin_right = 58.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 62.0
+margin_top = 13.0
+margin_right = 75.0
+margin_bottom = 27.0
+text = "to"
+
+[node name="Max" type="LineEdit" parent="."]
+margin_left = 79.0
+margin_right = 137.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )

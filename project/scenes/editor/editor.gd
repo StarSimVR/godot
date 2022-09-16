@@ -2,6 +2,7 @@ extends Control
 
 onready var camera := get_node("/root/Main/3D/Camera")
 onready var full_editor := get_node("../FullEditor")
+onready var geometry_editor := get_node("../GeometryEditor")
 onready var draw := get_node("/root/Main/HUD/Draw")
 
 var saved_margin_bottom := self.margin_bottom
@@ -12,7 +13,7 @@ var orig_scaling_factor := 0.0
 var gui_input := false
 
 func _ready() -> void:
-	scene = SceneEncoder.new("solar_system")
+	scene = SceneEncoder.new(SceneDecoder.opened_scene)
 	init()
 
 func _on_slider_input(event: InputEvent) -> void:
@@ -60,7 +61,7 @@ func save() -> void:
 	var name: String = ""
 	if "name" in obj:
 		name = obj.name
-	scene.save("solar_system")
+	scene.save(SceneDecoder.opened_scene)
 
 	var space := get_node("/root/Main/Objects/Space/MathObjects")
 	for planet in space.get_children():
@@ -155,6 +156,11 @@ func to_full_editor() -> void:
 	self.hide()
 	full_editor.show()
 	full_editor.init()
+
+func to_geometry_editor() -> void:
+	self.hide()
+	geometry_editor.show()
+	geometry_editor.init()
 	unload_object()
 
 func delete_objects_with_parent(parent: String) -> void:
