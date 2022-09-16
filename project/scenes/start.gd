@@ -2,11 +2,7 @@ extends Control
 
 func _ready() -> void:
 	var dir = Directory.new()
-	if dir.dir_exists("./encoded_scenes/"):
-		dir.open("./encoded_scenes/")
-	elif dir.dir_exists("./scenes/"):
-		dir.open("./scenes/")
-	else:
+	if dir.open("./encoded_scenes/") != OK && dir.open("./scenes/") != OK:
 		return
 	dir.list_dir_begin(true)
 
