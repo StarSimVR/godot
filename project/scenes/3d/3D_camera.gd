@@ -11,8 +11,8 @@ func _ready() -> void:
 	start()
 
 func start() -> void:
-	SceneDecoder.create("stars")
-	SceneDecoder.create("solar_system")
+	SceneDecoder.create(SceneDecoder.STARS_SCENE)
+	SceneDecoder.create(SceneDecoder.opened_scene)
 	create_labels()
 	create_trails()
 	#create_collision_objects()

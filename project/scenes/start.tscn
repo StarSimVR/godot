@@ -5,11 +5,10 @@
 [ext_resource path="res://scenes/start.gd" type="Script" id=3]
 
 [node name="Start" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -21,36 +20,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 447.0
-margin_top = 258.0
-margin_right = 546.0
-margin_bottom = 338.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -67.0
+margin_top = -104.5
+margin_right = 67.0
+margin_bottom = 104.5
 
-[node name="Start3D" type="Button" parent="VBoxContainer"]
-margin_right = 128.0
+[node name="Start3D" type="Button" parent="Buttons"]
+margin_right = 134.0
 margin_bottom = 35.0
 text = "Start 3D"
 
-[node name="StartVR" type="Button" parent="VBoxContainer"]
+[node name="StartVR" type="Button" parent="Buttons"]
 margin_top = 45.0
-margin_right = 128.0
+margin_right = 134.0
 margin_bottom = 80.0
 text = "Start VR"
 
-[node name="StartEditor" type="Button" parent="VBoxContainer"]
+[node name="StartEditor" type="Button" parent="Buttons"]
 margin_top = 90.0
-margin_right = 128.0
+margin_right = 134.0
 margin_bottom = 125.0
 text = "Start editor"
 
-[connection signal="pressed" from="VBoxContainer/Start3D" to="." method="_on_Start3D_pressed"]
-[connection signal="pressed" from="VBoxContainer/StartVR" to="." method="_on_StartVR_pressed"]
-[connection signal="pressed" from="VBoxContainer/StartEditor" to="." method="_on_StartEditor_pressed"]
+[node name="SelectListLabel" type="Label" parent="Buttons"]
+margin_top = 135.0
+margin_right = 134.0
+margin_bottom = 164.0
+text = "Select scene:"
+align = 1
+
+[node name="SceneList" type="OptionButton" parent="Buttons"]
+margin_top = 174.0
+margin_right = 134.0
+margin_bottom = 209.0
+
+[connection signal="pressed" from="Buttons/Start3D" to="." method="_on_Start3D_pressed"]
+[connection signal="pressed" from="Buttons/StartVR" to="." method="_on_StartVR_pressed"]
+[connection signal="pressed" from="Buttons/StartEditor" to="." method="_on_StartEditor_pressed"]
+[connection signal="item_selected" from="Buttons/SceneList" to="." method="_on_scene_selected"]

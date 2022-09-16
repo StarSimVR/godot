@@ -1,19 +1,32 @@
 extends Node
 
+const DEFAULT_SCENE := "solar_system"
 const DEFAULT_SEED := 1234
 const SCALE_POSITION := 149597870700
 const SCALE_VELOCITY := 1e4
+const DEFAULT_ASTEROID_PATH := "/root/Main/Objects/Space/MultiMeshObjects"
+const STARS_SCENE := "res://encoded_scenes/stars.json"
 
 const collision_object := preload("collision_object.tscn")
 const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
+
 var is_editor := false
-const default_asteroid_path = "/root/Main/Objects/Space/MultiMeshObjects"
+var opened_scene := DEFAULT_SCENE
+
+func get_scene_path(scene_name: String) -> String:
+	var dir = Directory.new()
+	if scene_name == STARS_SCENE:
+		return STARS_SCENE
+	elif dir.dir_exists("./encoded_scenes/"):
+		return "./encoded_scenes/" + scene_name + ".json"
+	else:
+		return "./scenes/" + scene_name + ".json"
 
 func load_scene(scene_name: String) -> Dictionary:
 	var file := File.new()
-	var _err := file.open("res://encoded_scenes/" + scene_name + ".json", File.READ)
+	var _err := file.open(get_scene_path(scene_name), File.READ)
 	var content := file.get_as_text()
 	file.close()
 	var json_result := JSON.parse(content)
@@ -47,7 +60,7 @@ func create(scene_name: String) -> void:
 				index+=1
 			multiStar.multimesh.visible_instance_count = -1
 			return
-		init_multimesh_asteroids(default_asteroid_path, pd_count, planet_data, planet_count, geometries)
+		init_multimesh_asteroids(DEFAULT_ASTEROID_PATH, pd_count, planet_data, planet_count, geometries)
 
 		for object in data.objects:
 			create_object(object, geometries, materials, pd_count, params, planet_data, planet_count)
@@ -277,7 +290,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		if  "child_of" in object:
 			path = math_objects.find_node(object.child_of, true, false).get_path()
 		if get_node(path) == null:
-			path = default_asteroid_path
+			path = DEFAULT_ASTEROID_PATH
 		if !has_multimesh(path):
 			init_multimesh_asteroids(path, pd_count, planet_data, planet_count, geometries)
 		for i in count:
