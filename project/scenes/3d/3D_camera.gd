@@ -14,8 +14,8 @@ func start() -> void:
 	SceneDecoder.create(SceneDecoder.STARS_SCENE)
 	SceneDecoder.create(SceneDecoder.opened_scene)
 	create_labels()
-	create_trails()
-	#create_collision_objects()
+	if !SceneDecoder.is_editor:
+		create_trails()
 
 func disable() -> void:
 	_enabled = false
@@ -123,29 +123,23 @@ func render_labels() -> void:
 
 func create_labels() -> void:
 	for object in _math_objects.get_children():
-		if object.name == "sun":
-			continue
-		var label := Label.new()
-		label.name = object.name
-		label.set_text(object.name)
-		_labels.add_child(label)
+		create_label(object)
+
+func create_label(object) -> void:
+	var label := Label.new()
+	label.name = object.name
+	label.set_text(object.name)
+	_labels.add_child(label)
 
 func create_trails() -> void:
 	for object in _math_objects.get_children():
-		if object.name == "sun":
-			continue
-		var motion_trail = motion_trail_scene.instance()
-		motion_trail.name = "MotionTrail"
-		motion_trail.fromWidth = 0.05
-		motion_trail.startColor = Color(0.52, 0.55, 0.72)
-		motion_trail.rotate_y(PI / 2)
-		object.add_child(motion_trail)
+		if object.name != "sun":
+			create_trail(object)
 
-func create_collision_objects() -> void:
-	for object in _math_objects.get_children():
-		if object.name == "Stars":
-			continue
-		var collision_object := collision_object_scene.instance()
-		collision_object.name = "CollisionObject"
-		collision_object.set_scale(object.get_child(0).get_scale())
-		object.add_child(collision_object)
+func create_trail(object: Spatial) -> void:
+	var motion_trail = motion_trail_scene.instance()
+	motion_trail.name = "MotionTrail"
+	motion_trail.fromWidth = 0.05
+	motion_trail.startColor = Color(0.52, 0.55, 0.72)
+	motion_trail.rotate_y(PI / 2)
+	object.add_child(motion_trail)

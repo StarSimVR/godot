@@ -65,7 +65,9 @@ func save() -> void:
 
 	var space := get_node("/root/Main/Objects/Space/MathObjects")
 	for planet in space.get_children():
-			planet.free()
+		planet.free()
+	for label in camera._labels.get_children():
+		label.free()
 
 	camera.start()
 	if name:
@@ -121,8 +123,11 @@ func update_info() -> void:
 		$Info.clear()
 		full_editor.clear()
 	else:
-		var params := [obj.name, get_mass(), get_scaling_factor()]
-		$Info.set_bbcode("[b]%s:[/b] mass=%.1f, scaling factor=%.1f" % params)
+		var mass := get_mass() * SceneDecoder.SCALE_MASS
+		var mass_pow := str(mass).length() - 1
+		mass /= pow(10, mass_pow)
+		var params := [obj.name, mass, mass_pow, get_scaling_factor()]
+		$Info.set_bbcode("[b]%s:[/b] mass=%fe%d, scaling factor=%.1f" % params)
 		full_editor.load_object()
 
 func get_change_coeff(change: int) -> float:

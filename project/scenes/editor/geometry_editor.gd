@@ -6,11 +6,28 @@ onready var editor := get_node("../Editor")
 var last_line_of_params: HBoxContainer
 
 var saved_margin_bottom := self.margin_bottom
+var is_loading := false
 
 func _ready() -> void:
 	var planet_data: Array = editor.scene.get_all_planet_data()
 	for pd in planet_data:
 		$Params/Edit.add_item(pd.name)
+
+	for param in $Params.get_children():
+		if param is ColorPickerButton:
+			param.connect("color_changed", self, "_on_text_changed")
+		elif !(param is Label || param is OptionButton):
+			param.connect("text_changed", self, "_on_text_changed")
+
+func _on_text_changed(_new_text) -> void:
+	if !is_loading:
+		not_saved()
+
+func not_saved() -> void:
+	$Buttons/Save.set_disabled(false)
+
+func saved() -> void:
+	$Buttons/Save.set_disabled(true)
 
 func init() -> void:
 	get_node("/root/Main/HUD/Background").set_margin(MARGIN_BOTTOM, saved_margin_bottom + 40)
@@ -35,6 +52,7 @@ func _on_Color_popup_closed() -> void:
 	$Params/Color.color = presets[0] if presets.size() > 0 else Color.black
 
 func clear() -> void:
+	is_loading = true
 	for param in $Params.get_children():
 		if param is ColorPickerButton:
 			param.color = Color.black
@@ -43,9 +61,11 @@ func clear() -> void:
 			param.clear()
 			if param is LineEdit:
 				param.emit_signal("text_changed", "")
+	is_loading = false
 
 func load_pd(pd_name: String) -> void:
 	var pd: Dictionary = editor.scene.get_planet_data(pd_name)
+	is_loading = true
 
 	for param in $Params.get_children():
 		if param is ColorPickerButton:
@@ -67,6 +87,7 @@ func load_pd(pd_name: String) -> void:
 			else:
 				value = value if typeof(value) == TYPE_ARRAY else [value, value]
 			param.set_text(value)
+	is_loading = false
 
 func pd_name_changed(index: int) -> void:
 	if index == 0:
@@ -113,4 +134,4 @@ func save() -> void:
 		editor.scene.set_planet_data(pd)
 		$Params/Edit.add_item(pd.name)
 	editor.save()
-	to_editor()
+	saved()

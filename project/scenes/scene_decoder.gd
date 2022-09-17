@@ -2,8 +2,9 @@ extends Node
 
 const DEFAULT_SCENE := "solar_system"
 const DEFAULT_SEED := 1234
-const SCALE_POSITION := 149597870700
-const SCALE_VELOCITY := 1e4
+const SCALE_POSITION := 1e11
+const SCALE_VELOCITY := 5e7
+const SCALE_MASS := 6.72006e23
 const DEFAULT_ASTEROID_PATH := "/root/Main/Objects/Space/MultiMeshObjects"
 const STARS_SCENE := "res://encoded_scenes/stars.json"
 
@@ -11,6 +12,7 @@ const collision_object := preload("collision_object.tscn")
 const gdmath := preload("res://gdmath.gdns")
 const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
+const planet_material := preload("res://Planet/PlanetMaterial.tres")
 
 var is_editor := false
 var opened_scene := DEFAULT_SCENE
@@ -36,19 +38,24 @@ func load_scene(scene_name: String) -> Dictionary:
 	var data: Dictionary = json_result.result
 	return data
 
+func get_all_data(data: Dictionary) -> Dictionary:
+	var i := {}
+	i.textures = get_textures(data)
+	i.pd_count = get_pd_count(data)
+	i.planet_data = get_planet_data(data)
+	i.planet_count = get_planet_count(data, i.planet_data, i.pd_count)
+	i.geometries = get_geometries(data, i.planet_data)
+	i.materials = get_materials(data, i.textures)
+	i.params = data.config.params if "config" in data && "params" in data.config else []
+	return i
+
 func create(scene_name: String) -> void:
 	var data := load_scene(scene_name)
 	if "error" in data:
 		return
 
 	if data.has("objects"):
-		var textures := get_textures(data)
-		var pd_count := get_pd_count(data)
-		var planet_data := get_planet_data(data)
-		var planet_count := get_planet_count(data, planet_data, pd_count)
-		var geometries := get_geometries(data, planet_data)
-		var materials := get_materials(data, textures)
-		var params: Array = data.config.params if "config" in data && "params" in data.config else []
+		var i := get_all_data(data)
 
 		#create MultiMesh if stars are loaded
 		if "config" in data && "starFile" in data.config && data.config.starFile:
@@ -56,14 +63,14 @@ func create(scene_name: String) -> void:
 			multiStar.multimesh.instance_count = data.objects.size()
 			var index = 0
 			for star in data.objects:
-				create_star(star, materials, index)
+				create_star(star, i.materials, index)
 				index+=1
 			multiStar.multimesh.visible_instance_count = -1
 			return
-		init_multimesh_asteroids(DEFAULT_ASTEROID_PATH, pd_count, planet_data, planet_count, geometries)
+		init_multimesh_asteroids(DEFAULT_ASTEROID_PATH, i.pd_count, i.planet_data, i.planet_count, i.geometries)
 
 		for object in data.objects:
-			create_object(object, geometries, materials, pd_count, params, planet_data, planet_count)
+			create_object(object, i.geometries, i.materials, i.pd_count, i.params, i.planet_data, i.planet_count)
 	if data.has("lights"):
 		for light in data.lights:
 			create_light(light)
@@ -96,8 +103,16 @@ func init_multimesh_asteroids(path: String, pd_count: Dictionary, planet_data: D
 		multi.multimesh.custom_data_format = MultiMesh.CUSTOM_DATA_FLOAT
 		multi.multimesh.mesh = geometries[planet_data[index_name].name]
 		multi.multimesh.instance_count = int(planet_count[index_name])
+		set_planet_material(multi, planet_data[index_name])
 		multi.set_script(rotate)
+		multi.is_editor = is_editor
 		asteroids.add_child(multi)
+
+func set_planet_material(mesh: GeometryInstance, planet_data: PlanetData) -> void:
+	mesh.material_override = planet_material
+	mesh.material_override.set_shader_param("min_height", planet_data.min_height)
+	mesh.material_override.set_shader_param("max_height", planet_data.max_height)
+	mesh.material_override.set_shader_param("height_color", planet_data.planet_color)
 
 func get_textures(data: Dictionary) -> Dictionary:
 	var texture_dir := "res://"
@@ -131,10 +146,7 @@ func get_geometries(data: Dictionary, planet_data: Dictionary) -> Dictionary:
 		return geometries
 	for geometry in data.geometries:
 		if "name" in geometry && "path" in geometry && "type" in geometry && geometry.type == "mesh":
-			if is_editor:
-				geometries[geometry.name] = SphereMesh.new()
-			else:
-				geometries[geometry.name] = load(model_dir + geometry.path)
+			geometries[geometry.name] = load(model_dir + geometry.path)
 	return geometries
 
 func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
@@ -270,7 +282,7 @@ func get_planet_data(data: Dictionary) -> Dictionary:
 				elif !["name", "seed", "count"].has(key):
 					pd_instance[key] = get_randomized(pd_info[key], rng)
 				elif key == "name":
-					pd_instance[key] = pd_info[key] + (str(n) if count > 1 else "")
+					pd_instance[key] = pd_info[key] + str(n)
 			planet_data[pd_instance.name] = pd_instance
 	return planet_data
 
@@ -299,10 +311,14 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		return
 
 	var geometry = geometries[object.geometry] if "geometry" in object else null
-	var node: Node
+	var pd_name: String
+	var node: Spatial
 	var mesh = null
 	var colObject: CollisionObject
 
+	if "planet_data" in object:
+		pd_name = object.planet_data + str(rng.randi_range(0, pd_count[object.planet_data] - 1))
+		geometry = geometries[pd_name]
 	if geometry is PackedScene:
 		node = geometry.instance()
 		mesh = node.get_child(0)
@@ -311,6 +327,8 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		mesh = MeshInstance.new()
 		mesh.set_mesh(geometry)
 		node.add_child(mesh)
+		if "planet_data" in object:
+			set_planet_material(mesh, planet_data[pd_name])
 	else:
 		node = Spatial.new()
 		mesh = node
@@ -356,6 +374,10 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 			var val = object[param]
 			val = Vector3(val[0], val[1], val[2]) if val is Array else val
 			node[param] = val
+
+func create_single_object(object: Dictionary, data: Dictionary) -> void:
+	var i := get_all_data(data)
+	create_object(object, i.geometries, i.materials, i.pd_count, i.params, i.planet_data, i.planet_count)
 
 func create_auto_generated(path: String, object: Dictionary, pd_count: Dictionary, rng: RandomNumberGenerator = null):
 	var asteroids := get_node(path)

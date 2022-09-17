@@ -2,6 +2,7 @@ extends VBoxContainer
 
 onready var editor := get_node("../Editor")
 onready var draw := get_node("/root/Main/HUD/Draw")
+onready var camera: Camera = get_node("/root/Main/3D/Camera")
 
 var saved_margin_bottom := self.margin_bottom
 var is_loading := false
@@ -31,11 +32,20 @@ func to_editor() -> void:
 	editor.init()
 
 func set_params(obj: Dictionary) -> void:
-	obj.name = $Params/Name.get_text()
-	obj.geometry = $Params/Geometry.get_text()
+	var child_of: String = $Params/ChildOf.get_text()
+	var geometry: String = $Params/Geometry.get_text()
+	var planet_data: String = $Params/PlanetData.get_text()
 	var scale := float($Params/Scale.get_text())
+
+	obj.name = $Params/Name.get_text()
+	if child_of:
+		obj.child_of = child_of
+	if geometry:
+		obj.geometry = geometry
+	if planet_data:
+		obj.planet_data = planet_data
 	obj.scale = [scale, scale, scale]
-	obj.mass = float($Params/Mass.get_text())
+	obj.mass = float($Params/Mass.get_text()) / SceneDecoder.SCALE_MASS
 	obj.rotationSpeed = int($Params/RotationSpeed.get_text())
 	obj.position = $Params/Position.get_array()
 	obj.velocity = $Params/Velocity.get_array()
@@ -64,7 +74,9 @@ func load_object() -> void:
 	for param in $Params.get_children():
 		if !(param is Label):
 			var name: String = param.name.substr(0, 1).to_lower() + param.name.substr(1)
-			var value = editor.obj[name]
+			var value = editor.obj[name] if name in editor.obj else ""
+			if name == "mass":
+				value *= SceneDecoder.SCALE_MASS
 			if param is LineEdit:
 				value = str(value) if name != "scale" else str(value[0])
 				param.emit_signal("text_changed", value)
@@ -87,3 +99,5 @@ func create():
 	editor.scene.set_object(obj)
 	not_saved()
 	clear()
+	SceneDecoder.create_single_object(obj, editor.scene.data)
+	camera.create_label(obj)
