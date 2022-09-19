@@ -13,7 +13,7 @@
 size = Vector2( 2, 2 )
 
 [sub_resource type="DynamicFontData" id=7]
-font_path = "res://roboto.ttf"
+font_path = "res://roboto-bold.ttf"
 
 [sub_resource type="DynamicFont" id=8]
 size = 42
@@ -62,8 +62,9 @@ script = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.1, 0, 0.1 )
 
 [node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/LeftController/Controller_GUI"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+transform = Transform( -0.3, 2.62268e-08, 0, 2.62268e-08, 0.3, 2.62268e-08, 2.29282e-15, 2.62268e-08, -0.3, 0.134849, -0.194517, -0.056 )
 mesh = SubResource( 6 )
+material/0 = null
 script = ExtResource( 8 )
 gui_viewport_path = NodePath("../GUI")
 
@@ -82,7 +83,7 @@ margin_bottom = 800.0
 [node name="help" type="Label" parent="ARVROrigin/LeftController/Controller_GUI/GUI/GUI_Control"]
 anchor_right = 1.0
 margin_bottom = 99.0
-custom_colors/font_color = Color( 0.937255, 0.905882, 0.105882, 1 )
+custom_colors/font_color = Color( 0.0352941, 0.878431, 0.921569, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "Trigger 		= God View
 Touch Pad	 = Prev Object
@@ -102,6 +103,7 @@ collide_with_areas = true
 [node name="Mesh" type="MeshInstance" parent="ARVROrigin/LeftController/GrabCast"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.233433 )
 mesh = SubResource( 2 )
+material/0 = null
 
 [node name="RightController" type="ARVRController" parent="ARVROrigin"]
 controller_id = 2
@@ -119,13 +121,15 @@ collide_with_areas = true
 [node name="Mesh" type="MeshInstance" parent="ARVROrigin/RightController/GrabCast"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4999.7 )
 mesh = SubResource( 2 )
+material/0 = null
 
 [node name="Controller_GUI" type="Spatial" parent="ARVROrigin/RightController"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.1, 0, 0.1 )
 
 [node name="GUI_Mesh" type="MeshInstance" parent="ARVROrigin/RightController/Controller_GUI"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+transform = Transform( -0.3, 2.62268e-08, 0, 2.62268e-08, 0.3, 2.62268e-08, 2.29282e-15, 2.62268e-08, -0.3, -0.0658244, -0.194517, -0.0676996 )
 mesh = SubResource( 6 )
+material/0 = null
 script = ExtResource( 8 )
 gui_viewport_path = NodePath("../GUI")
 
@@ -144,7 +148,7 @@ margin_bottom = 800.0
 [node name="help" type="Label" parent="ARVROrigin/RightController/Controller_GUI/GUI/GUI_Control"]
 anchor_right = 1.0
 margin_bottom = 99.0
-custom_colors/font_color = Color( 0.937255, 0.905882, 0.105882, 1 )
+custom_colors/font_color = Color( 0, 0.490196, 0.490196, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "Trigger 		= Teleport
 Touch Pad	 = Next Object
