@@ -174,6 +174,8 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.normal_texture = textures[m_info.normal_map]
 		if "normalMap" in m_info:
 			m_instance.normal_texture = textures[m_info.normalMap]
+		if "use_as_albedo" in m_info:
+			m_instance.vertex_color_use_as_albedo = m_info.use_as_albedo
 		if "flags_unshaded" in m_info:
 			m_instance.flags_unshaded = m_info.flags_unshaded
 		if "emission_enabled" in m_info:
@@ -182,8 +184,6 @@ func get_materials(data: Dictionary, textures: Dictionary) -> Dictionary:
 			m_instance.emission_energy = m_info.emission_energy
 		if "emission" in m_info:
 			m_instance.emission = Color(m_info.emission[0], m_info.emission[1], m_info.emission[2])
-		if "use_as_albedo" in m_info:
-			m_instance.vertex_color_use_as_albedo = m_info.use_as_albedo
 		if "emission_operator" in m_info:
 			match str(m_info.emission_operator):
 				"0":
@@ -342,8 +342,8 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 
 		if "scale" in object:
 			var scaling = 1.0
-			if object.scale[0] < 0.2:
-				scaling = 1.0 / (8.0 * object.scale[0])
+			if object.scale[0] < 0.3:
+				scaling = 1.0 / (6.0 * object.scale[0])
 			colObject.set_scale(Vector3(object.scale[0] * scaling, object.scale[1] * scaling, object.scale[2] * scaling))
 
 		colObject.input_ray_pickable = true
