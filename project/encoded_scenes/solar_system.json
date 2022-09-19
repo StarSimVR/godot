@@ -216,7 +216,6 @@
             ],
             "rotationSpeed": 0,
             "has_collision_object": true,
-            "material": "sun_material",
             "mass": 2959122.082855911
         },
         {
@@ -509,19 +508,5 @@
             "has_collision_object": true
         }
     ],
-    "materials": [
-        {
-            "name": "sun_material",
-            "flags_unshaded": true,
-            "emission_enabled": false,
-            "emission_energy": 1,
-            "emission": [
-                0.94,
-                0.95,
-                0.69
-            ],
-            "use_as_albedo": false,
-            "emission_operator": 1
-        }
-    ]
+    "materials": []
 }
