@@ -18,11 +18,16 @@ func _on_scene_selected(index: int) -> void:
 	SceneDecoder.opened_scene = $Buttons/SceneList.get_item_text(index)
 
 func _on_Start3D_pressed() -> void:
+	SceneDecoder.is_editor = false
+	get_tree().set_debug_collisions_hint(false)
 	var _err = get_tree().change_scene("res://scenes/3d/3d.tscn")
 
 func _on_StartVR_pressed() -> void:
+	SceneDecoder.is_editor = false
+	get_tree().set_debug_collisions_hint(false)
 	var _err = get_tree().change_scene("res://scenes/vr/vr.tscn")
 
 func _on_StartEditor_pressed() -> void:
+	SceneDecoder.is_editor = true
 	get_tree().set_debug_collisions_hint(true)
 	var _err = get_tree().change_scene("res://scenes/editor/editor.tscn")
