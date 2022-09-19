@@ -18,9 +18,7 @@ func slower() -> void:
 		_math_objects.speed = 0
 		return
 	_math_objects.speed /= 2
-#	var _objects := _math_objects.get_children()
-#	for object in _objects:
-#		object.slower()
+
 
 func faster() -> void:
 	if SceneDecoder.is_editor:
@@ -29,9 +27,7 @@ func faster() -> void:
 		_math_objects.speed = 1
 		return
 	_math_objects.speed *= 2
-#	var _objects := _math_objects.get_children()
-#	for object in _objects:
-#		object.faster()
+
 
 func prev_warp_point() -> void:
 	_math_objects._curr_object -= 1

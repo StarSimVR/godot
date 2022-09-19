@@ -1,14 +1,25 @@
 extends Spatial
 
-export(float) var speed = 1.0 # angle / sec
 export(bool) var is_editor = false
+onready var _math_objects := get_node("/root/Main/Objects/Space/MathObjects")
 
 func _process(delta) -> void:
 	if !is_editor:
-		rotate_z(speed * delta)
+		rotate_z(_math_objects.speed * delta)
 
 func slower() -> void:
-	speed *= 0.5
+	if SceneDecoder.is_editor:
+		return
+	if _math_objects.speed <= 1:
+		_math_objects.speed = 0
+		return
+	_math_objects.speed /= 2
+
 
 func faster() -> void:
-	speed *= 2
+	if SceneDecoder.is_editor:
+		return
+	if _math_objects.speed == 0:
+		_math_objects.speed = 1
+		return
+	_math_objects.speed *= 2
