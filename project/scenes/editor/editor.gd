@@ -66,8 +66,6 @@ func save() -> void:
 	var space := get_node("/root/Main/Objects/Space/MathObjects")
 	for planet in space.get_children():
 		planet.free()
-	for label in camera._labels.get_children():
-		label.free()
 
 	camera.start()
 	if name:

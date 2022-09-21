@@ -13,7 +13,6 @@ func _ready() -> void:
 func start() -> void:
 	SceneDecoder.create(SceneDecoder.STARS_SCENE)
 	SceneDecoder.create(SceneDecoder.opened_scene)
-	create_labels()
 	if !SceneDecoder.is_editor:
 		create_trails()
 
@@ -66,8 +65,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_free_flight_mode"):
 		_free_flight_mode = !_free_flight_mode
 
-	render_labels()
-
 func zoom_in() -> void:
 	fov = max(fov - 0.5, 1)
 
@@ -98,38 +95,6 @@ func look_at_current_object() -> void:
 	var position := origin + origin.normalized() * 1
 	if position != sun_origin:
 		look_at_from_position(position, sun_origin, Vector3(0, 0, 1))
-
-func render_labels() -> void:
-	for object in _math_objects.get_children():
-		if object.name == "sun":
-			continue
-		var label: Label = _labels.get_node(object.name)
-		var object_position: Vector3 = object.global_transform.origin
-		if is_position_behind(object_position):
-			label.hide()
-			continue
-
-		var object_to_exclude: Node = object.get_node_or_null("CollisionObject")
-		var exclude = [] if object_to_exclude == null else [object_to_exclude]
-		var result := get_world().direct_space_state.intersect_ray(
-			global_transform.origin, object_position, exclude, 2147483647, true, true
-		)
-		if result.empty():
-			label.show()
-			var offset := Vector2(label.get_size().x / 2, 0)
-			label.rect_position = unproject_position(object_position) - offset
-		else:
-			label.hide()
-
-func create_labels() -> void:
-	for object in _math_objects.get_children():
-		create_label(object)
-
-func create_label(object) -> void:
-	var label := Label.new()
-	label.name = object.name
-	label.set_text(object.name)
-	_labels.add_child(label)
 
 func create_trails() -> void:
 	for object in _math_objects.get_children():

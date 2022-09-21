@@ -100,4 +100,3 @@ func create():
 	not_saved()
 	clear()
 	SceneDecoder.create_single_object(obj, editor.scene.data)
-	camera.create_label(obj)

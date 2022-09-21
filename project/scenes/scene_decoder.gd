@@ -333,6 +333,18 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		node = Spatial.new()
 		mesh = node
 
+	if object.name != "sun":
+		var label := Label3D.new()
+		label.name = "Label"
+		label.text = object.name
+		label.pixel_size = 0.0025
+		label.render_priority = 1
+		label.billboard = SpatialMaterial.BILLBOARD_ENABLED
+		label.fixed_size = true
+		label.no_depth_test = true
+		#label.transform.origin = Vector3(0, 0, 0.02)
+		node.add_child(label)
+
 	if "with_script" in object && object.with_script && !is_editor:
 		node.set_script(gdmath)
 

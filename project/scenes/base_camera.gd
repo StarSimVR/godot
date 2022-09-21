@@ -3,7 +3,6 @@ extends Camera
 
 
 onready var _math_objects := get_node("/root/Main/Objects/Space/MathObjects")
-onready var _labels := get_node("/root/Main/Objects/CanvasLayer/Labels")
 var motion_trail_scene := preload("res://MotionTrail/MotionTrail.tscn")
 var collision_object_scene := preload("res://scenes/collision_object.tscn")
 
