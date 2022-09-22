@@ -5,6 +5,7 @@ extends Spatial
 var _curr_object := 1
 var first_draw := true
 var speed := 1
+var speed_upper_bound := 512
 
 
 # Called when the node enters the scene tree for the first time.

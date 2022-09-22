@@ -337,7 +337,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		var label := Label3D.new()
 		label.name = "Label"
 		label.text = object.name
-		label.pixel_size = 0.0025
+		label.pixel_size = 0.001
 		label.render_priority = 1
 		label.billboard = SpatialMaterial.BILLBOARD_ENABLED
 		label.fixed_size = true

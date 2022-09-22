@@ -27,6 +27,8 @@ func faster() -> void:
 		_math_objects.speed = 1
 		return
 	_math_objects.speed *= 2
+	if _math_objects.speed >= _math_objects.speed_upper_bound:
+		_math_objects.speed = _math_objects.speed_upper_bound
 
 
 func prev_warp_point() -> void:
