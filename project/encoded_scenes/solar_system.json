@@ -1,6 +1,7 @@
 {
     "config": {
         "model_dir": "geometry/solarSystem/glTF2/",
+        "texture_dir": "geometry/solarSystem/textures/",
         "params": [
             "position",
             "velocity",
@@ -10,6 +11,12 @@
             "mass"
         ]
     },
+    "textures": [
+        {
+            "name": "sun_texture",
+            "path": "2k_sun.jpg"
+        }
+    ],
     "lights": [
         {
             "name": "OmniLight",
@@ -189,6 +196,8 @@
             "with_script": true,
             "name": "sun",
             "geometry": "sun",
+            "texture": "sun_texture",
+            "material": "sun_material",
             "scale": [
                 0.3,
                 0.3,
@@ -519,5 +528,11 @@
             "has_collision_object": true
         }
     ],
-    "materials": []
+    "materials": [
+        {
+            "name": "sun_material",
+            "flags_unshaded": true,
+            "albedo_map": "sun_texture"
+        }
+    ]
 }
