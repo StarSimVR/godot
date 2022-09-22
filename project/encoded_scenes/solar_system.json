@@ -218,6 +218,17 @@
             "has_collision_object": true,
             "mass": 2959122.082855911
         },
+		{
+			"seed": 1111,
+			"count": 3000,
+			"name": "asteroid_belt",
+			"geometry": "planet",
+			"scale": [1.0, 1.0, 1.0],
+			"planet_data": "asteroid",
+			"centre": [0, 0, 0],
+			"radius": [6, 9],
+			"speed": 0.01
+		},
         {
             "with_script": true,
             "name": "mercury",
