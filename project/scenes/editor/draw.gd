@@ -109,11 +109,11 @@ func draw_axes() -> void:
 func _process(delta: float) -> void:
 	update()
 
-	if Input.is_action_just_pressed("switch_to_plane_yz"):
+	if Input.is_action_just_pressed("switch_to_plane_YZ"):
 		fixed_coord = "x"
-	elif Input.is_action_just_pressed("switch_to_plane_xz"):
+	elif Input.is_action_just_pressed("switch_to_plane_XZ"):
 		fixed_coord = "y"
-	elif Input.is_action_just_pressed("switch_to_plane_xy"):
+	elif Input.is_action_just_pressed("switch_to_plane_XY"):
 		fixed_coord = "z"
 	elif Input.is_mouse_button_pressed(BUTTON_LEFT):
 		if Input.is_action_pressed("decrease_fixed_coord_when_dragging_vector"):
