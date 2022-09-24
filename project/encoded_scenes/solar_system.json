@@ -52,6 +52,16 @@
             "path": "earth.glb"
         },
         {
+            "name": "moon",
+            "type": "mesh",
+            "path": "moon.glb"
+        },
+        {
+            "name": "pluto",
+            "type": "mesh",
+            "path": "pluto.glb"
+        },
+        {
             "name": "mars",
             "type": "mesh",
             "path": "mars.glb"
@@ -227,17 +237,28 @@
             "has_collision_object": true,
             "mass": 2959122.082855911
         },
-		{
-			"seed": 1111,
-			"count": 3000,
-			"name": "asteroid_belt",
-			"geometry": "planet",
-			"scale": [1.0, 1.0, 1.0],
-			"planet_data": "asteroid",
-			"centre": [0, 0, 0],
-			"radius": [6, 9],
-			"speed": 0.01
-		},
+        {
+            "seed": 1111,
+            "count": 3000,
+            "name": "asteroid_belt",
+            "geometry": "planet",
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "planet_data": "asteroid",
+            "centre": [
+                0,
+                0,
+                0
+            ],
+            "radius": [
+                6,
+                9
+            ],
+            "speed": 0.01
+        },
         {
             "with_script": true,
             "name": "mercury",
@@ -336,6 +357,39 @@
             "rotationSpeed": 0,
             "mass": 8.88682541524927,
             "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "moon",
+            "geometry": "moon",
+            "scale": [
+                0.0075,
+                0.0075,
+                0.0075
+            ],
+            "position": [
+                -25528579356.23111,
+                132732547498.93604,
+                57585772806.284515
+            ],
+            "velocity": [
+                -105404566.5582092,
+                -19840344.48268497,
+                -8608031.908394637
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "has_collision_object": true,
+            "mass": 0.10933939711847811
         },
         {
             "with_script": true,
@@ -526,6 +580,39 @@
             "rotationSpeed": 0,
             "mass": 152.435734788511,
             "has_collision_object": true
+        },
+        {
+            "with_script": true,
+            "name": "pluto",
+            "geometry": "pluto",
+            "scale": [
+                0.005,
+                0.005,
+                0.005
+            ],
+            "position": [
+                -1477556900411.4448,
+                -4185492354856.593,
+                -860644442432.4579
+            ],
+            "velocity": [
+                18878643.509490676,
+                -7029422.988210799,
+                -7886034.461128264
+            ],
+            "acceleration": [
+                0,
+                0,
+                0
+            ],
+            "orientation": [
+                0,
+                0,
+                0
+            ],
+            "rotationSpeed": 0,
+            "has_collision_object": true,
+            "mass": 0.01947899274708857
         }
     ],
     "materials": [
