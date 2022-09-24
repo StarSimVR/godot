@@ -24,6 +24,7 @@ func _on_Start3D_pressed() -> void:
 
 func _on_StartVR_pressed() -> void:
 	SceneDecoder.is_editor = false
+	SceneDecoder.is_vr = true
 	get_tree().set_debug_collisions_hint(false)
 	var _err = get_tree().change_scene("res://scenes/vr/vr.tscn")
 

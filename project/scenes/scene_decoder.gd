@@ -14,6 +14,7 @@ const rotate := preload("res://scenes/rotate.gd")
 const planet_scene := preload("res://Planet/Planet.tscn")
 const planet_material := preload("res://Planet/PlanetMaterial.tres")
 
+var is_vr := false
 var is_editor := false
 var opened_scene := DEFAULT_SCENE
 
@@ -301,7 +302,7 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		var path = ""
 		if  "child_of" in object:
 			path = math_objects.find_node(object.child_of, true, false).get_path()
-		if get_node(path) == null:
+		if get_node_or_null(path) == null:
 			path = DEFAULT_ASTEROID_PATH
 		if !has_multimesh(path):
 			init_multimesh_asteroids(path, pd_count, planet_data, planet_count, geometries)
@@ -337,12 +338,11 @@ func create_object(object: Dictionary, geometries: Dictionary, materials: Dictio
 		var label := Label3D.new()
 		label.name = "Label"
 		label.text = object.name
-		label.pixel_size = 0.001
+		label.pixel_size = 0.001 * (1 if is_vr else 2)
 		label.render_priority = 1
 		label.billboard = SpatialMaterial.BILLBOARD_ENABLED
 		label.fixed_size = true
 		label.no_depth_test = true
-		#label.transform.origin = Vector3(0, 0, 0.02)
 		node.add_child(label)
 
 	if "with_script" in object && object.with_script && !is_editor:
