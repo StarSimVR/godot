@@ -22,7 +22,7 @@ func get_scene_path(scene_name: String) -> String:
 	var dir = Directory.new()
 	if scene_name == STARS_SCENE:
 		return STARS_SCENE
-	elif dir.dir_exists("./encoded_scenes/"):
+	elif dir.open("./encoded_scenes/") == OK:
 		return "./encoded_scenes/" + scene_name + ".json"
 	else:
 		return "./scenes/" + scene_name + ".json"
