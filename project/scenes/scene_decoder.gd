@@ -6,7 +6,7 @@ const SCALE_POSITION := 1e11
 const SCALE_VELOCITY := 5e7
 const SCALE_MASS := 6.72006e23
 const DEFAULT_ASTEROID_PATH := "/root/Main/Objects/Space/MultiMeshObjects"
-const STARS_SCENE := "res://encoded_scenes/stars.json"
+const STARS_SCENE := "res://stars.json"
 
 const collision_object := preload("collision_object.tscn")
 const gdmath := preload("res://gdmath.gdns")
