@@ -42,12 +42,18 @@ func _physics_process(delta):
 func iter():
 	var children = self.get_children()
 	for child in children:
+		
 		child.updateInfluence()
 
 
 func update_position(delta):
 	var children = self.get_children()
 	for child in children:
+		if child.shouldBeRemoved():
+			for ch in children:
+				if ch != child:
+					ch.removeObject(child)
+			child.queue_free()
 		child.updatePosition(delta)
 
 
