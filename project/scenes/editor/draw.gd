@@ -236,7 +236,7 @@ func _input(event: InputEvent) -> void:
 					new_origin = clicked_obj.transform.origin
 			motion_start = pos
 			offset_fixed_coord = 0.0 if clicked else offset_fixed_coord
-			start_position = clicked_obj.transform.origin if clicked_obj else Vector3.ZERO
+			start_position = clicked_obj.transform.origin if clicked else Vector3.ZERO
 		# Left mouse button released & a planet is selected
 		elif clicked:
 			set_vector(true)

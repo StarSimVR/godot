@@ -72,6 +72,7 @@ func save() -> void:
 		load_object(name)
 	saved()
 	full_editor.saved()
+	draw.clear()
 
 func get_mass() -> float:
 	return obj.mass if "mass" in obj else 0.0
