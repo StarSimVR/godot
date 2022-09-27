@@ -184,9 +184,9 @@ func update_camera_position_on_warp():
 	var object: Spatial = _math_objects.get_cur_object()
 	if(object == null): return
 	var origin := object.transform.origin
-	var camera_offset = get_parent().get_node("StarSimVRCamera").global_transform.origin - get_parent().global_transform.origin
+	var camera_offset = get_parent().global_transform.origin - get_parent().global_transform.origin
 	camera_offset.y = 0
-	get_parent().global_transform.origin = origin - camera_offset
+	get_parent().global_transform.origin = origin + camera_offset.normalized()
 		
 		
 #Function to specify how to update and redisplay a scene in VR upon a teleport
