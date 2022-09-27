@@ -8,7 +8,7 @@ func _init(scene_name: String) -> void:
 
 func save(scene_name: String) -> void:
 	var file := File.new()
-	var _err := file.open("res://encoded_scenes/" + scene_name + ".json", File.WRITE)
+	var _err := file.open(SceneDecoder.get_scene_path(scene_name), File.WRITE)
 	file.store_string(JSON.print(data, "\t"))
 	file.close()
 
