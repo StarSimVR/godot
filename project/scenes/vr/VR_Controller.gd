@@ -196,7 +196,7 @@ func update_camera_position_on_teleport():
 	var object_origin := object.transform.origin
 	var camera_direction = get_parent().global_transform.origin - object_origin
 	#camera_direction.y = 0
-	get_parent().global_transform.origin = object_origin + 2 * camera_direction.normalized()
+	get_parent().global_transform.origin = object_origin + object.scale.length() * camera_direction.normalized()
 		
 
 #Function to specify what happens when a teleport interaction is triggered
