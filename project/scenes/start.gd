@@ -14,6 +14,8 @@ func _ready() -> void:
 			$Buttons/SceneList.add_item(filename.replace(".json", ""))
 		filename = dir.get_next()
 
+	show_version()
+
 func _on_scene_selected(index: int) -> void:
 	SceneDecoder.opened_scene = $Buttons/SceneList.get_item_text(index)
 
@@ -32,3 +34,9 @@ func _on_StartEditor_pressed() -> void:
 	SceneDecoder.is_editor = true
 	get_tree().set_debug_collisions_hint(true)
 	var _err = get_tree().change_scene("res://scenes/editor/editor.tscn")
+
+func show_version() -> void:
+	var version_file := File.new()
+	var _err := version_file.open("res://version.txt", File.READ)
+	$AppName.text = "StarSimVR " + version_file.get_as_text()
+	version_file.close()

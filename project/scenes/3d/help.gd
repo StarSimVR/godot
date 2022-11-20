@@ -1,7 +1,7 @@
 extends ColorRect
 
 func _ready():
-	$Text.set_text(generate_help_text())
+	$Text.set_bbcode(generate_help_text())
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("help"):
@@ -19,7 +19,11 @@ func can_use_hotkey(deadzone: float) -> bool:
 		return true
 
 func generate_help_text():
-	var help_text := ""
+	var version_file := File.new()
+	var _err := version_file.open("res://version.txt", File.READ)
+	var help_text := "[b]StarSimVR " + version_file.get_as_text() + "[/b]\n"
+	version_file.close()
+
 	var actions := InputMap.get_actions()
 	for action in actions:
 		var deadzone := InputMap.action_get_deadzone(action)
