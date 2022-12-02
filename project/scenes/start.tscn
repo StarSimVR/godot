@@ -59,6 +59,14 @@ margin_top = 174.0
 margin_right = 134.0
 margin_bottom = 209.0
 
+[node name="AppName" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -29.0
+text = "StarSimVR"
+align = 2
+
 [connection signal="pressed" from="Buttons/Start3D" to="." method="_on_Start3D_pressed"]
 [connection signal="pressed" from="Buttons/StartVR" to="." method="_on_StartVR_pressed"]
 [connection signal="pressed" from="Buttons/StartEditor" to="." method="_on_StartEditor_pressed"]
