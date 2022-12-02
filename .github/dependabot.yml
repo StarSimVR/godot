@@ -38,6 +38,8 @@ updates:
       interval: daily
       time: '00:00'
     assignees:
+      - Luka-sama
+      - Ranplax
       - kevinmatthes
     commit-message:
       prefix: Dependabot
